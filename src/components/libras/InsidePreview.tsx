@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Eye, Check, ArrowUpRight, Maximize2 } from "lucide-react";
+import { Eye, Check, Maximize2 } from "lucide-react";
 import { PreviewModal } from "./PreviewModal";
 
 const SAMPLES = [
@@ -65,25 +65,25 @@ export const InsidePreview = ({ onCtaClick }: { onCtaClick: () => void }) => {
 
   return (
     <>
-      <section className="py-20 md:py-28 bg-slate-900 border-y border-slate-800 relative">
+      <section className="py-10 md:py-16 bg-slate-900 border-y border-slate-800 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           {/* Section Badge */}
-          <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+          <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
             <Eye className="w-3.5 h-3.5 text-cyan-400" /> Veja Por Dentro do Material
           </div>
 
           {/* Section Title */}
-          <h2 className="text-3xl sm:text-5xl font-black text-white mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-black text-white mb-3 tracking-tight">
             Veja os jogos e materiais que você recebe
           </h2>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-slate-400 max-w-3xl mx-auto mb-12">
+          <p className="text-sm sm:text-base text-slate-400 max-w-3xl mx-auto mb-8">
             Clique em qualquer jogo abaixo para ver detalhes e dicas de utilização com os seus alunos.
           </p>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
             {[
               { id: "todos", label: "Todos os Jogos (+240)" },
               { id: "dupla", label: "Jogos em Dupla" },
@@ -93,7 +93,7 @@ export const InsidePreview = ({ onCtaClick }: { onCtaClick: () => void }) => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                   activeTab === tab.id
                     ? "bg-gradient-to-r from-teal-500 to-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20"
                     : "bg-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-700/60"
@@ -105,50 +105,50 @@ export const InsidePreview = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </div>
 
           {/* Samples Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 text-left">
             {filteredSamples.map((item, idx) => (
               <div
                 key={idx}
                 onClick={() => setSelectedSample(item)}
-                className="group bg-slate-950/70 rounded-3xl border border-slate-800/80 p-6 shadow-xl hover:border-cyan-500/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between backdrop-blur-md cursor-pointer relative"
+                className="group bg-slate-950/70 rounded-3xl border border-slate-800/80 p-5 shadow-xl hover:border-cyan-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between backdrop-blur-md cursor-pointer relative"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-2xl shadow-inner">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-11 h-11 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-xl shadow-inner">
                       {item.icon}
                     </div>
-                    <span className={`text-[10px] uppercase font-black tracking-wider px-3 py-1 rounded-full text-slate-950 bg-gradient-to-r ${item.color} shadow-sm`}>
+                    <span className={`text-[10px] uppercase font-black tracking-wider px-2.5 py-0.5 rounded-full text-slate-950 bg-gradient-to-r ${item.color} shadow-sm`}>
                       {item.badge}
                     </span>
                   </div>
 
-                  <span className="text-[11px] font-bold text-teal-400 uppercase tracking-widest">
+                  <span className="text-[10px] font-bold text-teal-400 uppercase tracking-widest">
                     {item.category}
                   </span>
-                  <h3 className="text-xl font-bold text-white mt-1 mb-2 group-hover:text-cyan-300 transition-colors flex items-center justify-between">
+                  <h3 className="text-lg font-bold text-white mt-0.5 mb-1.5 group-hover:text-cyan-300 transition-colors flex items-center justify-between">
                     {item.title}
-                    <Maximize2 className="w-4 h-4 text-cyan-400 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <Maximize2 className="w-3.5 h-3.5 text-cyan-400 opacity-70 group-hover:opacity-100 transition-opacity" />
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                  <p className="text-xs text-slate-400 leading-relaxed mb-4">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-medium text-slate-400">
-                  <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-                    <Check className="w-4 h-4" /> Clique p/ ver detalhes
+                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-medium text-slate-400">
+                  <span className="flex items-center gap-1.5 text-emerald-400 font-semibold text-[11px]">
+                    <Check className="w-3.5 h-3.5" /> Clique p/ ver detalhes
                   </span>
-                  <span className="text-cyan-400 font-bold group-hover:underline">Ampliar ➔</span>
+                  <span className="text-cyan-400 font-bold group-hover:underline text-[11px]">Ampliar ➔</span>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Intermediate Banner */}
-          <div className="bg-gradient-to-r from-teal-950 via-slate-950 to-cyan-950 border border-teal-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left relative overflow-hidden">
+          <div className="bg-gradient-to-r from-teal-950 via-slate-950 to-cyan-950 border border-teal-500/30 rounded-3xl p-5 sm:p-8 shadow-2xl max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left relative overflow-hidden">
             <div className="space-y-1 z-10">
-              <h4 className="text-xl font-black flex items-center justify-center sm:justify-start gap-2 text-cyan-300">
-                <Eye className="w-5 h-5 text-amber-400" />
+              <h4 className="text-lg font-black flex items-center justify-center sm:justify-start gap-2 text-cyan-300">
+                <Eye className="w-4 h-4 text-amber-400" />
                 Arquivos Digitais em Alta Resolução
               </h4>
               <p className="text-xs sm:text-sm text-slate-300">
@@ -157,7 +157,7 @@ export const InsidePreview = ({ onCtaClick }: { onCtaClick: () => void }) => {
             </div>
             <button
               onClick={onCtaClick}
-              className="z-10 shrink-0 bg-gradient-to-r from-teal-400 to-cyan-300 text-slate-950 font-black px-7 py-3.5 rounded-2xl text-sm transition-transform hover:scale-105 shadow-xl shadow-cyan-500/20 cursor-pointer"
+              className="z-10 shrink-0 bg-gradient-to-r from-teal-400 to-cyan-300 text-slate-950 font-black px-6 py-3 rounded-2xl text-xs sm:text-sm transition-transform hover:scale-105 shadow-xl shadow-cyan-500/20 cursor-pointer"
             >
               GARANTIR ACESSO AGORA ➔
             </button>

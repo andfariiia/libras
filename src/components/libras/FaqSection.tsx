@@ -34,40 +34,40 @@ export const FaqSection = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-slate-950 text-white border-t border-slate-800">
+    <section className="py-10 md:py-16 bg-slate-950 text-white border-t border-slate-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 bg-slate-900 text-cyan-300 border border-slate-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 bg-slate-900 text-cyan-300 border border-slate-800 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
             <HelpCircle className="w-3.5 h-3.5 text-cyan-400" /> Tire Suas Dúvidas
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black">
+          <h2 className="text-2xl sm:text-4xl font-black">
             Perguntas Frequentes
           </h2>
         </div>
 
         {/* Accordions */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {FAQS.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden transition-all"
+                className="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden transition-all"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-white text-base sm:text-lg hover:text-cyan-300 transition-colors cursor-pointer"
+                  className="w-full text-left p-5 flex items-center justify-between gap-3 font-bold text-white text-sm sm:text-base hover:text-cyan-300 transition-colors cursor-pointer"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-cyan-400 shrink-0 transition-transform duration-300 ${
+                    className={`w-4 h-4 text-cyan-400 shrink-0 transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 pt-4">
+                  <div className="px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 pt-3">
                     {faq.a}
                   </div>
                 )}

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Package, Dices, CreditCard, FileText, Layout, HeartHandshake } from "lucide-react";
+import { Package } from "lucide-react";
 
 const DELIVERABLES = [
   {
@@ -43,51 +43,51 @@ const DELIVERABLES = [
 
 export const DeliverablesSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
-    <section className="py-20 md:py-28 bg-slate-950 text-white relative border-t border-slate-800">
+    <section className="py-10 md:py-16 bg-slate-950 text-white relative border-t border-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+        <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
           <Package className="w-3.5 h-3.5 text-cyan-400" /> O QUE VOCÊ VAI RECEBER AGORA MESMO
         </div>
 
         {/* Title */}
-        <h2 className="text-3xl sm:text-5xl font-black mb-4 tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-black mb-3 tracking-tight">
           Tudo o que vem no Kit de Jogos em Libras
         </h2>
 
-        <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-14">
+        <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mb-10">
           Acesso vitalício aos arquivos digitais prontos em formato PDF de alta resolução para baixar e imprimir.
         </p>
 
         {/* Grid of 5 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-left">
           {DELIVERABLES.map((item, idx) => (
             <div
               key={idx}
-              className={`bg-slate-900/80 rounded-3xl p-7 border border-slate-800 shadow-xl hover:border-slate-700 transition-all duration-300 flex flex-col justify-between ${
+              className={`bg-slate-900/80 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-slate-700 transition-all duration-300 flex flex-col justify-between ${
                 idx === 4 ? "md:col-span-2 lg:col-span-1" : ""
               }`}
             >
               <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-slate-950 border border-slate-800 text-2xl flex items-center justify-center">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-11 h-11 rounded-2xl bg-slate-950 border border-slate-800 text-xl flex items-center justify-center">
                     {item.icon}
                   </div>
-                  <span className={`text-[10px] uppercase font-black text-slate-950 px-3 py-1 rounded-full bg-gradient-to-r ${item.bg}`}>
+                  <span className={`text-[10px] uppercase font-black text-slate-950 px-2.5 py-0.5 rounded-full bg-gradient-to-r ${item.bg}`}>
                     Acesso Imediato
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-white mb-1.5">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-400 mb-6 leading-relaxed">
+                <p className="text-xs text-slate-400 mb-5 leading-relaxed">
                   {item.desc}
                 </p>
 
-                <ul className="space-y-2.5 mb-8">
+                <ul className="space-y-2 mb-6">
                   {item.items.map((sub, sIdx) => (
-                    <li key={sIdx} className="text-xs font-semibold text-slate-300 flex items-center gap-2.5">
+                    <li key={sIdx} className="text-xs font-semibold text-slate-300 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
                       {sub}
                     </li>
@@ -95,7 +95,7 @@ export const DeliverablesSection = ({ onCtaClick }: { onCtaClick: () => void }) 
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-medium">
+              <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-medium">
                 <span>Formato: PDF HD</span>
                 <span className="text-cyan-400 font-bold">Imprima Ilimitado</span>
               </div>
