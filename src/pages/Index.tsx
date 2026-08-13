@@ -16,7 +16,6 @@ import { CreatorSection } from "@/components/libras/CreatorSection";
 import { FaqSection } from "@/components/libras/FaqSection";
 import { GuaranteeFooter } from "@/components/libras/GuaranteeFooter";
 import { InteractiveQuiz } from "@/components/libras/InteractiveQuiz";
-import { MobileBottomBar } from "@/components/libras/MobileBottomBar";
 import { showSuccess } from "@/utils/toast";
 
 const Index = () => {
@@ -35,7 +34,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950 pb-16 md:pb-0">
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
       {/* 1. STICKY TOPBAR OF URGENCY */}
       <UrgencyHeader onCtaClick={scrollToCheckout} />
 
@@ -80,9 +79,6 @@ const Index = () => {
 
       {/* 15. GUARANTEE & FOOTER */}
       <GuaranteeFooter onCtaClick={scrollToCheckout} />
-
-      {/* FLOATING MOBILE STICKY BOTTOM BAR */}
-      <MobileBottomBar onCtaClick={scrollToCheckout} />
     </div>
   );
 };
