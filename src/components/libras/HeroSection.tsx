@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2, ShieldCheck, Download, Printer, Zap, Lock, Sparkles, Star, ArrowRight } from "lucide-react";
-import { AudioMessageCard } from "./AudioMessageCard";
+import { CheckCircle2, ShieldCheck, Download, Printer, Zap, Lock, Sparkles, Star, ArrowRight, Image as ImageIcon } from "lucide-react";
 
 export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
@@ -33,8 +32,26 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           Mais de 240 jogos em Libras prontos para imprimir. Ajude crianças surdas e ouvintes a aprender, se comunicar e participar juntas com jogos, cards, desafios e atividades visuais fáceis de aplicar.
         </p>
 
-        {/* Audio Message Player Card from Creator */}
-        <AudioMessageCard />
+        {/* Product Mockup Container (Placeholder for your upcoming image) */}
+        <div className="my-8 max-w-2xl mx-auto">
+          <div className="relative group bg-slate-900/90 border-2 border-dashed border-cyan-500/40 hover:border-cyan-400 rounded-3xl p-8 sm:p-12 text-center shadow-2xl backdrop-blur-xl transition-all overflow-hidden">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="flex flex-col items-center justify-center space-y-3 relative z-10">
+              <div className="w-16 h-16 rounded-2xl bg-slate-800/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-lg group-hover:scale-110 transition-transform">
+                <ImageIcon className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-slate-100">
+                Área do Mockup do Produto
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto">
+                Espaço reservado para a imagem do kit de jogos em Libras.
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-cyan-300 bg-cyan-950/80 border border-cyan-500/30 px-3 py-1 rounded-full mt-2">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Imagem em Breve
+              </span>
+            </div>
+          </div>
+        </div>
 
         {/* Action Pills */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 text-xs sm:text-sm font-semibold text-slate-200">
