@@ -126,51 +126,74 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </div>
         </div>
 
-        {/* Modern Interactive Product Showcase Card (UNO de Sinais, Jogo da Memória, Bingo) */}
-        <div className="relative max-w-4xl mx-auto">
-          <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-indigo-500 rounded-4xl blur-2xl opacity-30 animate-pulse" />
+        {/* Showcase Container matching user photo style */}
+        <div className="relative max-w-2xl mx-auto">
+          <div className="absolute -inset-1 bg-gradient-to-r from-teal-500/30 via-indigo-500/30 to-amber-500/30 rounded-3xl blur-2xl opacity-50" />
           
-          <div className="relative bg-slate-900/90 backdrop-blur-2xl rounded-3xl border border-slate-800 p-5 sm:p-7 shadow-2xl text-left">
-            {/* Visual 3D Simulated Interactive Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-5">
-              <div className="bg-gradient-to-br from-slate-800/90 to-teal-950/40 p-4 rounded-2xl border border-teal-500/30 shadow-xl transition-all duration-300 hover:border-teal-400 hover:-translate-y-1">
-                <div className="flex items-center justify-between mb-2.5">
-                  <span className="text-2xl">🃏</span>
-                  <span className="text-[10px] uppercase tracking-wider font-extrabold bg-teal-500 text-slate-950 px-2.5 py-0.5 rounded-full">PDF HD</span>
+          <div className="relative bg-slate-950/90 backdrop-blur-2xl rounded-3xl border border-slate-800 p-4 sm:p-6 shadow-2xl text-left space-y-4">
+            
+            {/* Card 1: UNO de Sinais */}
+            <div className="bg-slate-900/90 border border-teal-500/40 rounded-2xl p-5 shadow-xl hover:border-teal-400 transition-all">
+              <div className="flex items-center justify-between mb-3">
+                <div className="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700/60 flex items-center justify-center text-xl shadow-inner">
+                  🤡
                 </div>
-                <h3 className="font-extrabold text-slate-100 text-sm mb-1">UNO de Sinais em Libras</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">Cartas adaptadas com datilologia, numerais e comandos de ação rápidos.</p>
+                <span className="text-[11px] font-black uppercase tracking-wider bg-teal-400 text-slate-950 px-3 py-1 rounded-full shadow-md">
+                  PDF HD
+                </span>
               </div>
-
-              <div className="bg-gradient-to-br from-slate-800/90 to-indigo-950/40 p-4 rounded-2xl border border-indigo-500/30 shadow-xl transition-all duration-300 hover:border-indigo-400 hover:-translate-y-1">
-                <div className="flex items-center justify-between mb-2.5">
-                  <span className="text-2xl">🧠</span>
-                  <span className="text-[10px] uppercase tracking-wider font-extrabold bg-indigo-500 text-white px-2.5 py-0.5 rounded-full">Lúdico</span>
-                </div>
-                <h3 className="font-extrabold text-slate-100 text-sm mb-1">Jogo da Memória dos Sinais</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">60 cartas com pares de imagem real + sinal em Libras ilustrado.</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-slate-800/90 to-amber-950/40 p-4 rounded-2xl border border-amber-500/30 shadow-xl transition-all duration-300 hover:border-amber-400 hover:-translate-y-1">
-                <div className="flex items-center justify-between mb-2.5">
-                  <span className="text-2xl">🎯</span>
-                  <span className="text-[10px] uppercase tracking-wider font-extrabold bg-amber-500 text-slate-950 px-2.5 py-0.5 rounded-full">Em Grupo</span>
-                </div>
-                <h3 className="font-extrabold text-slate-100 text-sm mb-1">Bingo do Alfabeto em Libras</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">20 cartelas exclusivas para engajar toda a turma ou família juntas.</p>
-              </div>
+              <h3 className="font-extrabold text-white text-base sm:text-lg tracking-tight mb-1">
+                UNO de Sinais em Libras
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+                Cartas adaptadas com datilologia, numerais e comandos de ação rápidos.
+              </p>
             </div>
 
-            {/* Bottom Info Banner */}
-            <div className="bg-slate-950/80 border border-slate-800 rounded-2xl p-3.5 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs">
-              <div className="flex items-center gap-2 text-slate-300">
-                <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Inclui suporte visual, gabarito prático e instruções passo a passo.</span>
+            {/* Card 2: Jogo da Memória */}
+            <div className="bg-slate-900/90 border border-indigo-500/40 rounded-2xl p-5 shadow-xl hover:border-indigo-400 transition-all">
+              <div className="flex items-center justify-between mb-3">
+                <div className="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700/60 flex items-center justify-center text-xl shadow-inner">
+                  🧠
+                </div>
+                <span className="text-[11px] font-black uppercase tracking-wider bg-indigo-500 text-white px-3 py-1 rounded-full shadow-md">
+                  LÚDICO
+                </span>
               </div>
-              <span className="font-mono text-cyan-400 font-bold shrink-0 bg-cyan-950/80 px-3 py-1 rounded-xl border border-cyan-500/30 text-[11px]">
-                +240 Atividades Visuais
+              <h3 className="font-extrabold text-white text-base sm:text-lg tracking-tight mb-1">
+                Jogo da Memória dos Sinais
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+                60 cartas com pares de imagem real + sinal em Libras ilustrado.
+              </p>
+            </div>
+
+            {/* Card 3: Bingo do Alfabeto */}
+            <div className="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 shadow-xl hover:border-amber-400 transition-all">
+              <div className="flex items-center justify-between mb-3">
+                <div className="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700/60 flex items-center justify-center text-xl shadow-inner">
+                  🎯
+                </div>
+                <span className="text-[11px] font-black uppercase tracking-wider bg-amber-400 text-slate-950 px-3 py-1 rounded-full shadow-md">
+                  EM GRUPO
+                </span>
+              </div>
+              <h3 className="font-extrabold text-white text-base sm:text-lg tracking-tight mb-1">
+                Bingo do Alfabeto em Libras
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+                20 cartelas exclusivas para engajar toda a turma ou família juntas.
+              </p>
+            </div>
+
+            {/* Bottom Card Footer Banner */}
+            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 flex items-center gap-3 text-xs text-slate-300">
+              <Sparkles className="w-5 h-5 text-amber-400 shrink-0" />
+              <span className="font-semibold leading-relaxed">
+                Inclui suporte visual, gabarito prático e instruções passo a passo.
               </span>
             </div>
+
           </div>
         </div>
 
