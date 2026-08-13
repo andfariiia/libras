@@ -25,19 +25,21 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
   }, []);
 
   useEffect(() => {
-    const toastTimer = setInterval(() => {
+    // Initial popup after 3 seconds
+    const initialTimeout = setTimeout(() => {
       setShowToast(true);
+      setTimeout(() => setShowToast(false), 5000);
+    }, 3000);
+
+    // Repeat every 40 seconds (40000 ms)
+    const toastTimer = setInterval(() => {
       setCurrentSaleIndex((prev) => (prev + 1) % RECENT_SALES.length);
+      setShowToast(true);
 
       setTimeout(() => {
         setShowToast(false);
-      }, 4500);
-    }, 9000);
-
-    const initialTimeout = setTimeout(() => {
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 4500);
-    }, 2000);
+      }, 5000);
+    }, 40000);
 
     return () => {
       clearInterval(toastTimer);
@@ -84,13 +86,15 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
         </div>
       </header>
 
-      {/* Floating Live Purchase Toast Popup */}
+      {/* Floating Live Purchase Toast Popup - Top Right with Right-to-Left Slide */}
       <div
-        className={`fixed bottom-5 right-5 z-50 max-w-xs sm:max-w-sm transition-all duration-500 transform ${
-          showToast ? "translate-y-0 opacity-100 scale-100" : "translate-y-10 opacity-0 scale-90 pointer-events-none"
+        className={`fixed top-16 right-4 sm:right-6 z-50 max-w-xs sm:max-w-sm transition-all duration-500 transform ${
+          showToast
+            ? "translate-x-0 opacity-100 scale-100"
+            : "translate-x-full opacity-0 scale-95 pointer-events-none"
         }`}
       >
-        <div className="bg-slate-900/90 backdrop-blur-2xl text-white p-4 rounded-3xl shadow-2xl border border-cyan-500/30 flex items-center gap-3.5 glow-cyan">
+        <div className="bg-slate-900/95 backdrop-blur-2xl text-white p-4 rounded-3xl shadow-2xl border border-cyan-500/40 flex items-center gap-3.5 glow-cyan">
           <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-teal-500 to-cyan-400 flex items-center justify-center shrink-0 shadow-lg shadow-cyan-500/30">
             <ShoppingBag className="w-5 h-5 text-slate-950 font-bold" />
           </div>
