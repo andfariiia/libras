@@ -46,7 +46,7 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
         </div>
 
         {/* Action Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 text-xs sm:text-sm font-semibold text-slate-200">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 text-xs sm:text-sm font-semibold text-slate-200">
           <span className="bg-slate-900/80 backdrop-blur-md border border-slate-800 px-4 py-2 rounded-2xl flex items-center gap-2 shadow-lg">
             <Download className="w-4 h-4 text-cyan-400" /> Baixe na hora
           </span>
@@ -58,8 +58,76 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </span>
         </div>
 
-        {/* Modern Interactive Product Showcase Card */}
-        <div className="relative max-w-4xl mx-auto mb-14">
+        {/* Key Advantages Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto mb-10 text-left">
+          {[
+            "Sem faculdade de Libras",
+            "Pronto para aplicar hoje",
+            "Para escola, casa e reforço",
+            "Comunicação imediata",
+          ].map((item, idx) => (
+            <div key={idx} className="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-4 flex items-center gap-3 backdrop-blur-md">
+              <div className="w-7 h-7 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center font-bold text-xs shrink-0 border border-teal-500/30">
+                ✓
+              </div>
+              <span className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Social Proof */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-8">
+          <div className="flex -space-x-2 overflow-hidden">
+            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-cyan-500/50 object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Professora Maria" />
+            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-cyan-500/50 object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="Professora Ana" />
+            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-cyan-500/50 object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80" alt="Mãe Patricia" />
+            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-cyan-500/50 object-cover" src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=100&auto=format&fit=crop&q=80" alt="Profa Carla" />
+          </div>
+          <div className="text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start text-amber-400 gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+              ))}
+              <span className="text-xs font-bold text-slate-200 ml-1.5">4.9 / 5.0</span>
+            </div>
+            <p className="text-xs sm:text-sm font-medium text-slate-400">
+              Mais de <strong className="text-white font-bold">2.000 professoras e mães</strong> já estão usando
+            </p>
+          </div>
+        </div>
+
+        {/* Main CTA */}
+        <div className="max-w-xl mx-auto text-center mb-16">
+          <button
+            onClick={onCtaClick}
+            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-5 text-lg sm:text-xl font-black text-slate-950 bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 rounded-2xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
+          >
+            <span className="relative z-10 flex items-center gap-2 tracking-wide uppercase">
+              QUERO OS +240 JOGOS
+              <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+            </span>
+            <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          </button>
+
+          <p className="text-xs text-slate-400 mt-4 font-medium">
+            ⚠️ Desconto exclusivo nesta página • Acesso imediato • 7 dias de garantia
+          </p>
+
+          <div className="flex items-center justify-center gap-5 mt-6 text-[11px] sm:text-xs text-slate-400 font-medium">
+            <span className="flex items-center gap-1.5">
+              <Lock className="w-3.5 h-3.5 text-emerald-400" /> COMPRA SEGURA
+            </span>
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" /> SSL 256-BIT
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Zap className="w-3.5 h-3.5 text-amber-400" /> ACESSO IMEDIATO
+            </span>
+          </div>
+        </div>
+
+        {/* Modern Interactive Product Showcase Card (UNO de Sinais, Jogo da Memória, Bingo) */}
+        <div className="relative max-w-4xl mx-auto">
           <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-indigo-500 rounded-4xl blur-2xl opacity-30 animate-pulse" />
           
           <div className="relative bg-slate-900/90 backdrop-blur-2xl rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-2xl text-left">
@@ -106,73 +174,6 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </div>
         </div>
 
-        {/* Key Advantages Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto mb-12 text-left">
-          {[
-            "Sem faculdade de Libras",
-            "Pronto para aplicar hoje",
-            "Para escola, casa e reforço",
-            "Comunicação imediata",
-          ].map((item, idx) => (
-            <div key={idx} className="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-4 flex items-center gap-3 backdrop-blur-md">
-              <div className="w-7 h-7 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center font-bold text-xs shrink-0 border border-teal-500/30">
-                ✓
-              </div>
-              <span className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">{item}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Social Proof */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10">
-          <div className="flex -space-x-2 overflow-hidden">
-            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-cyan-500/50 object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Professora Maria" />
-            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-cyan-500/50 object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="Professora Ana" />
-            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-cyan-500/50 object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80" alt="Mãe Patricia" />
-            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-cyan-500/50 object-cover" src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=100&auto=format&fit=crop&q=80" alt="Profa Carla" />
-          </div>
-          <div className="text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start text-amber-400 gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-              ))}
-              <span className="text-xs font-bold text-slate-200 ml-1.5">4.9 / 5.0</span>
-            </div>
-            <p className="text-xs sm:text-sm font-medium text-slate-400">
-              Mais de <strong className="text-white font-bold">2.000 professoras e mães</strong> já estão usando
-            </p>
-          </div>
-        </div>
-
-        {/* Main CTA */}
-        <div className="max-w-xl mx-auto text-center">
-          <button
-            onClick={onCtaClick}
-            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-5 text-lg sm:text-xl font-black text-slate-950 bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 rounded-2xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
-          >
-            <span className="relative z-10 flex items-center gap-2 tracking-wide uppercase">
-              QUERO OS +240 JOGOS
-              <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-            </span>
-            <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-          </button>
-
-          <p className="text-xs text-slate-400 mt-4 font-medium">
-            ⚠️ Desconto exclusivo nesta página • Acesso imediato • 7 dias de garantia
-          </p>
-
-          <div className="flex items-center justify-center gap-5 mt-6 text-[11px] sm:text-xs text-slate-400 font-medium">
-            <span className="flex items-center gap-1.5">
-              <Lock className="w-3.5 h-3.5 text-emerald-400" /> COMPRA SEGURA
-            </span>
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" /> SSL 256-BIT
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Zap className="w-3.5 h-3.5 text-amber-400" /> ACESSO IMEDIATO
-            </span>
-          </div>
-        </div>
       </div>
     </section>
   );
