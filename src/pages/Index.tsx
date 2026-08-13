@@ -27,14 +27,13 @@ const Index = () => {
 
   const handleSelectPlan = (planName: string) => {
     showSuccess(`Redirecionando para o checkout seguro (${planName})...`);
-    // Simulated checkout link
     setTimeout(() => {
       window.open("https://pay.kiwify.com.br", "_blank");
     }, 1200);
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
       {/* 1. STICKY TOPBAR OF URGENCY */}
       <UrgencyHeader onCtaClick={scrollToCheckout} />
 
@@ -56,10 +55,10 @@ const Index = () => {
       {/* 7. REAL EXAMPLES GALLERY */}
       <GallerySection onCtaClick={scrollToCheckout} />
 
-      {/* 8. SOCIAL PROOF & TESTIMONIALS (Dark BG #0F172A) */}
+      {/* 8. SOCIAL PROOF & TESTIMONIALS */}
       <TestimonialsSection />
 
-      {/* 9. EXCLUSIVE BONUSES (Dark Night BG) */}
+      {/* 9. EXCLUSIVE BONUSES */}
       <BonusSection onCtaClick={scrollToCheckout} />
 
       {/* 10. TWO PATHS COMPARISON */}

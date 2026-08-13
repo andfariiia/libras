@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sparkles, FileCheck2 } from "lucide-react";
+import { FileCheck2, Sparkles } from "lucide-react";
 
 const REAL_SAMPLES = [
   {
@@ -29,45 +29,44 @@ const REAL_SAMPLES = [
 
 export const GallerySection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-20 md:py-28 bg-slate-900 text-white relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-1.5 bg-teal-100 text-teal-800 border border-teal-200/80 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-          <FileCheck2 className="w-3.5 h-3.5 text-teal-600" /> EXEMPLOS REAIS DO MATERIAL
+        <div className="inline-flex items-center gap-2 bg-teal-950/80 border border-teal-500/30 text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+          <FileCheck2 className="w-3.5 h-3.5 text-teal-400" /> Exemplos Reais Do Material
         </div>
 
         {/* Title */}
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 max-w-3xl mx-auto">
+        <h2 className="text-3xl sm:text-5xl font-black mb-4 max-w-3xl mx-auto tracking-tight">
           Mais de 240 jogos em Libras prontos para imprimir. Veja alguns exemplos reais:
         </h2>
 
-        <p className="text-base text-slate-600 max-w-2xl mx-auto mb-12">
+        <p className="text-base text-slate-400 max-w-2xl mx-auto mb-14">
           Todos os PDFs foram elaborados com fontes legíveis, cores vivas e ilustrações claras para garantir rápido entendimento pelas crianças.
         </p>
 
-        {/* Gallery Display Cards */}
+        {/* Gallery Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           {REAL_SAMPLES.map((sample, idx) => (
             <div
               key={idx}
-              className="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col"
+              className="bg-slate-950/80 rounded-3xl border border-slate-800 overflow-hidden shadow-2xl hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col"
             >
-              {/* Graphical Header Representing High Quality Printable */}
+              {/* Card Header Preview Box */}
               <div className={`h-48 bg-gradient-to-br ${sample.imageBg} p-6 text-white flex flex-col justify-between relative overflow-hidden`}>
-                <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-32 h-32 bg-white/10 rounded-full blur-lg" />
                 <div className="flex items-center justify-between relative z-10">
-                  <span className="text-xs font-mono font-bold bg-black/30 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/20">
+                  <span className="text-xs font-mono font-bold bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
                     PDF IMPRESSÃO
                   </span>
-                  <span className="text-xs font-bold bg-amber-400 text-slate-950 px-2.5 py-1 rounded-full shadow-sm">
+                  <span className="text-xs font-black bg-amber-400 text-slate-950 px-3 py-1 rounded-full shadow-md">
                     {sample.badge}
                   </span>
                 </div>
                 <div className="relative z-10">
-                  <span className="text-[11px] uppercase tracking-wider text-cyan-200 font-semibold">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-cyan-200">
                     {sample.tag}
                   </span>
-                  <h3 className="text-xl font-extrabold text-white leading-tight mt-1">
+                  <h3 className="text-xl font-black text-white leading-tight mt-1">
                     {sample.title}
                   </h3>
                 </div>
@@ -75,12 +74,12 @@ export const GallerySection = ({ onCtaClick }: { onCtaClick: () => void }) => {
 
               {/* Card Body */}
               <div className="p-6 flex-1 flex flex-col justify-between">
-                <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
                   {sample.description}
                 </p>
 
-                <div className="flex items-center justify-between text-xs font-semibold text-slate-700 pt-4 border-t border-slate-200/80">
-                  <span className="text-emerald-600 flex items-center gap-1">
+                <div className="flex items-center justify-between text-xs font-semibold text-slate-300 pt-4 border-t border-slate-800">
+                  <span className="text-emerald-400 flex items-center gap-1.5">
                     ✓ Alta Definição
                   </span>
                   <span className="text-slate-400">Pronto p/ Imprimir</span>

@@ -1,53 +1,53 @@
 "use client";
 
 import React, { useState } from "react";
-import { ShieldCheck, Lock, Award, Heart } from "lucide-react";
-import { showSuccess } from "@/utils/toast";
+import { ShieldCheck, Award, ArrowRight } from "lucide-react";
 
 export const GuaranteeFooter = ({ onCtaClick }: { onCtaClick: () => void }) => {
   const [modalType, setModalType] = useState<"terms" | "privacy" | null>(null);
 
   return (
     <>
-      <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-slate-100 border-t border-slate-200">
+      <section className="py-20 md:py-28 bg-slate-900 text-white border-t border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           {/* Guarantee Card */}
-          <div className="bg-white rounded-3xl p-8 sm:p-12 border-2 border-emerald-500/30 shadow-xl mb-14 relative overflow-hidden">
-            <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-6 shadow-md">
+          <div className="bg-slate-950 rounded-4xl p-8 sm:p-12 border border-emerald-500/30 shadow-2xl mb-16 relative overflow-hidden">
+            <div className="w-20 h-20 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-500/20">
               <ShieldCheck className="w-10 h-10" />
             </div>
 
-            <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+            <span className="text-xs font-black text-emerald-400 uppercase tracking-widest bg-emerald-950/80 border border-emerald-500/40 px-4 py-1.5 rounded-full">
               GARANTIA INCONDICIONAL DE 7 DIAS
             </span>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-white mt-4 mb-4">
               Risco Zero para Você!
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
               Teste o <strong>Kit Libras na Prática</strong> por 7 dias inteiros. Se você baixar os PDFs, testar com as crianças e sentir que não valeu a pena, devolvemos 100% do seu investimento sem perguntas nem burocracia.
             </p>
 
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-100 px-4 py-2 rounded-xl">
-              <Award className="w-4 h-4 text-emerald-600" /> Reembolso Simples e Rápido no E-mail
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-slate-200 bg-slate-900 border border-slate-800 px-4 py-2 rounded-2xl">
+              <Award className="w-4 h-4 text-emerald-400" /> Reembolso Simples e Rápido no E-mail
             </div>
           </div>
 
           {/* Big Final CTA */}
-          <div className="space-y-4">
-            <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+          <div className="space-y-6">
+            <h3 className="text-2xl sm:text-4xl font-black text-white max-w-2xl mx-auto leading-tight">
               Pronta para transformar a inclusão na sua sala ou casa?
             </h3>
 
             <button
               onClick={onCtaClick}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-5 text-xl font-extrabold text-white bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 rounded-2xl shadow-2xl hover:scale-105 transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 text-lg sm:text-xl font-black text-slate-950 bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 rounded-2xl shadow-2xl shadow-cyan-500/25 hover:scale-105 transition-all cursor-pointer uppercase tracking-wide"
             >
-              SIM! QUERO GARANTIR MEU KIT COM 71% OFF ➔
+              <span>SIM! QUERO GARANTIR MEU KIT COM 71% OFF</span>
+              <ArrowRight className="w-6 h-6" />
             </button>
 
-            <p className="text-xs text-slate-500 font-medium">
+            <p className="text-xs text-slate-400 font-medium">
               Acesso imediato enviado para o seu e-mail logo após a confirmação.
             </p>
           </div>
@@ -55,7 +55,7 @@ export const GuaranteeFooter = ({ onCtaClick }: { onCtaClick: () => void }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-950 text-slate-400 text-xs py-10 border-t border-slate-800">
+      <footer className="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800/80">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center space-y-4">
           <p className="font-semibold text-slate-300">
             Kit Libras na Prática © {new Date().getFullYear()} — Todos os Direitos Reservados.
@@ -79,9 +79,9 @@ export const GuaranteeFooter = ({ onCtaClick }: { onCtaClick: () => void }) => {
 
       {/* Modal for Legal Documents */}
       {modalType && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-6 max-w-md w-full text-slate-800 text-xs space-y-4 max-h-[80vh] overflow-y-auto">
-            <h3 className="font-bold text-lg text-slate-900 border-b pb-2">
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full text-slate-300 text-xs space-y-4 max-h-[80vh] overflow-y-auto shadow-2xl">
+            <h3 className="font-bold text-lg text-white border-b border-slate-800 pb-2">
               {modalType === "terms" ? "Termos de Uso" : "Políticas de Privacidade"}
             </h3>
             <p className="leading-relaxed">
@@ -91,7 +91,7 @@ export const GuaranteeFooter = ({ onCtaClick }: { onCtaClick: () => void }) => {
             </p>
             <button
               onClick={() => setModalType(null)}
-              className="w-full py-2 bg-slate-900 text-white font-bold rounded-xl mt-4 cursor-pointer"
+              className="w-full py-2.5 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black rounded-xl mt-4 cursor-pointer"
             >
               Fechar
             </button>

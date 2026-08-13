@@ -13,33 +13,33 @@ const PAIN_POINTS = [
 
 export const PainPointsSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-100 to-slate-50 border-y border-slate-200/80">
+    <section className="py-20 md:py-28 bg-slate-950 text-white relative border-b border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-1.5 bg-rose-100 text-rose-800 border border-rose-200/80 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-          <XCircle className="w-3.5 h-3.5 text-rose-600" /> × DORES REAIS
+        <div className="inline-flex items-center gap-2 bg-rose-950/80 border border-rose-500/30 text-rose-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+          <XCircle className="w-3.5 h-3.5 text-rose-400" /> Dores Reais
         </div>
 
         {/* Title */}
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+        <h2 className="text-3xl sm:text-5xl font-black mb-4 tracking-tight">
           Você está vivendo essa situação?
         </h2>
 
-        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-10">
+        <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-12">
           Se você se identifica com um ou mais pontos abaixo, saiba que a culpa não é sua. O sistema raramente oferece materiais prontos e verdadeiramente inclusivos.
         </p>
 
-        {/* List of Pain Points Cards */}
+        {/* Pain Points Cards */}
         <div className="space-y-4 max-w-3xl mx-auto text-left mb-12">
           {PAIN_POINTS.map((point, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4"
+              className="bg-slate-900/80 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-lg hover:border-rose-500/30 transition-all flex items-start gap-4"
             >
-              <div className="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 border border-rose-100 flex items-center justify-center font-bold text-lg shrink-0 mt-0.5">
+              <div className="w-9 h-9 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-400 flex items-center justify-center font-black text-sm shrink-0 mt-0.5">
                 ✕
               </div>
-              <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed pt-1">
+              <p className="text-sm sm:text-base text-slate-200 font-medium leading-relaxed pt-1">
                 {point}
               </p>
             </div>
@@ -47,10 +47,10 @@ export const PainPointsSection = ({ onCtaClick }: { onCtaClick: () => void }) =>
         </div>
 
         {/* Callout box */}
-        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 sm:p-6 max-w-2xl mx-auto flex items-center gap-4 text-left">
-          <HelpCircle className="w-8 h-8 text-amber-600 shrink-0 hidden xs:block" />
-          <p className="text-xs sm:text-sm text-amber-900 font-medium leading-relaxed">
-            <strong>Chega de passar perrengue ou improvisar na hora da aula!</strong> Com os materiais estruturados do Kit, você economiza horas de planejamento e conquista a atenção do aluno em minutos.
+        <div className="bg-gradient-to-r from-amber-950/40 via-slate-900 to-amber-950/40 border border-amber-500/30 rounded-3xl p-6 max-w-2xl mx-auto flex items-center gap-4 text-left">
+          <HelpCircle className="w-8 h-8 text-amber-400 shrink-0 hidden xs:block" />
+          <p className="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
+            <strong className="text-amber-300">Chega de passar perrengue ou improvisar na hora da aula!</strong> Com os materiais estruturados do Kit, você economiza horas de planejamento e conquista a atenção do aluno em minutos.
           </p>
         </div>
       </div>
