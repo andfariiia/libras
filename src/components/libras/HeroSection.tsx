@@ -3,7 +3,25 @@
 import React from "react";
 import { CheckCircle2, ShieldCheck, Download, Printer, Zap, Lock, Star, ArrowRight } from "lucide-react";
 
-const CAROUSEL_ITEMS = [
+interface CarouselItem {
+  title: string;
+  image?: string;
+  customContent?: React.ReactNode;
+}
+
+const CAROUSEL_ITEMS: CarouselItem[] = [
+  {
+    title: "Jogo da Memória em Libras",
+    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
+  },
+  {
+    title: "Cards e Atividades Visuais de Libras",
+    image: "https://i.ibb.co/27sZ12B5/image.png",
+  },
+  {
+    title: "Jogos Didáticos e Cards Ilustrados",
+    image: "https://i.ibb.co/FbfBhJSM/image.png",
+  },
   {
     title: "Card ilustrado do Jogo da Memória dos Sinais",
     customContent: (
@@ -37,19 +55,6 @@ const CAROUSEL_ITEMS = [
         ].map((c, i) => (
           <div key={i} className={`${c.bg} rounded-lg flex items-center justify-center text-[10px] font-black p-1 text-center`}>
             {c.text}
-          </div>
-        ))}
-      </div>
-    ),
-  },
-  {
-    title: "Cards de atividades e desafios em Libras",
-    customContent: (
-      <div className="w-full h-64 bg-slate-50 rounded-2xl p-2 grid grid-cols-3 gap-2 border border-slate-200">
-        {["👋", "🤟", "🏼", "👍", "🖐️", "✊", "🤞", "🤝", "👌"].map((icon, i) => (
-          <div key={i} className="bg-white border border-slate-200 rounded-xl flex flex-col items-center justify-center p-1.5">
-            <span className="text-2xl mb-0.5">{icon}</span>
-            <span className="text-[8px] font-bold text-slate-500 uppercase">Sinal #{i + 1}</span>
           </div>
         ))}
       </div>
@@ -127,7 +132,7 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </div>
         </div>
 
-        {/* SOCIAL PROOF & MAIN CTA BLOCK - DIRECTLY BELOW THE MOCKUP */}
+        {/* SOCIAL PROOF & MAIN CTA BLOCK */}
         <div className="max-w-xl mx-auto text-center my-8">
           {/* Social Proof */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
@@ -226,7 +231,7 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
             Você recebe jogos como Memória dos Sinais, Bingo do Alfabeto em Libras, Cards de Desafio, Jogo dos Sinais, UNO adaptado, cartazes e atividades de rotina.
           </p>
 
-          {/* Automatic Infinite Scrolling Carousel (Right to Left) - Without Side Shadows */}
+          {/* Automatic Infinite Scrolling Carousel (Right to Left) */}
           <div className="relative w-full overflow-hidden py-4 px-2">
             <div className="animate-marquee-slow flex items-center gap-6">
               {[...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS].map((item, idx) => (
@@ -236,7 +241,13 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
                 >
                   {/* Card Visual Content Container */}
                   <div className="mb-3">
-                    {item.customContent}
+                    {item.image ? (
+                      <div className="w-full h-64 rounded-2xl border border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center">
+                        <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                      </div>
+                    ) : (
+                      item.customContent
+                    )}
                   </div>
 
                   {/* Caption underneath card */}

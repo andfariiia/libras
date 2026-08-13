@@ -4,6 +4,7 @@ import React from "react";
 import { UrgencyHeader } from "@/components/libras/UrgencyHeader";
 import { HeroSection } from "@/components/libras/HeroSection";
 import { InsidePreview } from "@/components/libras/InsidePreview";
+import { InteractiveQuiz } from "@/components/libras/InteractiveQuiz";
 import { PainPointsSection } from "@/components/libras/PainPointsSection";
 import { SolutionSection } from "@/components/libras/SolutionSection";
 import { DeliverablesSection } from "@/components/libras/DeliverablesSection";
@@ -15,7 +16,6 @@ import { PricingSection } from "@/components/libras/PricingSection";
 import { CreatorSection } from "@/components/libras/CreatorSection";
 import { FaqSection } from "@/components/libras/FaqSection";
 import { GuaranteeFooter } from "@/components/libras/GuaranteeFooter";
-import { InteractiveQuiz } from "@/components/libras/InteractiveQuiz";
 import { showSuccess } from "@/utils/toast";
 
 const Index = () => {
@@ -27,57 +27,67 @@ const Index = () => {
   };
 
   const handleSelectPlan = (planName: string) => {
-    showSuccess(`Redirecionando para o checkout seguro (${planName})...`);
+    let checkoutUrl = "https://pay.kiwify.com.br/o8QVrMK"; // Valor padrão 27,90
+
+    if (planName.includes("10")) {
+      checkoutUrl = "https://pay.kiwify.com.br/Tch9sHz";
+    } else if (planName.includes("17,90") || planName.includes("17.90")) {
+      checkoutUrl = "https://pay.kiwify.com.br/n80iYQJ";
+    } else if (planName.includes("27")) {
+      checkoutUrl = "https://pay.kiwify.com.br/o8QVrMK";
+    }
+
+    showSuccess(`Redirecionando para o checkout seguro...`);
     setTimeout(() => {
-      window.open("https://pay.kiwify.com.br", "_blank");
-    }, 1200);
+      window.location.href = checkoutUrl;
+    }, 800);
   };
 
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
-      {/* 1. STICKY TOPBAR OF URGENCY */}
+      {/* 1. BARRA FIXA DE URGÊNCIA */}
       <UrgencyHeader onCtaClick={scrollToCheckout} />
 
-      {/* 2. HERO SECTION WITH AUDIO NOTE */}
+      {/* 2. HERO SECTION COM CARROSSEL "VEJA POR DENTRO" */}
       <HeroSection onCtaClick={scrollToCheckout} />
 
-      {/* 3. INTERACTIVE QUIZ & DIAGNOSTIC WIDGET */}
-      <InteractiveQuiz onFinish={scrollToCheckout} />
-
-      {/* 4. PREVIEW SECTION "VEJA POR DENTRO" WITH CLICK MODAL */}
+      {/* 3. SEÇÃO "VEJA POR DENTRO DO MATERIAL" (POSICIONADA LOGO ABAIXO DA SEÇÃO VEJA POR DENTRO) */}
       <InsidePreview onCtaClick={scrollToCheckout} />
+
+      {/* 4. QUIZ INTERATIVO */}
+      <InteractiveQuiz onFinish={scrollToCheckout} />
 
       {/* 5. PAIN POINTS "DORES REAIS" */}
       <PainPointsSection onCtaClick={scrollToCheckout} />
 
-      {/* 6. SOLUTION & 3 PILLARS */}
+      {/* 6. SOLUÇÃO E PILARES */}
       <SolutionSection />
 
-      {/* 7. DETAILED DELIVERABLES */}
+      {/* 7. ENTREGÁVEIS DETALHADOS */}
       <DeliverablesSection onCtaClick={scrollToCheckout} />
 
-      {/* 8. REAL EXAMPLES GALLERY */}
+      {/* 8. GALERIA DE EXEMPLOS REAIS */}
       <GallerySection onCtaClick={scrollToCheckout} />
 
-      {/* 9. SOCIAL PROOF & TESTIMONIALS */}
+      {/* 9. PROVA SOCIAL E DEPOIMENTOS */}
       <TestimonialsSection />
 
-      {/* 10. EXCLUSIVE BONUSES */}
+      {/* 10. BÔNUS EXCLUSIVOS */}
       <BonusSection onCtaClick={scrollToCheckout} />
 
-      {/* 11. TWO PATHS COMPARISON */}
+      {/* 11. COMPARATIVO DE DOIS CAMINHOS */}
       <TwoPathsSection onCtaClick={scrollToCheckout} />
 
-      {/* 12. PRICING TABLE & CHECKOUT ANCHORING */}
+      {/* 12. TABELA DE PREÇOS E CHECKOUT */}
       <PricingSection onSelectPlan={handleSelectPlan} />
 
-      {/* 13. ABOUT THE CREATOR */}
+      {/* 13. SOBRE A CRIADORA */}
       <CreatorSection />
 
-      {/* 14. FAQ ACCORDION */}
+      {/* 14. PERGUNTAS FREQUENTES (FAQ) */}
       <FaqSection />
 
-      {/* 15. GUARANTEE & FOOTER */}
+      {/* 15. GARANTIA E RODAPÉ */}
       <GuaranteeFooter onCtaClick={scrollToCheckout} />
     </div>
   );
