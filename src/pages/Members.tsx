@@ -15,8 +15,7 @@ import {
   Hand,
   CheckCircle2,
   ExternalLink,
-  Heart,
-  Home
+  Heart
 } from "lucide-react";
 
 export const Members = () => {
@@ -44,15 +43,6 @@ export const Members = () => {
                 Central do Aluno
               </span>
             </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="/"
-              className="text-xs font-bold text-purple-200 hover:text-white flex items-center gap-1.5 bg-purple-900/60 px-3.5 py-1.5 rounded-xl border border-purple-700/60 transition-colors"
-            >
-              <Home className="w-3.5 h-3.5" /> Página Inicial
-            </a>
           </div>
         </div>
       </nav>
