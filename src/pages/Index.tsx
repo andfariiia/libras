@@ -15,6 +15,8 @@ import { PricingSection } from "@/components/libras/PricingSection";
 import { CreatorSection } from "@/components/libras/CreatorSection";
 import { FaqSection } from "@/components/libras/FaqSection";
 import { GuaranteeFooter } from "@/components/libras/GuaranteeFooter";
+import { InteractiveQuiz } from "@/components/libras/InteractiveQuiz";
+import { MobileBottomBar } from "@/components/libras/MobileBottomBar";
 import { showSuccess } from "@/utils/toast";
 
 const Index = () => {
@@ -33,48 +35,54 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950 pb-16 md:pb-0">
       {/* 1. STICKY TOPBAR OF URGENCY */}
       <UrgencyHeader onCtaClick={scrollToCheckout} />
 
-      {/* 2. HERO SECTION */}
+      {/* 2. HERO SECTION WITH AUDIO NOTE */}
       <HeroSection onCtaClick={scrollToCheckout} />
 
-      {/* 3. PREVIEW SECTION "VEJA POR DENTRO" */}
+      {/* 3. INTERACTIVE QUIZ & DIAGNOSTIC WIDGET */}
+      <InteractiveQuiz onFinish={scrollToCheckout} />
+
+      {/* 4. PREVIEW SECTION "VEJA POR DENTRO" WITH CLICK MODAL */}
       <InsidePreview onCtaClick={scrollToCheckout} />
 
-      {/* 4. PAIN POINTS "DORES REAIS" */}
+      {/* 5. PAIN POINTS "DORES REAIS" */}
       <PainPointsSection onCtaClick={scrollToCheckout} />
 
-      {/* 5. SOLUTION & 3 PILLARS */}
+      {/* 6. SOLUTION & 3 PILLARS */}
       <SolutionSection />
 
-      {/* 6. DETAILED DELIVERABLES */}
+      {/* 7. DETAILED DELIVERABLES */}
       <DeliverablesSection onCtaClick={scrollToCheckout} />
 
-      {/* 7. REAL EXAMPLES GALLERY */}
+      {/* 8. REAL EXAMPLES GALLERY */}
       <GallerySection onCtaClick={scrollToCheckout} />
 
-      {/* 8. SOCIAL PROOF & TESTIMONIALS */}
+      {/* 9. SOCIAL PROOF & TESTIMONIALS */}
       <TestimonialsSection />
 
-      {/* 9. EXCLUSIVE BONUSES */}
+      {/* 10. EXCLUSIVE BONUSES */}
       <BonusSection onCtaClick={scrollToCheckout} />
 
-      {/* 10. TWO PATHS COMPARISON */}
+      {/* 11. TWO PATHS COMPARISON */}
       <TwoPathsSection onCtaClick={scrollToCheckout} />
 
-      {/* 11. PRICING TABLE & CHECKOUT ANCHORING */}
+      {/* 12. PRICING TABLE & CHECKOUT ANCHORING */}
       <PricingSection onSelectPlan={handleSelectPlan} />
 
-      {/* 12. ABOUT THE CREATOR */}
+      {/* 13. ABOUT THE CREATOR */}
       <CreatorSection />
 
-      {/* 13. FAQ ACCORDION */}
+      {/* 14. FAQ ACCORDION */}
       <FaqSection />
 
-      {/* 14. GUARANTEE & FOOTER */}
+      {/* 15. GUARANTEE & FOOTER */}
       <GuaranteeFooter onCtaClick={scrollToCheckout} />
+
+      {/* FLOATING MOBILE STICKY BOTTOM BAR */}
+      <MobileBottomBar onCtaClick={scrollToCheckout} />
     </div>
   );
 };

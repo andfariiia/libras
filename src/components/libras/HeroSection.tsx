@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CheckCircle2, ShieldCheck, Download, Printer, Zap, Lock, Sparkles, Star, ArrowRight } from "lucide-react";
+import { AudioMessageCard } from "./AudioMessageCard";
 
 export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
@@ -28,9 +29,12 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10 text-balance">
+        <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-8 text-balance">
           Mais de 240 jogos em Libras prontos para imprimir. Ajude crianças surdas e ouvintes a aprender, se comunicar e participar juntas com jogos, cards, desafios e atividades visuais fáceis de aplicar.
         </p>
+
+        {/* Audio Message Player Card from Creator */}
+        <AudioMessageCard />
 
         {/* Action Pills */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 text-xs sm:text-sm font-semibold text-slate-200">
