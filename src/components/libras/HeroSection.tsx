@@ -6,13 +6,12 @@ import { CheckCircle2, ShieldCheck, Download, Printer, Zap, Lock, Star, ArrowRig
 const CAROUSEL_ITEMS = [
   {
     title: "Card ilustrado do Jogo da Memória dos Sinais",
-    bgColor: "bg-slate-50",
     customContent: (
-      <div className="w-full h-64 bg-slate-100 rounded-2xl border-4 border-cyan-500/80 p-3 flex flex-col items-center justify-center shadow-inner relative overflow-hidden">
-        <div className="w-28 h-28 rounded-full bg-cyan-100 flex items-center justify-center text-5xl mb-3 shadow-md">
+      <div className="w-full h-64 bg-slate-50 rounded-2xl border-2 border-cyan-500/70 p-3 flex flex-col items-center justify-center relative">
+        <div className="w-28 h-28 rounded-full bg-cyan-100/80 flex items-center justify-center text-5xl mb-3 shadow-sm">
           👧🏻
         </div>
-        <div className="bg-white px-6 py-1.5 rounded-xl border border-slate-300 font-extrabold text-slate-800 text-sm shadow-sm tracking-wider">
+        <div className="bg-white px-6 py-1.5 rounded-xl border border-slate-200 font-extrabold text-slate-800 text-sm shadow-xs tracking-wider">
           AMIGO
         </div>
       </div>
@@ -20,9 +19,8 @@ const CAROUSEL_ITEMS = [
   },
   {
     title: "Cards coloridos de sinais e cores",
-    bgColor: "bg-slate-50",
     customContent: (
-      <div className="w-full h-64 bg-slate-100 rounded-2xl p-2.5 grid grid-cols-3 gap-1.5 border border-slate-200 shadow-inner">
+      <div className="w-full h-64 bg-slate-50 rounded-2xl p-2.5 grid grid-cols-3 gap-1.5 border border-slate-200">
         {[
           { text: "Lilás", bg: "bg-purple-200 text-purple-900 border-dashed border-purple-400" },
           { text: "Cinza", bg: "bg-gray-200 text-gray-800 border-dashed border-gray-400" },
@@ -37,7 +35,7 @@ const CAROUSEL_ITEMS = [
           { text: "Verde", bg: "bg-emerald-500 text-white font-bold" },
           { text: "Vermelho", bg: "bg-rose-600 text-white font-bold" },
         ].map((c, i) => (
-          <div key={i} className={`${c.bg} rounded-lg flex items-center justify-center text-[10px] font-black p-1 text-center shadow-xs`}>
+          <div key={i} className={`${c.bg} rounded-lg flex items-center justify-center text-[10px] font-black p-1 text-center`}>
             {c.text}
           </div>
         ))}
@@ -46,11 +44,10 @@ const CAROUSEL_ITEMS = [
   },
   {
     title: "Cards de atividades e desafios em Libras",
-    bgColor: "bg-slate-50",
     customContent: (
-      <div className="w-full h-64 bg-slate-100 rounded-2xl p-2 grid grid-cols-3 gap-2 border border-slate-200 shadow-inner">
+      <div className="w-full h-64 bg-slate-50 rounded-2xl p-2 grid grid-cols-3 gap-2 border border-slate-200">
         {["👋", "🤟", "🏼", "👍", "🖐️", "✊", "🤞", "🤝", "👌"].map((icon, i) => (
-          <div key={i} className="bg-white border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center p-1.5 shadow-xs">
+          <div key={i} className="bg-white border border-slate-200 rounded-xl flex flex-col items-center justify-center p-1.5">
             <span className="text-2xl mb-0.5">{icon}</span>
             <span className="text-[8px] font-bold text-slate-500 uppercase">Sinal #{i + 1}</span>
           </div>
@@ -60,10 +57,9 @@ const CAROUSEL_ITEMS = [
   },
   {
     title: "UNO Adaptado em Libras",
-    bgColor: "bg-slate-50",
     customContent: (
-      <div className="w-full h-64 bg-gradient-to-br from-rose-500 via-amber-400 to-teal-500 rounded-2xl p-4 flex flex-col items-center justify-center shadow-md text-white font-black text-center relative overflow-hidden">
-        <div className="bg-slate-950/90 border-2 border-white px-4 py-2 rounded-2xl text-xl shadow-2xl mb-2">
+      <div className="w-full h-64 bg-gradient-to-br from-rose-500 via-amber-400 to-teal-500 rounded-2xl p-4 flex flex-col items-center justify-center text-white font-black text-center relative">
+        <div className="bg-slate-950/90 border border-white/60 px-4 py-2 rounded-2xl text-xl shadow-md mb-2">
           🎲 UNO LIBRAS
         </div>
         <p className="text-[11px] font-medium text-slate-100 max-w-[180px]">Baralho completo com datilologia, números e ações</p>
@@ -72,15 +68,14 @@ const CAROUSEL_ITEMS = [
   },
   {
     title: "Bingo do Alfabeto em Libras",
-    bgColor: "bg-slate-50",
     customContent: (
-      <div className="w-full h-64 bg-slate-100 rounded-2xl p-3 border border-slate-200 flex flex-col items-center justify-between shadow-inner">
+      <div className="w-full h-64 bg-slate-50 rounded-2xl p-3 border border-slate-200 flex flex-col items-center justify-between">
         <div className="bg-indigo-600 text-white font-black px-4 py-1 rounded-lg text-xs tracking-wider uppercase">
           BINGO LIBRAS (20 CARTELAS)
         </div>
         <div className="grid grid-cols-4 gap-1.5 w-full my-auto">
           {["A 🤟", "B ✊", "C 🖐️", "D ✌️", "E 🤏", "F 🤞", "G 👆", "H 👈"].map((b, i) => (
-            <div key={i} className="bg-white border border-indigo-200 rounded-lg p-1.5 text-center font-bold text-[9px] text-slate-800 shadow-xs">
+            <div key={i} className="bg-white border border-indigo-200 rounded-lg p-1.5 text-center font-bold text-[9px] text-slate-800">
               {b}
             </div>
           ))}
@@ -213,10 +208,10 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </div>
         </div>
 
-        {/* NEW SHOWCASE SECTION MATCHING REFERENCE IMAGE ("VEJA POR DENTRO") WITH AUTO-SCROLLING CAROUSEL */}
+        {/* SHOWCASE CAROUSEL SECTION WITH SUBTLE SATELLITE SHADOWS */}
         <div className="pt-6 border-t border-slate-800/80 relative">
           {/* Header Pill */}
-          <span className="text-[11px] font-black uppercase tracking-widest text-cyan-400 bg-cyan-950/80 border border-cyan-500/30 px-4 py-1.5 rounded-full shadow-md">
+          <span className="text-[11px] font-black uppercase tracking-widest text-cyan-400 bg-cyan-950/80 border border-cyan-500/30 px-4 py-1.5 rounded-full shadow-xs">
             VEJA POR DENTRO
           </span>
 
@@ -236,19 +231,18 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
             <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
 
             <div className="animate-marquee-slow flex items-center gap-6">
-              {/* Duplicate array twice to ensure seamless infinite loop */}
               {[...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS].map((item, idx) => (
                 <div
                   key={idx}
-                  className="w-72 sm:w-80 shrink-0 bg-white rounded-3xl p-4 shadow-xl border border-slate-200 text-center flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
+                  className="w-72 sm:w-80 shrink-0 bg-white rounded-3xl p-3.5 border border-slate-200/90 text-center flex flex-col justify-between transition-transform duration-300 hover:scale-[1.01] shadow-xs cursor-pointer"
                 >
                   {/* Card Visual Content Container */}
-                  <div className="mb-4">
+                  <div className="mb-3">
                     {item.customContent}
                   </div>
 
                   {/* Caption underneath card */}
-                  <p className="text-xs font-extrabold text-slate-800 leading-snug px-2 pt-1">
+                  <p className="text-xs font-extrabold text-slate-800 leading-snug px-2 pt-0.5 pb-1">
                     {item.title}
                   </p>
                 </div>
