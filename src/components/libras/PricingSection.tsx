@@ -69,12 +69,26 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
                 </ul>
               </div>
 
-              <button
-                onClick={handleBasicClick}
-                className="w-full py-4 px-4 rounded-2xl border border-slate-700 text-slate-300 font-bold hover:bg-slate-800 transition-colors text-sm text-center cursor-pointer"
-              >
-                Escolher Plano Básico
-              </button>
+              {/* Pulsing CTA Button matching Full Plan */}
+              <div>
+                <button
+                  onClick={handleBasicClick}
+                  className="w-full py-5 px-6 rounded-2xl bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 text-slate-950 font-black text-base sm:text-lg shadow-xl shadow-cyan-500/20 hover:scale-[1.02] active:scale-[0.98] animate-pulse transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
+                >
+                  <span>ESCOLHER PLANO BÁSICO</span>
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+
+                <div className="flex items-center justify-center gap-4 mt-4 text-[11px] text-slate-400">
+                  <span className="flex items-center gap-1">
+                    <Lock className="w-3.5 h-3.5 text-emerald-400" /> Checkout Seguro
+                  </span>
+                  <span>•</span>
+                  <span className="flex items-center gap-1">
+                    <Zap className="w-3.5 h-3.5 text-amber-400" /> Receba em 2 Minutos
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Plan 2: RECOMMENDED FULL KIT */}
@@ -126,7 +140,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
               <div>
                 <button
                   onClick={() => onSelectPlan("Kit Completo R$ 27,90")}
-                  className="w-full py-5 px-6 rounded-2xl bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 text-slate-950 font-black text-base sm:text-lg shadow-xl shadow-cyan-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
+                  className="w-full py-5 px-6 rounded-2xl bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 text-slate-950 font-black text-base sm:text-lg shadow-xl shadow-cyan-500/30 hover:scale-[1.02] active:scale-[0.98] animate-pulse transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
                 >
                   <span>QUERO O KIT COMPLETO</span>
                   <ArrowRight className="w-5 h-5" />
@@ -210,7 +224,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
               {/* Option A: Upgrade Offer */}
               <button
                 onClick={handleAcceptUpsell}
-                className="w-full py-4 px-5 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
+                className="w-full py-4 px-5 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] animate-pulse transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
               >
                 <Sparkles className="w-5 h-5 text-slate-950" />
                 <span>SIM! QUERO O KIT COMPLETO POR R$ 17,90</span>
