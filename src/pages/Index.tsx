@@ -27,7 +27,7 @@ const Index = () => {
   };
 
   const handleSelectPlan = (planName: string) => {
-    let checkoutUrl = "https://pay.kiwify.com.br/o8QVrMK"; // Valor padrão 27,90
+    let checkoutUrl = "https://pay.kiwify.com.br/o8QVrMK"; // Valor padrão (R$ 27,00)
 
     if (planName.includes("10")) {
       checkoutUrl = "https://pay.kiwify.com.br/Tch9sHz";
@@ -40,7 +40,7 @@ const Index = () => {
     showSuccess(`Redirecionando para o checkout seguro...`);
     setTimeout(() => {
       window.location.href = checkoutUrl;
-    }, 800);
+    }, 600);
   };
 
   return (
@@ -51,7 +51,7 @@ const Index = () => {
       {/* 2. HERO SECTION COM CARROSSEL "VEJA POR DENTRO" */}
       <HeroSection onCtaClick={scrollToCheckout} />
 
-      {/* 3. SEÇÃO "VEJA POR DENTRO DO MATERIAL" (POSICIONADA LOGO ABAIXO DA SEÇÃO VEJA POR DENTRO) */}
+      {/* 3. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
       <InsidePreview onCtaClick={scrollToCheckout} />
 
       {/* 4. QUIZ INTERATIVO */}
