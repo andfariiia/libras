@@ -11,22 +11,22 @@ interface CarouselItem {
 
 const CAROUSEL_ITEMS: CarouselItem[] = [
   {
-    title: "Jogo da Memória em Libras",
+    title: "Jogo da Memória dos Sinais em Libras",
     image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
   },
   {
-    title: "Cards e Atividades Visuais de Libras",
+    title: "Cards e Atividades Visuais da Rotina",
     image: "https://i.ibb.co/27sZ12B5/image.png",
   },
   {
-    title: "Jogos Didáticos e Cards Ilustrados",
+    title: "Jogos Didáticos & Material Lúdico Ilustrado",
     image: "https://i.ibb.co/FbfBhJSM/image.png",
   },
   {
-    title: "Card ilustrado do Jogo da Memória dos Sinais",
+    title: "Card Ilustrado — Jogo da Memória dos Sinais",
     customContent: (
-      <div className="w-full h-64 bg-slate-50 rounded-2xl border-2 border-cyan-500/70 p-3 flex flex-col items-center justify-center relative">
-        <div className="w-28 h-28 rounded-full bg-cyan-100/80 flex items-center justify-center text-5xl mb-3 shadow-sm">
+      <div className="w-full h-64 bg-slate-50 rounded-2xl border-2 border-cyan-500/70 p-3 flex flex-col items-center justify-center relative shadow-inner">
+        <div className="w-28 h-28 rounded-full bg-cyan-100/80 flex items-center justify-center text-5xl mb-3 shadow-xs">
           👧🏻
         </div>
         <div className="bg-white px-6 py-1.5 rounded-xl border border-slate-200 font-extrabold text-slate-800 text-sm shadow-xs tracking-wider">
@@ -36,7 +36,7 @@ const CAROUSEL_ITEMS: CarouselItem[] = [
     ),
   },
   {
-    title: "Cards coloridos de sinais e cores",
+    title: "Cards Coloridos de Sinais e Cores",
     customContent: (
       <div className="w-full h-64 bg-slate-50 rounded-2xl p-2.5 grid grid-cols-3 gap-1.5 border border-slate-200">
         {[
@@ -61,9 +61,9 @@ const CAROUSEL_ITEMS: CarouselItem[] = [
     ),
   },
   {
-    title: "UNO Adaptado em Libras",
+    title: "Baralho UNO Adaptado em Libras",
     customContent: (
-      <div className="w-full h-64 bg-gradient-to-br from-rose-500 via-amber-400 to-teal-500 rounded-2xl p-4 flex flex-col items-center justify-center text-white font-black text-center relative">
+      <div className="w-full h-64 bg-gradient-to-br from-rose-500 via-amber-400 to-teal-500 rounded-2xl p-4 flex flex-col items-center justify-center text-white font-black text-center relative shadow-md">
         <div className="bg-slate-950/90 border border-white/60 px-4 py-2 rounded-2xl text-xl shadow-md mb-2">
           🎲 UNO LIBRAS
         </div>
@@ -72,11 +72,11 @@ const CAROUSEL_ITEMS: CarouselItem[] = [
     ),
   },
   {
-    title: "Bingo do Alfabeto em Libras",
+    title: "Bingo do Alfabeto em Libras (20 Cartelas)",
     customContent: (
       <div className="w-full h-64 bg-slate-50 rounded-2xl p-3 border border-slate-200 flex flex-col items-center justify-between">
         <div className="bg-indigo-600 text-white font-black px-4 py-1 rounded-lg text-xs tracking-wider uppercase">
-          BINGO LIBRAS (20 CARTELAS)
+          BINGO LIBRAS
         </div>
         <div className="grid grid-cols-4 gap-1.5 w-full my-auto">
           {["A 🤟", "B ✊", "C 🖐️", "D ✌️", "E 🤏", "F 🤞", "G 👆", "H 👈"].map((b, i) => (
