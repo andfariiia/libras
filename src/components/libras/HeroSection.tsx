@@ -226,12 +226,8 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
             Você recebe jogos como Memória dos Sinais, Bingo do Alfabeto em Libras, Cards de Desafio, Jogo dos Sinais, UNO adaptado, cartazes e atividades de rotina.
           </p>
 
-          {/* Automatic Infinite Scrolling Carousel (Right to Left) */}
+          {/* Automatic Infinite Scrolling Carousel (Right to Left) - Without Side Shadows */}
           <div className="relative w-full overflow-hidden py-4 px-2">
-            {/* Fade gradients on edges */}
-            <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
-            <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
-
             <div className="animate-marquee-slow flex items-center gap-6">
               {[...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS].map((item, idx) => (
                 <div

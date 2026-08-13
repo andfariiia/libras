@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ShieldCheck, Award, ArrowRight } from "lucide-react";
+import { ShieldCheck, Award, ArrowRight, UserCheck } from "lucide-react";
 
 export const GuaranteeFooter = ({ onCtaClick }: { onCtaClick: () => void }) => {
   const [modalType, setModalType] = useState<"terms" | "privacy" | null>(null);
@@ -65,7 +65,11 @@ export const GuaranteeFooter = ({ onCtaClick }: { onCtaClick: () => void }) => {
             Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Todos os conteúdos e produtos são de responsabilidade exclusiva da equipe Libras na Prática.
           </p>
 
-          <div className="flex justify-center gap-5 text-xs text-slate-400 pt-1 font-medium">
+          <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-slate-400 pt-1 font-medium">
+            <a href="/membros" className="text-amber-300 hover:text-amber-200 font-bold flex items-center gap-1">
+              <UserCheck className="w-3.5 h-3.5" /> Área de Alunos / Membros
+            </a>
+            <span>•</span>
             <button onClick={() => setModalType("terms")} className="hover:text-cyan-400 underline cursor-pointer">
               Termos de Uso
             </button>
