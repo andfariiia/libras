@@ -15,7 +15,6 @@ import {
   Hand,
   CheckCircle2,
   ExternalLink,
-  ShieldCheck,
   Heart,
   Home
 } from "lucide-react";
@@ -172,7 +171,7 @@ export const Members = () => {
             {/* Grid 3 Cards Principais */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
-              {/* Card 1 */}
+              {/* Card 1: Dinâmicas de Libras */}
               <div className="bg-slate-900/90 rounded-3xl border border-purple-400/30 overflow-hidden shadow-2xl hover:border-amber-300/70 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   {/* Card Capa Image */}
@@ -203,20 +202,18 @@ export const Members = () => {
 
                 <div className="p-6 pt-0">
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert("Link temporário! Em breve direcionado ao seu drive.");
-                    }}
+                    href="https://drive.google.com/drive/folders/1qQgbtVMlXbXMyDvSMyy-PXGwEw1RkImG"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full py-3 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
                   >
                     <span>Acessar Conteúdo</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
               </div>
 
-              {/* Card 2 */}
+              {/* Card 2: Jogos de Libras */}
               <div className="bg-slate-900/90 rounded-3xl border border-purple-400/30 overflow-hidden shadow-2xl hover:border-amber-300/70 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   {/* Card Capa Image */}
@@ -247,20 +244,18 @@ export const Members = () => {
 
                 <div className="p-6 pt-0">
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert("Link temporário! Em breve direcionado ao seu drive.");
-                    }}
+                    href="https://drive.google.com/drive/folders/1YvmR2NUY1g0n-z_AoOhxH9xQWFdFtDFW"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full py-3 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
                   >
                     <span>Acessar Conteúdo</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
               </div>
 
-              {/* Card 3 */}
+              {/* Card 3: Atividades Práticas */}
               <div className="bg-slate-900/90 rounded-3xl border border-purple-400/30 overflow-hidden shadow-2xl hover:border-amber-300/70 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
                   {/* Card Capa Image */}
@@ -291,15 +286,13 @@ export const Members = () => {
 
                 <div className="p-6 pt-0">
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert("Link temporário! Em breve direcionado ao seu drive.");
-                    }}
+                    href="https://drive.google.com/drive/folders/1qQgbtVMlXbXMyDvSMyy-PXGwEw1RkImG"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full py-3 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
                   >
                     <span>Acessar Conteúdo</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
               </div>
@@ -327,7 +320,7 @@ export const Members = () => {
             {/* Grid 2 Cards Bônus */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
-              {/* Bônus Card 1 */}
+              {/* Bônus Card 1: Cartazes Imprimíveis */}
               <div className="bg-purple-950/80 rounded-3xl border border-purple-400/30 p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-amber-300/50 transition-all backdrop-blur-md">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-300 to-amber-400 text-purple-950 flex items-center justify-center shrink-0 shadow-lg">
@@ -348,11 +341,9 @@ export const Members = () => {
 
                 <div className="pt-6 mt-4 border-t border-purple-800/80">
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert("Link temporário! Em breve direcionado ao seu drive.");
-                    }}
+                    href="https://drive.google.com/drive/folders/1utFp8SPCzKTwkQq7oQL4UUXDxQQK4sZK"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full py-3 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-purple-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
                   >
                     <span>Acessar Bônus</span>
@@ -361,7 +352,7 @@ export const Members = () => {
                 </div>
               </div>
 
-              {/* Bônus Card 2 */}
+              {/* Bônus Card 2: Preparação das Mãos */}
               <div className="bg-purple-950/80 rounded-3xl border border-purple-400/30 p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-amber-300/50 transition-all backdrop-blur-md">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-300 to-amber-400 text-purple-950 flex items-center justify-center shrink-0 shadow-lg">
@@ -382,11 +373,9 @@ export const Members = () => {
 
                 <div className="pt-6 mt-4 border-t border-purple-800/80">
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert("Link temporário! Em breve direcionado ao seu drive.");
-                    }}
+                    href="https://drive.google.com/drive/folders/1-EVh47sgrA_msQqVJNWnhXov28g257yP?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full py-3 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-purple-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
                   >
                     <span>Acessar Bônus</span>
