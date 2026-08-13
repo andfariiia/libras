@@ -45,6 +45,26 @@
   }
 }
 
+/* Infinite Marquee Animation for Auto-sliding cards right-to-left */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 35s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
 /* Custom Ultra-Modern Glow & Glass Effects */
 .glass-panel {
   background: rgba(15, 23, 42, 0.65);
@@ -70,14 +90,4 @@
 
 .gradient-text {
   @apply bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent;
-}
-
-.gradient-button {
-  background: linear-gradient(135deg, #0d9488 0%, #06b6d4 50%, #4f46e5 100%);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.gradient-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px -8px rgba(6, 182, 212, 0.5);
 }
