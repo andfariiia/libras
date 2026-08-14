@@ -13,24 +13,24 @@ const PAIN_POINTS = [
 
 export const PainPointsSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
-    <section className="py-10 md:py-16 bg-slate-950 text-white relative border-b border-slate-800">
+    <section className="py-6 md:py-10 bg-slate-950 text-white relative border-b border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-rose-950/80 border border-rose-500/30 text-rose-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 bg-rose-950/80 border border-rose-500/30 text-rose-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
           <XCircle className="w-3.5 h-3.5 text-rose-400" /> Dores Reais
         </div>
 
         {/* Title */}
-        <h2 className="text-2xl sm:text-4xl font-black mb-3 tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-black mb-2 tracking-tight">
           Você está vivendo essa situação?
         </h2>
 
-        <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mb-8">
+        <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mb-6">
           Se você se identifica com um ou mais pontos abaixo, saiba que a culpa não é sua. O sistema raramente oferece materiais prontos e verdadeiramente inclusivos.
         </p>
 
         {/* Pain Points Cards */}
-        <div className="space-y-3 max-w-3xl mx-auto text-left mb-8">
+        <div className="space-y-3 max-w-3xl mx-auto text-left mb-6">
           {PAIN_POINTS.map((point, index) => (
             <div
               key={index}
@@ -47,7 +47,7 @@ export const PainPointsSection = ({ onCtaClick }: { onCtaClick: () => void }) =>
         </div>
 
         {/* Callout box */}
-        <div className="bg-gradient-to-r from-amber-950/40 via-slate-900 to-amber-950/40 border border-amber-500/30 rounded-2xl p-5 max-w-2xl mx-auto flex items-center gap-3.5 text-left">
+        <div className="bg-gradient-to-r from-amber-950/40 via-slate-900 to-amber-950/40 border border-amber-500/30 rounded-2xl p-4 sm:p-5 max-w-2xl mx-auto flex items-center gap-3.5 text-left">
           <HelpCircle className="w-7 h-7 text-amber-400 shrink-0 hidden xs:block" />
           <p className="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
             <strong className="text-amber-300">Chega de passar perrengue ou improvisar na hora da aula!</strong> Com os materiais estruturados do Kit, você economiza horas de planejamento e conquista a atenção do aluno em minutos.

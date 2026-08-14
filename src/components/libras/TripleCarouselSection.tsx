@@ -80,20 +80,20 @@ const ROW_3: CardItem[] = [
 
 export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
-    <section className="py-12 sm:py-20 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800/80">
+    <section className="py-6 sm:py-10 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800/80">
       {/* Background Glows */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10 mb-8 sm:mb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10 mb-6 sm:mb-8">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-purple-500/20 border border-cyan-500/40 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-4 shadow-lg shadow-cyan-500/10">
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-purple-500/20 border border-cyan-500/40 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-3 shadow-lg shadow-cyan-500/10">
           <PackageCheck className="w-4 h-4 text-cyan-400" />
           <span>O QUE VOCÊ VAI RECEBER NO KIT COMPLETO</span>
         </div>
 
         {/* Heading */}
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-3">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-2">
           + de 240 Atividades e Jogos em Libras
         </h2>
 
@@ -104,14 +104,14 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
       </div>
 
       {/* THREE CAROUSELS CONTAINER */}
-      <div className="space-y-8 sm:space-y-10 relative w-full overflow-hidden">
+      <div className="space-y-6 sm:space-y-8 relative w-full overflow-hidden">
         
         {/* CAROUSEL 1 — MOVING LEFT */}
         <div>
           {/* Subtitle / Header above Carousel 1 */}
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-3 flex items-center justify-center gap-2">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-2 flex items-center justify-center gap-2">
             <Puzzle className="w-4 h-4 text-cyan-400" />
-            <h3 className="text-sm sm:text-lg font-black text-cyan-300 uppercase tracking-wide">
+            <h3 className="text-sm sm:text-base font-black text-cyan-300 uppercase tracking-wide">
               Quebra-Cabeça do Alfabeto em Libras
             </h3>
           </div>
@@ -123,7 +123,7 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
                   key={idx}
                   className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-cyan-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
                 >
-                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2 relative">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -145,9 +145,9 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
         {/* CAROUSEL 2 — MOVING RIGHT (REVERSE) */}
         <div>
           {/* Subtitle / Header above Carousel 2 */}
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-3 flex items-center justify-center gap-2">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-2 flex items-center justify-center gap-2">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <h3 className="text-sm sm:text-lg font-black text-amber-300 uppercase tracking-wide">
+            <h3 className="text-sm sm:text-base font-black text-amber-300 uppercase tracking-wide">
               Encaixa Frutas em Libras
             </h3>
           </div>
@@ -159,7 +159,7 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
                   key={idx}
                   className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-amber-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
                 >
-                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2 relative">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -181,9 +181,9 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
         {/* CAROUSEL 3 — MOVING LEFT */}
         <div>
           {/* Subtitle / Header above Carousel 3 */}
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-3 flex items-center justify-center gap-2">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-2 flex items-center justify-center gap-2">
             <Gamepad2 className="w-4 h-4 text-emerald-400" />
-            <h3 className="text-sm sm:text-lg font-black text-emerald-300 uppercase tracking-wide">
+            <h3 className="text-sm sm:text-base font-black text-emerald-300 uppercase tracking-wide">
               Libras STOP
             </h3>
           </div>
@@ -195,7 +195,7 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
                   key={idx}
                   className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-emerald-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
                 >
-                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2 relative">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -217,7 +217,7 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
       </div>
 
       {/* BOTTOM CTA BUTTON */}
-      <div className="mt-10 sm:mt-14 text-center px-4 relative z-10">
+      <div className="mt-8 sm:mt-10 text-center px-4 relative z-10">
         <button
           onClick={onCtaClick}
           className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-sm sm:text-base font-black text-slate-950 bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 rounded-2xl shadow-2xl shadow-cyan-500/25 hover:scale-105 transition-all cursor-pointer uppercase tracking-wider"

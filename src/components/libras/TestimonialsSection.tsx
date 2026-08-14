@@ -29,20 +29,20 @@ const WHATSAPP_TESTIMONIALS = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-10 md:py-16 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-6 md:py-10 bg-slate-900 text-white relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
         {/* Title */}
-        <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 tracking-tight">
           Amado por <span className="text-cyan-400 underline decoration-cyan-500/40">PROFESSORAS E MÃES</span>
         </h2>
 
         {/* Inspirational Quote */}
-        <div className="max-w-3xl mx-auto mb-10 bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 backdrop-blur-md">
-          <Quote className="w-6 h-6 text-cyan-400 mx-auto mb-1.5 opacity-60" />
-          <p className="text-sm sm:text-base font-medium text-slate-200 italic leading-relaxed">
+        <div className="max-w-3xl mx-auto mb-8 bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 sm:p-5 backdrop-blur-md">
+          <Quote className="w-5 h-5 text-cyan-400 mx-auto mb-1 opacity-60" />
+          <p className="text-xs sm:text-base font-medium text-slate-200 italic leading-relaxed">
             "Um material para quem precisa sair do improviso e começar a se comunicar com mais segurança, acolhimento e clareza."
           </p>
         </div>
@@ -76,7 +76,7 @@ export const TestimonialsSection = () => {
                 </div>
 
                 {/* WhatsApp Chat Bubble Style */}
-                <div className="bg-emerald-950/60 border border-emerald-500/30 rounded-2xl p-3.5 text-emerald-100 text-xs leading-relaxed relative">
+                <div className="bg-emerald-950/60 border border-emerald-500/30 rounded-2xl p-3 text-emerald-100 text-xs leading-relaxed relative">
                   <p>"{t.message}"</p>
                   <div className="flex items-center justify-end gap-1 mt-1.5 text-[10px] text-emerald-400 font-mono">
                     <span>{t.time}</span>
