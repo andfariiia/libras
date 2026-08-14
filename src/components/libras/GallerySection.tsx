@@ -3,33 +3,55 @@
 import React from "react";
 import { FileCheck2 } from "lucide-react";
 
-const REAL_SAMPLES = [
+interface SampleItem {
+  title: string;
+  badge: string;
+  tag: string;
+  image: string;
+  description: string;
+}
+
+const REAL_SAMPLES: SampleItem[] = [
   {
     title: "Quebra-Cabeça do Alfabeto em Libras",
     badge: "Mais Vendido",
     tag: "Alfabetização",
-    imageBg: "from-teal-600 to-cyan-700",
+    image: "https://i.ibb.co/9Hcs4qdz/jogo-dos-sinais-capa.webp",
     description: "Associação entre a letra do alfabeto, a imagem correspondente e a configuração de mão em Libras.",
   },
   {
     title: "Encaixa Frutas & Alimentos em Libras",
     badge: "Mais Popular",
     tag: "Vocabulário",
-    imageBg: "from-cyan-600 to-indigo-700",
-    description: "Cartas estilo domino de encaixe para aprender nomes de frutas e alimentos do dia a dia.",
+    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
+    description: "Cartas estilo dominó de encaixe para aprender nomes de frutas e alimentos do dia a dia.",
   },
   {
     title: "Libras STOP (Adedanha Adaptada)",
     badge: "Super Divertido",
     tag: "Avançado Lúdico",
-    imageBg: "from-purple-600 to-indigo-800",
+    image: "https://i.ibb.co/XrgfhVcQ/bingo-libras-1.webp",
     description: "Fichas de jogo do famoso STOP adaptado com categorias visuais em Libras para turmas.",
+  },
+  {
+    title: "Jogo da Memória dos Sinais",
+    badge: "Essencial",
+    tag: "Raciocínio Visual",
+    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
+    description: "Cards duplos para pareamento direto de figuras e sinais em Libras.",
+  },
+  {
+    title: "Atividades Práticas de Fixação",
+    badge: "Para Imprimir",
+    tag: "Exercícios",
+    image: "https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp",
+    description: "Exercícios de fixação e dactilologia prontos para aplicação individual.",
   },
 ];
 
-export const GallerySection = ({ onCtaClick }: { onCtaClick: () => void }) => {
+export const GallerySection = ({ onCtaClick }: { onCtaClick?: () => void }) => {
   return (
-    <section className="py-10 md:py-16 bg-slate-900 text-white relative">
+    <section className="py-10 md:py-16 bg-slate-900 text-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-teal-950/80 border border-teal-500/30 text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
@@ -41,52 +63,49 @@ export const GallerySection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           Mais de 240 jogos em Libras prontos para imprimir. Veja alguns exemplos reais:
         </h2>
 
-        <p className="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto mb-10">
+        <p className="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto mb-8 font-medium">
           Todos os PDFs foram elaborados com fontes legíveis, cores vivas e ilustrações claras para garantir rápido entendimento pelas crianças.
         </p>
 
-        {/* Gallery Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          {REAL_SAMPLES.map((sample, idx) => (
-            <div
-              key={idx}
-              className="bg-slate-950/80 rounded-3xl border border-slate-800 overflow-hidden shadow-2xl hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col"
-            >
-              {/* Card Header Preview Box */}
-              <div className={`h-40 bg-gradient-to-br ${sample.imageBg} p-5 text-white flex flex-col justify-between relative overflow-hidden`}>
-                <div className="flex items-center justify-between relative z-10">
-                  <span className="text-[10px] font-mono font-bold bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/20">
-                    PDF IMPRESSÃO
+        {/* Automatic Infinite Scrolling Carousel (Right to Left) */}
+        <div className="relative w-full overflow-hidden py-4 px-1">
+          <div className="animate-marquee-slow flex items-center gap-6">
+            {[...REAL_SAMPLES, ...REAL_SAMPLES, ...REAL_SAMPLES].map((sample, idx) => (
+              <div
+                key={idx}
+                className="w-64 sm:w-80 shrink-0 bg-slate-950/90 rounded-3xl p-3.5 border border-slate-800 text-left flex flex-col justify-between transition-all duration-300 hover:scale-[1.01] hover:border-cyan-500/40 shadow-xl cursor-pointer"
+              >
+                {/* Header tags */}
+                <div className="flex items-center justify-between mb-2.5">
+                  <span className="text-[10px] font-bold uppercase text-cyan-300 bg-cyan-950 px-2.5 py-0.5 rounded-full border border-cyan-800/80">
+                    {sample.tag}
                   </span>
-                  <span className="text-[10px] font-black bg-amber-400 text-slate-950 px-2.5 py-0.5 rounded-full shadow-md">
+                  <span className="text-[10px] font-black bg-amber-400 text-slate-950 px-2.5 py-0.5 rounded-full">
                     {sample.badge}
                   </span>
                 </div>
-                <div className="relative z-10">
-                  <span className="text-[9px] uppercase font-bold tracking-widest text-cyan-200">
-                    {sample.tag}
-                  </span>
-                  <h3 className="text-lg font-black text-white leading-tight mt-0.5">
+
+                {/* 4:5 Image Container */}
+                <div className="w-full aspect-[4/5] rounded-2xl border border-slate-800 overflow-hidden bg-slate-900 mb-3 relative">
+                  <img
+                    src={sample.image}
+                    alt={sample.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Card Title & Description */}
+                <div>
+                  <h3 className="text-sm font-black text-white leading-tight mb-1">
                     {sample.title}
                   </h3>
+                  <p className="text-[11px] text-slate-400 leading-relaxed font-normal line-clamp-2">
+                    {sample.description}
+                  </p>
                 </div>
               </div>
-
-              {/* Card Body */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
-                  {sample.description}
-                </p>
-
-                <div className="flex items-center justify-between text-xs font-semibold text-slate-300 pt-3 border-t border-slate-800">
-                  <span className="text-emerald-400 flex items-center gap-1.5 text-[11px]">
-                    ✓ Alta Definição
-                  </span>
-                  <span className="text-slate-400 text-[11px]">Pronto p/ Imprimir</span>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
