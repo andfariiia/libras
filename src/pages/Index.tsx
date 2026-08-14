@@ -69,17 +69,17 @@ const Index = () => {
       {/* 8. COMPARATIVO DE DOIS CAMINHOS */}
       <TwoPathsSection onCtaClick={scrollToCheckout} />
 
-      {/* 9. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
+      {/* 9. TABELA DE PREÇOS E CHECKOUT ("OFERTA POR TEMPO LIMITADO") */}
+      <PricingSection onSelectPlan={handleSelectPlan} />
+
+      {/* 10. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
       <InsidePreview onCtaClick={scrollToCheckout} />
 
-      {/* 10. QUIZ INTERATIVO */}
+      {/* 11. QUIZ INTERATIVO */}
       <InteractiveQuiz onFinish={scrollToCheckout} />
 
-      {/* 11. GALERIA DE EXEMPLOS REAIS */}
+      {/* 12. GALERIA DE EXEMPLOS REAIS */}
       <GallerySection onCtaClick={scrollToCheckout} />
-
-      {/* 12. TABELA DE PREÇOS E CHECKOUT */}
-      <PricingSection onSelectPlan={handleSelectPlan} />
 
       {/* 13. SOBRE A CRIADORA */}
       <CreatorSection />
