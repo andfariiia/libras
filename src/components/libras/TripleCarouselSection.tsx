@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sparkles, ArrowRight, PackageCheck } from "lucide-react";
+import { Sparkles, ArrowRight, PackageCheck, Puzzle } from "lucide-react";
 
 interface CardItem {
   title: string;
@@ -11,29 +11,24 @@ interface CardItem {
 
 const ROW_1: CardItem[] = [
   {
-    title: "Jogo dos Sinais — Capa e Guia",
-    tag: "Acompanhamento",
-    image: "https://i.ibb.co/9Hcs4qdz/jogo-dos-sinais-capa.webp",
+    title: "Quebra-Cabeça do Alfabeto — Modelo 1",
+    tag: "Alfabeto Libras",
+    image: "https://i.ibb.co/Hf6Jkyx7/image.png",
   },
   {
-    title: "Bingo em Libras — Cartelas Ilustradas",
-    tag: "Jogo em Grupo",
-    image: "https://i.ibb.co/XrgfhVcQ/bingo-libras-1.webp",
+    title: "Quebra-Cabeça do Alfabeto — Modelo 2",
+    tag: "Alfabeto Libras",
+    image: "https://i.ibb.co/XrCQhqTf/image.png",
   },
   {
-    title: "Baralho UNO em Libras",
-    tag: "Fixação Rápida",
-    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
+    title: "Quebra-Cabeça do Alfabeto — Modelo 3",
+    tag: "Alfabeto Libras",
+    image: "https://i.ibb.co/N20JWvLD/image.png",
   },
   {
-    title: "Cards Visuais de Comunicação",
-    tag: "Rotina Escolar",
-    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
-  },
-  {
-    title: "Jogo da Memória dos Sinais",
-    tag: "Atenção Visual",
-    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
+    title: "Quebra-Cabeça do Alfabeto — Modelo 4",
+    tag: "Alfabeto Libras",
+    image: "https://i.ibb.co/ym7fck6V/image.png",
   },
 ];
 
@@ -119,31 +114,41 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
       </div>
 
       {/* THREE CAROUSELS CONTAINER */}
-      <div className="space-y-5 sm:space-y-6 relative w-full overflow-hidden">
+      <div className="space-y-8 sm:space-y-10 relative w-full overflow-hidden">
         
         {/* CAROUSEL 1 — MOVING LEFT */}
-        <div className="relative w-full overflow-hidden py-1">
-          <div className="animate-marquee-slow flex items-center gap-4 sm:gap-6">
-            {[...ROW_1, ...ROW_1, ...ROW_1].map((item, idx) => (
-              <div
-                key={idx}
-                className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-cyan-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
-              >
-                <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
-                    {item.tag}
-                  </span>
+        <div>
+          {/* Subtitle / Header above Carousel 1 */}
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-3 flex items-center justify-center gap-2">
+            <Puzzle className="w-4 h-4 text-cyan-400" />
+            <h3 className="text-sm sm:text-lg font-black text-cyan-300 uppercase tracking-wide">
+              Quebra-Cabeça do Alfabeto em Libras
+            </h3>
+          </div>
+
+          <div className="relative w-full overflow-hidden py-1">
+            <div className="animate-marquee-slow flex items-center gap-4 sm:gap-6">
+              {[...ROW_1, ...ROW_1, ...ROW_1].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-cyan-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
+                >
+                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <p className="text-xs font-black text-white leading-snug truncate">
+                    {item.title}
+                  </p>
                 </div>
-                <p className="text-xs font-black text-white leading-snug truncate">
-                  {item.title}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
