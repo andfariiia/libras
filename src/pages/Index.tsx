@@ -57,14 +57,14 @@ const Index = () => {
       {/* 4. SOLUÇÃO E PILARES ("MÉTODO EXCLUSIVO") */}
       <SolutionSection />
 
-      {/* 5. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
+      {/* 5. ENTREGÁVEIS DETALHADOS ("O QUE VOCÊ VAI RECEBER AGORA MESMO") */}
+      <DeliverablesSection onCtaClick={scrollToCheckout} />
+
+      {/* 6. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
       <InsidePreview onCtaClick={scrollToCheckout} />
 
-      {/* 6. QUIZ INTERATIVO */}
+      {/* 7. QUIZ INTERATIVO */}
       <InteractiveQuiz onFinish={scrollToCheckout} />
-
-      {/* 7. ENTREGÁVEIS DETALHADOS */}
-      <DeliverablesSection onCtaClick={scrollToCheckout} />
 
       {/* 8. GALERIA DE EXEMPLOS REAIS */}
       <GallerySection onCtaClick={scrollToCheckout} />
