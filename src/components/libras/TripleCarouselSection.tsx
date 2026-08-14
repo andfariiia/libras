@@ -34,29 +34,24 @@ const ROW_1: CardItem[] = [
 
 const ROW_2: CardItem[] = [
   {
-    title: "Atividades Práticas e Exercícios",
-    tag: "Datilologia",
-    image: "https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp",
+    title: "Encaixa Frutas — Modelo 1",
+    tag: "Frutas Libras",
+    image: "https://i.ibb.co/6cvZK4fh/image.png",
   },
   {
-    title: "Cartazes da Rotina & Combinados",
-    tag: "Bônus 01",
-    image: "https://i.ibb.co/x8KF09HY/bonus-1-edf-otimizado.webp",
+    title: "Encaixa Frutas — Modelo 2",
+    tag: "Frutas Libras",
+    image: "https://i.ibb.co/gb4pJzL1/image.png",
   },
   {
-    title: "Desafios de Comunicação em Libras",
-    tag: "Bônus 02",
-    image: "https://i.ibb.co/5x9Q6Pzk/bonus-2-edf-otimizado.webp",
+    title: "Encaixa Frutas — Modelo 3",
+    tag: "Frutas Libras",
+    image: "https://i.ibb.co/vCMyBMPt/image.png",
   },
   {
-    title: "Dinâmicas Inclusivas em Grupo",
-    tag: "Bônus 03",
-    image: "https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp",
-  },
-  {
-    title: "Cartazes de Sinais Decorativos",
-    tag: "Bônus 04",
-    image: "https://i.ibb.co/Pvht8nFx/bonus-4-edf-otimizado.webp",
+    title: "Encaixa Frutas — Modelo 4",
+    tag: "Frutas Libras",
+    image: "https://i.ibb.co/3m4dRCqc/image.png",
   },
 ];
 
@@ -153,28 +148,38 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
         </div>
 
         {/* CAROUSEL 2 — MOVING RIGHT (REVERSE) */}
-        <div className="relative w-full overflow-hidden py-1">
-          <div className="animate-marquee-reverse flex items-center gap-4 sm:gap-6">
-            {[...ROW_2, ...ROW_2, ...ROW_2].map((item, idx) => (
-              <div
-                key={idx}
-                className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-amber-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
-              >
-                <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-amber-300 border border-amber-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
-                    {item.tag}
-                  </span>
+        <div>
+          {/* Subtitle / Header above Carousel 2 */}
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-3 flex items-center justify-center gap-2">
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <h3 className="text-sm sm:text-lg font-black text-amber-300 uppercase tracking-wide">
+              Encaixa Frutas em Libras
+            </h3>
+          </div>
+
+          <div className="relative w-full overflow-hidden py-1">
+            <div className="animate-marquee-reverse flex items-center gap-4 sm:gap-6">
+              {[...ROW_2, ...ROW_2, ...ROW_2].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-amber-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
+                >
+                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-amber-300 border border-amber-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <p className="text-xs font-black text-white leading-snug truncate">
+                    {item.title}
+                  </p>
                 </div>
-                <p className="text-xs font-black text-white leading-snug truncate">
-                  {item.title}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
