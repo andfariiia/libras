@@ -1,3 +1,4 @@
+PainPointsSection (Dores Reais) -> InsidePreview (Veja Por Dentro)">
 "use client";
 
 import React from "react";
@@ -51,11 +52,11 @@ const Index = () => {
       {/* 2. HERO SECTION COM CARROSSEL "VEJA POR DENTRO" */}
       <HeroSection onCtaClick={scrollToCheckout} />
 
-      {/* 3. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
-      <InsidePreview onCtaClick={scrollToCheckout} />
-
-      {/* 4. PAIN POINTS "DORES REAIS" (Posicionado logo abaixo de Veja Por Dentro) */}
+      {/* 3. PAIN POINTS "DORES REAIS" */}
       <PainPointsSection onCtaClick={scrollToCheckout} />
+
+      {/* 4. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
+      <InsidePreview onCtaClick={scrollToCheckout} />
 
       {/* 5. QUIZ INTERATIVO */}
       <InteractiveQuiz onFinish={scrollToCheckout} />
