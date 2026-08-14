@@ -63,17 +63,17 @@ const Index = () => {
       {/* 6. PROVA SOCIAL E DEPOIMENTOS ("AMADO POR PROFESSORAS E MÃES") */}
       <TestimonialsSection />
 
-      {/* 7. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
+      {/* 7. BÔNUS EXCLUSIVOS */}
+      <BonusSection onCtaClick={scrollToCheckout} />
+
+      {/* 8. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
       <InsidePreview onCtaClick={scrollToCheckout} />
 
-      {/* 8. QUIZ INTERATIVO */}
+      {/* 9. QUIZ INTERATIVO */}
       <InteractiveQuiz onFinish={scrollToCheckout} />
 
-      {/* 9. GALERIA DE EXEMPLOS REAIS */}
+      {/* 10. GALERIA DE EXEMPLOS REAIS */}
       <GallerySection onCtaClick={scrollToCheckout} />
-
-      {/* 10. BÔNUS EXCLUSIVOS */}
-      <BonusSection onCtaClick={scrollToCheckout} />
 
       {/* 11. COMPARATIVO DE DOIS CAMINHOS */}
       <TwoPathsSection onCtaClick={scrollToCheckout} />
