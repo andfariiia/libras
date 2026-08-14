@@ -72,20 +72,20 @@ const Index = () => {
       {/* 9. TABELA DE PREÇOS E CHECKOUT ("OFERTA POR TEMPO LIMITADO") */}
       <PricingSection onSelectPlan={handleSelectPlan} />
 
-      {/* 10. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
-      <InsidePreview onCtaClick={scrollToCheckout} />
-
-      {/* 11. QUIZ INTERATIVO */}
-      <InteractiveQuiz onFinish={scrollToCheckout} />
-
-      {/* 12. GALERIA DE EXEMPLOS REAIS */}
-      <GallerySection onCtaClick={scrollToCheckout} />
-
-      {/* 13. SOBRE A CRIADORA */}
+      {/* 10. SOBRE A CRIADORA ("QUEM CRIOU O MATERIAL") */}
       <CreatorSection />
 
-      {/* 14. PERGUNTAS FREQUENTES (FAQ) */}
+      {/* 11. PERGUNTAS FREQUENTES ("TIRE SUAS DÚVIDAS") */}
       <FaqSection />
+
+      {/* 12. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
+      <InsidePreview onCtaClick={scrollToCheckout} />
+
+      {/* 13. QUIZ INTERATIVO */}
+      <InteractiveQuiz onFinish={scrollToCheckout} />
+
+      {/* 14. GALERIA DE EXEMPLOS REAIS */}
+      <GallerySection onCtaClick={scrollToCheckout} />
 
       {/* 15. GARANTIA E RODAPÉ */}
       <GuaranteeFooter onCtaClick={scrollToCheckout} />
