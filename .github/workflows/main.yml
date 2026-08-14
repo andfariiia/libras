@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Baixar codigo fonte
-        uses: actions/checkout@v4
+        uses: uses: SamKirkland/FTP-Deploy-Action@v4.3.5
 
       - name: Configurar pnpm
         uses: pnpm/action-setup@v2
