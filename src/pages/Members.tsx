@@ -164,16 +164,16 @@ export const Members = () => {
               {/* Card 1: Dinâmicas de Libras */}
               <div className="bg-slate-900/90 rounded-3xl border border-purple-400/30 overflow-hidden shadow-2xl hover:border-amber-300/70 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  {/* Card Capa Image */}
-                  <div className="h-48 bg-gradient-to-tr from-purple-900 to-indigo-900 relative overflow-hidden p-4 flex items-center justify-center">
+                  {/* Card Capa Image com material real da home */}
+                  <div className="h-52 bg-slate-950 relative overflow-hidden flex items-center justify-center">
                     <img
-                      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&auto=format&fit=crop&q=80"
+                      src="https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp"
                       alt="Dinâmicas de Libras"
-                      className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                    <div className="relative z-10 w-12 h-12 rounded-2xl bg-amber-400 text-purple-950 flex items-center justify-center shadow-lg">
-                      <BookOpen className="w-6 h-6 font-bold" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-black/20" />
+                    <div className="absolute top-3 right-3 w-10 h-10 rounded-2xl bg-amber-400 text-purple-950 flex items-center justify-center shadow-lg">
+                      <BookOpen className="w-5 h-5 font-bold" />
                     </div>
                   </div>
 
@@ -206,16 +206,16 @@ export const Members = () => {
               {/* Card 2: Jogos de Libras */}
               <div className="bg-slate-900/90 rounded-3xl border border-purple-400/30 overflow-hidden shadow-2xl hover:border-amber-300/70 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  {/* Card Capa Image */}
-                  <div className="h-48 bg-gradient-to-tr from-purple-900 to-indigo-900 relative overflow-hidden p-4 flex items-center justify-center">
+                  {/* Card Capa Image com material real da home */}
+                  <div className="h-52 bg-slate-950 relative overflow-hidden flex items-center justify-center">
                     <img
-                      src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&auto=format&fit=crop&q=80"
+                      src="https://i.ibb.co/XfL47vmK/uno-libras-1.webp"
                       alt="Jogos de Libras"
-                      className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                    <div className="relative z-10 w-12 h-12 rounded-2xl bg-amber-400 text-purple-950 flex items-center justify-center shadow-lg">
-                      <Gamepad2 className="w-6 h-6 font-bold" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-black/20" />
+                    <div className="absolute top-3 right-3 w-10 h-10 rounded-2xl bg-amber-400 text-purple-950 flex items-center justify-center shadow-lg">
+                      <Gamepad2 className="w-5 h-5 font-bold" />
                     </div>
                   </div>
 
@@ -248,16 +248,16 @@ export const Members = () => {
               {/* Card 3: Atividades Práticas */}
               <div className="bg-slate-900/90 rounded-3xl border border-purple-400/30 overflow-hidden shadow-2xl hover:border-amber-300/70 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  {/* Card Capa Image */}
-                  <div className="h-48 bg-gradient-to-tr from-purple-900 to-indigo-900 relative overflow-hidden p-4 flex items-center justify-center">
+                  {/* Card Capa Image com material real da home */}
+                  <div className="h-52 bg-slate-950 relative overflow-hidden flex items-center justify-center">
                     <img
-                      src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&auto=format&fit=crop&q=80"
+                      src="https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp"
                       alt="Atividades Práticas"
-                      className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                    <div className="relative z-10 w-12 h-12 rounded-2xl bg-amber-400 text-purple-950 flex items-center justify-center shadow-lg">
-                      <FileText className="w-6 h-6 font-bold" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-black/20" />
+                    <div className="absolute top-3 right-3 w-10 h-10 rounded-2xl bg-amber-400 text-purple-950 flex items-center justify-center shadow-lg">
+                      <FileText className="w-5 h-5 font-bold" />
                     </div>
                   </div>
 
@@ -311,12 +311,21 @@ export const Members = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Bônus Card 1: Cartazes Imprimíveis */}
-              <div className="bg-purple-950/80 rounded-3xl border border-purple-400/30 p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-amber-300/50 transition-all backdrop-blur-md">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-300 to-amber-400 text-purple-950 flex items-center justify-center shrink-0 shadow-lg">
-                    <ImageIcon className="w-7 h-7 font-black" />
+              <div className="bg-purple-950/80 rounded-3xl border border-purple-400/30 overflow-hidden shadow-2xl flex flex-col justify-between hover:border-amber-300/50 transition-all backdrop-blur-md group">
+                <div>
+                  <div className="h-52 bg-slate-950 relative overflow-hidden">
+                    <img
+                      src="https://i.ibb.co/x8KF09HY/bonus-1-edf-otimizado.webp"
+                      alt="Cartazes Imprimíveis"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-950 via-transparent to-black/20" />
+                    <div className="absolute top-3 right-3 w-10 h-10 rounded-2xl bg-amber-400 text-purple-950 flex items-center justify-center shadow-lg">
+                      <ImageIcon className="w-5 h-5 font-black" />
+                    </div>
                   </div>
-                  <div>
+
+                  <div className="p-6">
                     <span className="text-[10px] font-black uppercase text-amber-300 tracking-wider">
                       BÔNUS EXCLUSIVO 01
                     </span>
@@ -329,7 +338,7 @@ export const Members = () => {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-purple-800/80">
+                <div className="p-6 pt-0">
                   <a
                     href="https://drive.google.com/drive/folders/1utFp8SPCzKTwkQq7oQL4UUXDxQQK4sZK"
                     target="_blank"
@@ -343,12 +352,21 @@ export const Members = () => {
               </div>
 
               {/* Bônus Card 2: Preparação das Mãos */}
-              <div className="bg-purple-950/80 rounded-3xl border border-purple-400/30 p-6 sm:p-8 shadow-2xl flex flex-col justify-between hover:border-amber-300/50 transition-all backdrop-blur-md">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-300 to-amber-400 text-purple-950 flex items-center justify-center shrink-0 shadow-lg">
-                    <Hand className="w-7 h-7 font-black" />
+              <div className="bg-purple-950/80 rounded-3xl border border-purple-400/30 overflow-hidden shadow-2xl flex flex-col justify-between hover:border-amber-300/50 transition-all backdrop-blur-md group">
+                <div>
+                  <div className="h-52 bg-slate-950 relative overflow-hidden">
+                    <img
+                      src="https://i.ibb.co/5x9Q6Pzk/bonus-2-edf-otimizado.webp"
+                      alt="Preparação das Mãos"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-950 via-transparent to-black/20" />
+                    <div className="absolute top-3 right-3 w-10 h-10 rounded-2xl bg-amber-400 text-purple-950 flex items-center justify-center shadow-lg">
+                      <Hand className="w-5 h-5 font-black" />
+                    </div>
                   </div>
-                  <div>
+
+                  <div className="p-6">
                     <span className="text-[10px] font-black uppercase text-amber-300 tracking-wider">
                       BÔNUS EXCLUSIVO 02
                     </span>
@@ -361,7 +379,7 @@ export const Members = () => {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-purple-800/80">
+                <div className="p-6 pt-0">
                   <a
                     href="https://drive.google.com/drive/folders/1-EVh47sgrA_msQqVJNWnhXov28g257yP?usp=drive_link"
                     target="_blank"
