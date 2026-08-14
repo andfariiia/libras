@@ -1,4 +1,3 @@
-PainPointsSection (Dores Reais) -> InsidePreview (Veja Por Dentro)">
 "use client";
 
 import React from "react";
