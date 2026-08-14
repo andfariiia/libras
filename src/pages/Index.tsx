@@ -3,12 +3,9 @@
 import React from "react";
 import { UrgencyHeader } from "@/components/libras/UrgencyHeader";
 import { HeroSection } from "@/components/libras/HeroSection";
-import { InsidePreview } from "@/components/libras/InsidePreview";
 import { PainPointsSection } from "@/components/libras/PainPointsSection";
-import { InteractiveQuiz } from "@/components/libras/InteractiveQuiz";
 import { SolutionSection } from "@/components/libras/SolutionSection";
 import { DeliverablesSection } from "@/components/libras/DeliverablesSection";
-import { GallerySection } from "@/components/libras/GallerySection";
 import { TestimonialsSection } from "@/components/libras/TestimonialsSection";
 import { BonusSection } from "@/components/libras/BonusSection";
 import { TwoPathsSection } from "@/components/libras/TwoPathsSection";
@@ -78,16 +75,7 @@ const Index = () => {
       {/* 11. PERGUNTAS FREQUENTES ("TIRE SUAS DÚVIDAS") */}
       <FaqSection />
 
-      {/* 12. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
-      <InsidePreview onCtaClick={scrollToCheckout} />
-
-      {/* 13. QUIZ INTERATIVO */}
-      <InteractiveQuiz onFinish={scrollToCheckout} />
-
-      {/* 14. GALERIA DE EXEMPLOS REAIS */}
-      <GallerySection onCtaClick={scrollToCheckout} />
-
-      {/* 15. GARANTIA E RODAPÉ */}
+      {/* 12. GARANTIA E RODAPÉ */}
       <GuaranteeFooter onCtaClick={scrollToCheckout} />
     </div>
   );
