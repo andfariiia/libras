@@ -3,11 +3,11 @@
 import React from "react";
 import { UrgencyHeader } from "@/components/libras/UrgencyHeader";
 import { HeroSection } from "@/components/libras/HeroSection";
-import { TripleCarouselSection } from "@/components/libras/TripleCarouselSection";
 import { PainPointsSection } from "@/components/libras/PainPointsSection";
 import { SolutionSection } from "@/components/libras/SolutionSection";
 import { DeliverablesSection } from "@/components/libras/DeliverablesSection";
 import { TestimonialsSection } from "@/components/libras/TestimonialsSection";
+import { TripleCarouselSection } from "@/components/libras/TripleCarouselSection";
 import { BonusSection } from "@/components/libras/BonusSection";
 import { TwoPathsSection } from "@/components/libras/TwoPathsSection";
 import { PricingSection } from "@/components/libras/PricingSection";
@@ -49,22 +49,22 @@ const Index = () => {
       {/* 2. HERO SECTION */}
       <HeroSection onCtaClick={scrollToCheckout} />
 
-      {/* 3. SEÇÃO DOS 3 CARROSSEIS ("+ de 240 Atividades e Jogos em Libras") */}
-      <TripleCarouselSection onCtaClick={scrollToCheckout} />
-
-      {/* 4. PAIN POINTS "DORES REAIS" */}
+      {/* 3. PAIN POINTS "DORES REAIS" */}
       <PainPointsSection onCtaClick={scrollToCheckout} />
 
-      {/* 5. SOLUÇÃO E PILARES ("MÉTODO EXCLUSIVO") */}
+      {/* 4. SOLUÇÃO E PILARES ("MÉTODO EXCLUSIVO") */}
       <SolutionSection />
 
-      {/* 6. ENTREGÁVEIS DETALHADOS ("O QUE VOCÊ VAI RECEBER AGORA MESMO") */}
+      {/* 5. ENTREGÁVEIS DETALHADOS ("O QUE VOCÊ VAI RECEBER AGORA MESMO") */}
       <DeliverablesSection onCtaClick={scrollToCheckout} />
 
-      {/* 7. PROVA SOCIAL E DEPOIMENTOS ("AMADO POR PROFESSORAS E MÃES") */}
+      {/* 6. PROVA SOCIAL E DEPOIMENTOS ("AMADO POR PROFESSORAS E MÃES") */}
       <TestimonialsSection />
 
-      {/* 8. BÔNUS EXCLUSIVOS */}
+      {/* 7. SEÇÃO DOS 3 CARROSSEIS ("O QUE VOCÊ VAI RECEBER NO KIT COMPLETO") */}
+      <TripleCarouselSection onCtaClick={scrollToCheckout} />
+
+      {/* 8. BÔNUS EXCLUSIVOS DO COMBO */}
       <BonusSection onCtaClick={scrollToCheckout} />
 
       {/* 9. COMPARATIVO DE DOIS CAMINHOS */}
