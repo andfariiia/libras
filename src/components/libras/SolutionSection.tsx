@@ -22,45 +22,51 @@ export const SolutionSection = () => {
         </div>
 
         {/* 3 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           {/* Pillar 1 */}
-          <div className="group bg-slate-950/80 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-teal-500/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-            <div className="w-12 h-12 rounded-2xl bg-teal-950 border border-teal-500/30 text-teal-400 flex items-center justify-center text-2xl font-bold mb-4">
+          <div className="group bg-slate-950/80 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl hover:border-teal-500/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden flex flex-col items-center">
+            <div className="w-14 h-14 rounded-2xl bg-teal-950 border border-teal-500/30 text-teal-400 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">
               🖨️
             </div>
-            <span className="text-[10px] font-bold text-teal-400 uppercase tracking-wider">PILAR 1</span>
-            <h3 className="text-lg font-extrabold text-white mt-0.5 mb-2">
+            <span className="text-[10px] font-bold text-teal-400 uppercase tracking-wider bg-teal-950/60 px-3 py-0.5 rounded-full border border-teal-800/60 mb-2">
+              PILAR 1
+            </span>
+            <h3 className="text-lg font-extrabold text-white mb-2 leading-snug">
               PRONTO PARA IMPRIMIR E USAR
             </h3>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <p className="text-xs text-slate-400 leading-relaxed max-w-xs">
               Baixe, imprima e aplique. Tudo pensado para facilitar a comunicação em sala, em casa e nas atividades sem exigir preparação complexa.
             </p>
           </div>
 
           {/* Pillar 2 */}
-          <div className="group bg-slate-950/80 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-cyan-500/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-            <div className="w-12 h-12 rounded-2xl bg-cyan-950 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-2xl font-bold mb-4">
+          <div className="group bg-slate-950/80 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl hover:border-cyan-500/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden flex flex-col items-center">
+            <div className="w-14 h-14 rounded-2xl bg-cyan-950 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">
               📋
             </div>
-            <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">PILAR 2</span>
-            <h3 className="text-lg font-extrabold text-white mt-0.5 mb-2">
+            <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider bg-cyan-950/60 px-3 py-0.5 rounded-full border border-cyan-800/60 mb-2">
+              PILAR 2
+            </span>
+            <h3 className="text-lg font-extrabold text-white mb-2 leading-snug">
               LIBRAS NA PRÁTICA
             </h3>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <p className="text-xs text-slate-400 leading-relaxed max-w-xs">
               Cada jogo trabalha sinais, comunicação, atenção visual e inclusão de forma simples, contextualizada e divertida para fixar de verdade.
             </p>
           </div>
 
           {/* Pillar 3 */}
-          <div className="group bg-slate-950/80 rounded-3xl p-6 border border-slate-800 shadow-xl hover:border-indigo-500/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-950 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-2xl font-bold mb-4">
+          <div className="group bg-slate-950/80 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl hover:border-indigo-500/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden flex flex-col items-center">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-950 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">
               👥
             </div>
-            <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">PILAR 3</span>
-            <h3 className="text-lg font-extrabold text-white mt-0.5 mb-2">
+            <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-wider bg-indigo-950/60 px-3 py-0.5 rounded-full border border-indigo-800/60 mb-2">
+              PILAR 3
+            </span>
+            <h3 className="text-lg font-extrabold text-white mb-2 leading-snug">
               VISUAL, LÚDICO E INCLUSIVO
             </h3>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <p className="text-xs text-slate-400 leading-relaxed max-w-xs">
               Atividades feitas para envolver crianças ouvintes e surdas lado a lado, promovendo empatia, participação ativa e acolhimento.
             </p>
           </div>
