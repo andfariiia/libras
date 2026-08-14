@@ -4,8 +4,8 @@ import React from "react";
 import { UrgencyHeader } from "@/components/libras/UrgencyHeader";
 import { HeroSection } from "@/components/libras/HeroSection";
 import { InsidePreview } from "@/components/libras/InsidePreview";
-import { InteractiveQuiz } from "@/components/libras/InteractiveQuiz";
 import { PainPointsSection } from "@/components/libras/PainPointsSection";
+import { InteractiveQuiz } from "@/components/libras/InteractiveQuiz";
 import { SolutionSection } from "@/components/libras/SolutionSection";
 import { DeliverablesSection } from "@/components/libras/DeliverablesSection";
 import { GallerySection } from "@/components/libras/GallerySection";
@@ -54,11 +54,11 @@ const Index = () => {
       {/* 3. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
       <InsidePreview onCtaClick={scrollToCheckout} />
 
-      {/* 4. QUIZ INTERATIVO */}
-      <InteractiveQuiz onFinish={scrollToCheckout} />
-
-      {/* 5. PAIN POINTS "DORES REAIS" */}
+      {/* 4. PAIN POINTS "DORES REAIS" (Posicionado logo abaixo de Veja Por Dentro) */}
       <PainPointsSection onCtaClick={scrollToCheckout} />
+
+      {/* 5. QUIZ INTERATIVO */}
+      <InteractiveQuiz onFinish={scrollToCheckout} />
 
       {/* 6. SOLUÇÃO E PILARES */}
       <SolutionSection />
