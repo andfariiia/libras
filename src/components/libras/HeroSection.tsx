@@ -210,11 +210,11 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
               {[...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS].map((item, idx) => (
                 <div
                   key={idx}
-                  className="w-80 sm:w-[380px] shrink-0 bg-white rounded-3xl p-3 border border-slate-200/90 text-center flex flex-col justify-between transition-transform duration-300 hover:scale-[1.01] shadow-md cursor-pointer"
+                  className="w-60 sm:w-72 shrink-0 bg-white rounded-3xl p-3 border border-slate-200/90 text-center flex flex-col justify-between transition-transform duration-300 hover:scale-[1.01] shadow-md cursor-pointer"
                 >
-                  {/* Card Visual Content Container - Rectangular Aspect Ratio */}
+                  {/* Card Visual Content Container - 4:5 Aspect Ratio (1080x1350) */}
                   <div className="mb-2.5">
-                    <div className="w-full h-48 sm:h-56 rounded-2xl border border-slate-200/80 overflow-hidden bg-slate-50 flex items-center justify-center">
+                    <div className="w-full aspect-[4/5] rounded-2xl border border-slate-200/80 overflow-hidden bg-slate-50 flex items-center justify-center">
                       <img
                         src={item.image}
                         alt={item.title}
