@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sparkles, ArrowRight, PackageCheck, Puzzle } from "lucide-react";
+import { Sparkles, ArrowRight, PackageCheck, Puzzle, Gamepad2 } from "lucide-react";
 
 interface CardItem {
   title: string;
@@ -57,29 +57,24 @@ const ROW_2: CardItem[] = [
 
 const ROW_3: CardItem[] = [
   {
-    title: "Bingo em Libras — Fichas de Sorteio",
-    tag: "Turma Inteira",
-    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
+    title: "Libras STOP — Modelo 1",
+    tag: "Libras STOP",
+    image: "https://i.ibb.co/39qZzBcZ/image.png",
   },
   {
-    title: "UNO Adaptado com Números e Sinais",
-    tag: "Lúdico",
-    image: "https://i.ibb.co/0ypCHLQ9/uno-libras-3.webp",
+    title: "Libras STOP — Modelo 2",
+    tag: "Libras STOP",
+    image: "https://i.ibb.co/8DBcgjZm/image.png",
   },
   {
-    title: "Jogo dos Sinais — Folha de Aplicação",
-    tag: "Exercício Prático",
-    image: "https://i.ibb.co/twNSWRdS/jogo-dos-sinais-folha.webp",
+    title: "Libras STOP — Modelo 3",
+    tag: "Libras STOP",
+    image: "https://i.ibb.co/Kpv7wfk1/image.png",
   },
   {
-    title: "Jogo da Memória — Alfabeto & Vocabulário",
-    tag: "Raciocínio",
-    image: "https://i.ibb.co/d4kJn7Ys/memoria-dos-sinais-2.webp",
-  },
-  {
-    title: "Pranchas de Apoio à Libras",
-    tag: "Apoio Visual",
-    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
+    title: "Libras STOP — Modelo 4",
+    tag: "Libras STOP",
+    image: "https://i.ibb.co/8n1c99zc/image.png",
   },
 ];
 
@@ -184,28 +179,38 @@ export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }
         </div>
 
         {/* CAROUSEL 3 — MOVING LEFT */}
-        <div className="relative w-full overflow-hidden py-1">
-          <div className="animate-marquee-slow flex items-center gap-4 sm:gap-6">
-            {[...ROW_3, ...ROW_3, ...ROW_3].map((item, idx) => (
-              <div
-                key={idx}
-                className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-emerald-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
-              >
-                <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-emerald-300 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
-                    {item.tag}
-                  </span>
+        <div>
+          {/* Subtitle / Header above Carousel 3 */}
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-3 flex items-center justify-center gap-2">
+            <Gamepad2 className="w-4 h-4 text-emerald-400" />
+            <h3 className="text-sm sm:text-lg font-black text-emerald-300 uppercase tracking-wide">
+              Libras STOP
+            </h3>
+          </div>
+
+          <div className="relative w-full overflow-hidden py-1">
+            <div className="animate-marquee-slow flex items-center gap-4 sm:gap-6">
+              {[...ROW_3, ...ROW_3, ...ROW_3].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-emerald-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
+                >
+                  <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-emerald-300 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <p className="text-xs font-black text-white leading-snug truncate">
+                    {item.title}
+                  </p>
                 </div>
-                <p className="text-xs font-black text-white leading-snug truncate">
-                  {item.title}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
