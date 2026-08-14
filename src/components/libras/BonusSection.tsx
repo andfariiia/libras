@@ -1,102 +1,154 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Monitor, Sparkles } from "lucide-react";
 
-const BONUSES = [
+interface BonusItem {
+  num: string;
+  category: string;
+  title: string;
+  highlight: string;
+  desc: string;
+  value: string;
+  image: string;
+}
+
+const BONUSES: BonusItem[] = [
   {
-    num: "BÔNUS 01",
+    num: "01",
+    category: "ROTINA E COMBINADOS",
     title: "Cartazes de Libras (Rotina & Combinados)",
+    highlight: "Cartazes visuais com sinais de entrada, lanche, higiene, combinados de convivência e frases essenciais para afixar na parede.",
+    desc: "Crie um ambiente 100% receptivo, acolhedor e visual para organizar o dia a dia do aluno surdo e de toda a turma.",
     value: "R$ 29,90",
-    desc: "Cartazes visuais com sinais de entrada, lanche, higiene, combinados de convivência e frases essenciais para parede.",
-    icon: "🖼️",
+    image: "/bonus-sample-reference.png",
   },
   {
-    num: "BÔNUS 02",
+    num: "02",
+    category: "DESAFIOS LÚDICOS",
     title: "Desafios de Comunicação em Libras",
+    highlight: "Cartões de desafios diários para estimular a memória, expressão facial e rapidez de resposta com a turma.",
+    desc: "Atividades dinâmicas que transformam o aprendizado de sinais em uma competição saudável e empolgante.",
     value: "R$ 34,90",
-    desc: "Cartões de desafios diários para estimular a memória, expressão facial e rapidez de resposta com a turma.",
-    icon: "🎯",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=80",
   },
   {
-    num: "BÔNUS 03",
+    num: "03",
+    category: "JOGOS E CIRCUITOS",
     title: "Dinâmicas Inclusivas em Grupo",
+    highlight: "Propostas extras para envolver crianças surdas e ouvintes em atividades conjuntas, estimulando comunicação, interação e participação.",
+    desc: "Use cartas, pareamentos, desafios e brincadeiras simples para envolver crianças surdas e ouvintes juntas.",
     value: "R$ 27,90",
-    desc: "Guia com 10 dinâmicas de acolhimento para integrar alunos surdos e ouvintes desde o primeiro dia de aula.",
-    icon: "🤝",
+    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&auto=format&fit=crop&q=80",
   },
   {
-    num: "BÔNUS 04",
+    num: "04",
+    category: "DECORAÇÃO E APOIO",
     title: "Cartazes de Sinais para Imprimir",
+    highlight: "Coleção de posters decorativos em alta definição com alfabeto dactilológico e numerais em Libras.",
+    desc: "Posters ilustrados de alta qualidade prontos para molduras ou fixação direta no quadro de avisos.",
     value: "R$ 24,90",
-    desc: "Coleção de posters decorativos em alta definição com alfabeto dactilológico e numerais em Libras.",
-    icon: "📜",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
   },
 ];
 
 export const BonusSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
-    <section className="py-10 md:py-16 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800">
-      {/* Cyan Glow Background Elements */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-600/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-12 md:py-20 bg-[#0B0F19] text-white relative overflow-hidden border-t border-slate-800/80">
+      {/* Background Glow Effects */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        {/* Tag */}
-        <div className="inline-block text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2">
-          — BÔNUS EXCLUSIVOS —
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-purple-950/80 border border-purple-500/30 text-purple-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-3 shadow-md">
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+            <span>BÔNUS EXCLUSIVOS DO COMBO</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-3">
+            Bônus do Combo Libras na Prática
+          </h2>
+
+          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-medium">
+            Garantindo o seu kit <strong className="text-amber-300">HOJE</strong>, você recebe estes 4 bônus incríveis sem nenhum custo adicional:
+          </p>
         </div>
 
-        {/* Title */}
-        <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 tracking-tight">
-          Bônus do Combo Libras na Prática
-        </h2>
-
-        {/* Subtitle */}
-        <p className="text-xs sm:text-base text-slate-400 max-w-2xl mx-auto mb-8">
-          Levando o Kit <strong className="text-amber-400">HOJE</strong>, você desbloqueia 4 materiais extras totalmente sem custo adicional:
-        </p>
-
-        {/* Grid 2x2 Glassmorphism Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left mb-8">
+        {/* 2x2 Grid of New Card Model */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 max-w-5xl mx-auto mb-12">
           {BONUSES.map((bonus, idx) => (
             <div
               key={idx}
-              className="bg-slate-900/80 backdrop-blur-md border border-slate-800 hover:border-cyan-500/50 rounded-3xl p-5 sm:p-6 shadow-2xl relative transition-all duration-300 hover:-translate-y-1"
+              className="bg-[#121829] border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all duration-300 group"
             >
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[11px] font-bold text-cyan-400 bg-cyan-950/80 border border-cyan-800/80 px-2.5 py-0.5 rounded-full">
-                  {bonus.num}
-                </span>
-                <span className="text-[11px] font-semibold text-slate-400 line-through">
-                  Valor individual: {bonus.value}
-                </span>
-              </div>
+              <div>
+                {/* Image Top Frame */}
+                <div className="relative w-full h-56 sm:h-64 overflow-hidden bg-slate-900">
+                  <img
+                    src={bonus.image}
+                    alt={bonus.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
 
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-slate-800 text-xl flex items-center justify-center shrink-0 border border-slate-700">
-                  {bonus.icon}
+                  {/* Gradient Overlay at bottom of image */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#121829] via-transparent to-black/30" />
+
+                  {/* Large Stylized Number Badge Top-Left */}
+                  <div className="absolute top-4 left-4 font-black text-4xl sm:text-5xl text-cyan-300/90 font-mono drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] tracking-tighter">
+                    {bonus.num}
+                  </div>
+
+                  {/* Media / Monitor Icon Bottom-Right */}
+                  <div className="absolute bottom-4 right-4 w-10 h-10 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-cyan-500/40 text-cyan-300 flex items-center justify-center shadow-lg">
+                    <Monitor className="w-5 h-5" />
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-slate-100 mb-1">
+
+                {/* Card Content Body */}
+                <div className="p-6 sm:p-7 space-y-4">
+                  {/* Pill Category Tag */}
+                  <div className="inline-flex items-center gap-2 bg-[#1A2238] border border-cyan-500/30 px-3.5 py-1 rounded-full text-[11px] font-black text-cyan-300 uppercase tracking-wider">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                    <span>{bonus.category}</span>
+                  </div>
+
+                  {/* Main Title */}
+                  <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
                     {bonus.title}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed mb-2">
+
+                  {/* Highlight Text (Purple/Cyan) */}
+                  <p className="text-xs sm:text-sm font-semibold text-purple-300 leading-relaxed">
+                    {bonus.highlight}
+                  </p>
+
+                  {/* Divider Line */}
+                  <div className="w-full h-px bg-slate-800/80 my-2" />
+
+                  {/* Secondary Description */}
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                     {bonus.desc}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> INCLUSO GRATUITAMENTE
-                  </span>
                 </div>
+              </div>
+
+              {/* Bottom Free Tag Banner */}
+              <div className="px-6 pb-6 pt-0 flex items-center justify-between text-xs font-bold text-slate-400">
+                <span className="text-slate-500 line-through">Valor normal: {bonus.value}</span>
+                <span className="text-emerald-400 bg-emerald-950/80 border border-emerald-500/40 px-3 py-1 rounded-full flex items-center gap-1.5 font-extrabold text-[11px]">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> 100% GRATUITO
+                </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Total Value Banner */}
-        <div className="bg-gradient-to-r from-cyan-900/60 to-teal-900/60 border border-cyan-500/30 rounded-2xl p-3.5 max-w-xl mx-auto flex items-center justify-between text-xs">
-          <span className="text-slate-300 font-medium">Economia total de Bônus:</span>
-          <span className="font-mono font-bold text-amber-300 text-sm">R$ 117,60 de presente</span>
+        {/* Economy Banner */}
+        <div className="bg-gradient-to-r from-purple-950/60 via-slate-900 to-cyan-950/60 border border-purple-500/30 rounded-2xl p-4 max-w-xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <span className="text-slate-300 font-semibold">Economia total em bônus inclusos:</span>
+          <span className="font-mono font-black text-amber-300 text-sm sm:text-base">R$ 117,60 DE PRESENTE</span>
         </div>
       </div>
     </section>
