@@ -60,17 +60,17 @@ const Index = () => {
       {/* 5. ENTREGÁVEIS DETALHADOS ("O QUE VOCÊ VAI RECEBER AGORA MESMO") */}
       <DeliverablesSection onCtaClick={scrollToCheckout} />
 
-      {/* 6. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
+      {/* 6. PROVA SOCIAL E DEPOIMENTOS ("AMADO POR PROFESSORAS E MÃES") */}
+      <TestimonialsSection />
+
+      {/* 7. SEÇÃO "VEJA POR DENTRO DO MATERIAL" */}
       <InsidePreview onCtaClick={scrollToCheckout} />
 
-      {/* 7. QUIZ INTERATIVO */}
+      {/* 8. QUIZ INTERATIVO */}
       <InteractiveQuiz onFinish={scrollToCheckout} />
 
-      {/* 8. GALERIA DE EXEMPLOS REAIS */}
+      {/* 9. GALERIA DE EXEMPLOS REAIS */}
       <GallerySection onCtaClick={scrollToCheckout} />
-
-      {/* 9. PROVA SOCIAL E DEPOIMENTOS */}
-      <TestimonialsSection />
 
       {/* 10. BÔNUS EXCLUSIVOS */}
       <BonusSection onCtaClick={scrollToCheckout} />
