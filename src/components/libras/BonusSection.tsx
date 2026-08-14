@@ -21,7 +21,7 @@ const BONUSES: BonusItem[] = [
     highlight: "Cartazes visuais com sinais de entrada, lanche, higiene, combinados de convivência e frases essenciais para afixar na parede.",
     desc: "Crie um ambiente 100% receptivo, acolhedor e visual para organizar o dia a dia do aluno surdo e de toda a turma.",
     value: "R$ 29,90",
-    image: "/bonus-sample-reference.png",
+    image: "https://i.ibb.co/x8KF09HY/bonus-1-edf-otimizado.webp",
   },
   {
     num: "02",
@@ -30,7 +30,7 @@ const BONUSES: BonusItem[] = [
     highlight: "Cartões de desafios diários para estimular a memória, expressão facial e rapidez de resposta com a turma.",
     desc: "Atividades dinâmicas que transformam o aprendizado de sinais em uma competição saudável e empolgante.",
     value: "R$ 34,90",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=80",
+    image: "https://i.ibb.co/5x9Q6Pzk/bonus-2-edf-otimizado.webp",
   },
   {
     num: "03",
@@ -39,7 +39,7 @@ const BONUSES: BonusItem[] = [
     highlight: "Propostas extras para envolver crianças surdas e ouvintes em atividades conjuntas, estimulando comunicação, interação e participação.",
     desc: "Use cartas, pareamentos, desafios e brincadeiras simples para envolver crianças surdas e ouvintes juntas.",
     value: "R$ 27,90",
-    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&auto=format&fit=crop&q=80",
+    image: "https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp",
   },
   {
     num: "04",
@@ -48,7 +48,7 @@ const BONUSES: BonusItem[] = [
     highlight: "Coleção de posters decorativos em alta definição com alfabeto dactilológico e numerais em Libras.",
     desc: "Posters ilustrados de alta qualidade prontos para molduras ou fixação direta no quadro de avisos.",
     value: "R$ 24,90",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+    image: "https://i.ibb.co/Pvht8nFx/bonus-4-edf-otimizado.webp",
   },
 ];
 
