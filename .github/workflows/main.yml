@@ -33,6 +33,6 @@ jobs:
         with:
           server: ftp://185.211.7.70
           username: u255414111
-          password: ${{ @Anderson123 }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
           server-dir: public_html/
