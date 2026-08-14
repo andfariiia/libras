@@ -1,0 +1,38 @@
+name: Deploy Automatico Hostinger
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar codigo fonte
+        uses: actions/checkout@v4
+
+      - name: Configurar pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      - name: Instalar dependencias
+        run: pnpm install
+
+      - name: Gerar arquivos de build
+        run: pnpm build
+
+      - name: Enviar para a Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ftp://185.211.7.70
+          username: u255414111
+          password: ${{ @Anderson123 }}
+          local-dir: dist/
+          server-dir: public_html/
