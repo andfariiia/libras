@@ -31,7 +31,7 @@ jobs:
       - name: Enviar para a Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp://185.211.7.70
+          server: 185.211.7.70
           username: u255414111
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
