@@ -3,6 +3,7 @@
 import React from "react";
 import { UrgencyHeader } from "@/components/libras/UrgencyHeader";
 import { HeroSection } from "@/components/libras/HeroSection";
+import { TripleCarouselSection } from "@/components/libras/TripleCarouselSection";
 import { PainPointsSection } from "@/components/libras/PainPointsSection";
 import { SolutionSection } from "@/components/libras/SolutionSection";
 import { DeliverablesSection } from "@/components/libras/DeliverablesSection";
@@ -45,37 +46,40 @@ const Index = () => {
       {/* 1. BARRA FIXA DE URGÊNCIA */}
       <UrgencyHeader onCtaClick={scrollToCheckout} />
 
-      {/* 2. HERO SECTION COM CARROSSEL "VEJA POR DENTRO" */}
+      {/* 2. HERO SECTION */}
       <HeroSection onCtaClick={scrollToCheckout} />
 
-      {/* 3. PAIN POINTS "DORES REAIS" */}
+      {/* 3. SEÇÃO DOS 3 CARROSSEIS ("+ de 240 Atividades e Jogos em Libras") */}
+      <TripleCarouselSection onCtaClick={scrollToCheckout} />
+
+      {/* 4. PAIN POINTS "DORES REAIS" */}
       <PainPointsSection onCtaClick={scrollToCheckout} />
 
-      {/* 4. SOLUÇÃO E PILARES ("MÉTODO EXCLUSIVO") */}
+      {/* 5. SOLUÇÃO E PILARES ("MÉTODO EXCLUSIVO") */}
       <SolutionSection />
 
-      {/* 5. ENTREGÁVEIS DETALHADOS ("O QUE VOCÊ VAI RECEBER AGORA MESMO") */}
+      {/* 6. ENTREGÁVEIS DETALHADOS ("O QUE VOCÊ VAI RECEBER AGORA MESMO") */}
       <DeliverablesSection onCtaClick={scrollToCheckout} />
 
-      {/* 6. PROVA SOCIAL E DEPOIMENTOS ("AMADO POR PROFESSORAS E MÃES") */}
+      {/* 7. PROVA SOCIAL E DEPOIMENTOS ("AMADO POR PROFESSORAS E MÃES") */}
       <TestimonialsSection />
 
-      {/* 7. BÔNUS EXCLUSIVOS */}
+      {/* 8. BÔNUS EXCLUSIVOS */}
       <BonusSection onCtaClick={scrollToCheckout} />
 
-      {/* 8. COMPARATIVO DE DOIS CAMINHOS */}
+      {/* 9. COMPARATIVO DE DOIS CAMINHOS */}
       <TwoPathsSection onCtaClick={scrollToCheckout} />
 
-      {/* 9. TABELA DE PREÇOS E CHECKOUT ("OFERTA POR TEMPO LIMITADO") */}
+      {/* 10. TABELA DE PREÇOS E CHECKOUT ("OFERTA POR TEMPO LIMITADO") */}
       <PricingSection onSelectPlan={handleSelectPlan} />
 
-      {/* 10. SOBRE A CRIADORA ("QUEM CRIOU O MATERIAL") */}
+      {/* 11. SOBRE A CRIADORA ("QUEM CRIOU O MATERIAL") */}
       <CreatorSection />
 
-      {/* 11. PERGUNTAS FREQUENTES ("TIRE SUAS DÚVIDAS") */}
+      {/* 12. PERGUNTAS FREQUENTES ("TIRE SUAS DÚVIDAS") */}
       <FaqSection />
 
-      {/* 12. GARANTIA E RODAPÉ */}
+      {/* 13. GARANTIA E RODAPÉ */}
       <GuaranteeFooter onCtaClick={scrollToCheckout} />
     </div>
   );

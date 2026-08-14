@@ -1,0 +1,216 @@
+"use client";
+
+import React from "react";
+import { Sparkles, ArrowRight, PackageCheck } from "lucide-react";
+
+interface CardItem {
+  title: string;
+  tag: string;
+  image: string;
+}
+
+const ROW_1: CardItem[] = [
+  {
+    title: "Jogo dos Sinais — Capa e Guia",
+    tag: "Acompanhamento",
+    image: "https://i.ibb.co/9Hcs4qdz/jogo-dos-sinais-capa.webp",
+  },
+  {
+    title: "Bingo em Libras — Cartelas Ilustradas",
+    tag: "Jogo em Grupo",
+    image: "https://i.ibb.co/XrgfhVcQ/bingo-libras-1.webp",
+  },
+  {
+    title: "Baralho UNO em Libras",
+    tag: "Fixação Rápida",
+    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
+  },
+  {
+    title: "Cards Visuais de Comunicação",
+    tag: "Rotina Escolar",
+    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
+  },
+  {
+    title: "Jogo da Memória dos Sinais",
+    tag: "Atenção Visual",
+    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
+  },
+];
+
+const ROW_2: CardItem[] = [
+  {
+    title: "Atividades Práticas e Exercícios",
+    tag: "Datilologia",
+    image: "https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp",
+  },
+  {
+    title: "Cartazes da Rotina & Combinados",
+    tag: "Bônus 01",
+    image: "https://i.ibb.co/x8KF09HY/bonus-1-edf-otimizado.webp",
+  },
+  {
+    title: "Desafios de Comunicação em Libras",
+    tag: "Bônus 02",
+    image: "https://i.ibb.co/5x9Q6Pzk/bonus-2-edf-otimizado.webp",
+  },
+  {
+    title: "Dinâmicas Inclusivas em Grupo",
+    tag: "Bônus 03",
+    image: "https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp",
+  },
+  {
+    title: "Cartazes de Sinais Decorativos",
+    tag: "Bônus 04",
+    image: "https://i.ibb.co/Pvht8nFx/bonus-4-edf-otimizado.webp",
+  },
+];
+
+const ROW_3: CardItem[] = [
+  {
+    title: "Bingo em Libras — Fichas de Sorteio",
+    tag: "Turma Inteira",
+    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
+  },
+  {
+    title: "UNO Adaptado com Números e Sinais",
+    tag: "Lúdico",
+    image: "https://i.ibb.co/0ypCHLQ9/uno-libras-3.webp",
+  },
+  {
+    title: "Jogo dos Sinais — Folha de Aplicação",
+    tag: "Exercício Prático",
+    image: "https://i.ibb.co/twNSWRdS/jogo-dos-sinais-folha.webp",
+  },
+  {
+    title: "Jogo da Memória — Alfabeto & Vocabulário",
+    tag: "Raciocínio",
+    image: "https://i.ibb.co/d4kJn7Ys/memoria-dos-sinais-2.webp",
+  },
+  {
+    title: "Pranchas de Apoio à Libras",
+    tag: "Apoio Visual",
+    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
+  },
+];
+
+export const TripleCarouselSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
+  return (
+    <section className="py-12 sm:py-20 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800/80">
+      {/* Background Glows */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10 mb-8 sm:mb-12">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-purple-500/20 border border-cyan-500/40 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-4 shadow-lg shadow-cyan-500/10">
+          <PackageCheck className="w-4 h-4 text-cyan-400" />
+          <span>O QUE VOCÊ VAI RECEBER NO KIT COMPLETO</span>
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-3">
+          + de 240 Atividades e Jogos em Libras
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto font-medium">
+          Confira abaixo uma prévia dos materiais incríveis e prontos para imprimir que você terá acesso imediato:
+        </p>
+      </div>
+
+      {/* THREE CAROUSELS CONTAINER */}
+      <div className="space-y-5 sm:space-y-6 relative w-full overflow-hidden">
+        
+        {/* CAROUSEL 1 — MOVING LEFT */}
+        <div className="relative w-full overflow-hidden py-1">
+          <div className="animate-marquee-slow flex items-center gap-4 sm:gap-6">
+            {[...ROW_1, ...ROW_1, ...ROW_1].map((item, idx) => (
+              <div
+                key={idx}
+                className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-cyan-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
+              >
+                <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                    {item.tag}
+                  </span>
+                </div>
+                <p className="text-xs font-black text-white leading-snug truncate">
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CAROUSEL 2 — MOVING RIGHT (REVERSE) */}
+        <div className="relative w-full overflow-hidden py-1">
+          <div className="animate-marquee-reverse flex items-center gap-4 sm:gap-6">
+            {[...ROW_2, ...ROW_2, ...ROW_2].map((item, idx) => (
+              <div
+                key={idx}
+                className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-amber-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
+              >
+                <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-amber-300 border border-amber-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                    {item.tag}
+                  </span>
+                </div>
+                <p className="text-xs font-black text-white leading-snug truncate">
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CAROUSEL 3 — MOVING LEFT */}
+        <div className="relative w-full overflow-hidden py-1">
+          <div className="animate-marquee-slow flex items-center gap-4 sm:gap-6">
+            {[...ROW_3, ...ROW_3, ...ROW_3].map((item, idx) => (
+              <div
+                key={idx}
+                className="w-56 sm:w-64 shrink-0 bg-slate-900/90 rounded-2xl p-3 border border-slate-800 text-left flex flex-col justify-between hover:border-emerald-400/50 transition-all duration-300 shadow-xl group cursor-pointer"
+              >
+                <div className="w-full aspect-[4/5] rounded-xl border border-slate-800 overflow-hidden bg-slate-950 mb-2.5 relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-2 left-2 bg-slate-950/80 backdrop-blur-md text-emerald-300 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                    {item.tag}
+                  </span>
+                </div>
+                <p className="text-xs font-black text-white leading-snug truncate">
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      {/* BOTTOM CTA BUTTON */}
+      <div className="mt-10 sm:mt-14 text-center px-4 relative z-10">
+        <button
+          onClick={onCtaClick}
+          className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-sm sm:text-base font-black text-slate-950 bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 rounded-2xl shadow-2xl shadow-cyan-500/25 hover:scale-105 transition-all cursor-pointer uppercase tracking-wider"
+        >
+          <span>QUERO GARANTIR O KIT COMPLETO AGORA</span>
+          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+        </button>
+      </div>
+    </section>
+  );
+};
