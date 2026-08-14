@@ -5,88 +5,152 @@ import { CheckCircle2, ShieldCheck, Download, Printer, Zap, Lock, Star, ArrowRig
 
 interface CarouselItem {
   title: string;
-  image?: string;
-  customContent?: React.ReactNode;
+  image: string;
 }
 
 const CAROUSEL_ITEMS: CarouselItem[] = [
+  {
+    title: "Jogo dos Sinais — Capa e Guia",
+    image: "https://i.ibb.co/9Hcs4qdz/jogo-dos-sinais-capa.webp",
+  },
+  {
+    title: "Jogo dos Sinais — Cards Visuais",
+    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
+  },
+  {
+    title: "Bingo em Libras — Cartelas Ilustradas",
+    image: "https://i.ibb.co/XrgfhVcQ/bingo-libras-1.webp",
+  },
+  {
+    title: "Baralho UNO em Libras — Edição Especial",
+    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
+  },
+  {
+    title: "Jogo dos Sinais — Atividades de Fixação",
+    image: "https://i.ibb.co/twNSWRdS/jogo-dos-sinais-folha.webp",
+  },
   {
     title: "Jogo da Memória dos Sinais em Libras",
     image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
   },
   {
-    title: "Cards e Atividades Visuais da Rotina",
-    image: "https://i.ibb.co/27sZ12B5/image.png",
+    title: "Atividades Práticas e Exercícios em Libras",
+    image: "https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp",
   },
   {
-    title: "Jogos Didáticos & Material Lúdico Ilustrado",
-    image: "https://i.ibb.co/FbfBhJSM/image.png",
+    title: "Bingo em Libras — Fichas de Sorteio",
+    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
   },
   {
-    title: "Card Ilustrado — Jogo da Memória dos Sinais",
-    customContent: (
-      <div className="w-full h-64 bg-slate-50 rounded-2xl border-2 border-cyan-500/70 p-3 flex flex-col items-center justify-center relative shadow-inner">
-        <div className="w-28 h-28 rounded-full bg-cyan-100/80 flex items-center justify-center text-5xl mb-3 shadow-xs">
-          👧🏻
-        </div>
-        <div className="bg-white px-6 py-1.5 rounded-xl border border-slate-200 font-extrabold text-slate-800 text-sm shadow-xs tracking-wider">
-          AMIGO
-        </div>
-      </div>
-    ),
+    title: "Baralho UNO em Libras — Sinais e Números",
+    image: "https://i.ibb.co/0ypCHLQ9/uno-libras-3.webp",
   },
   {
-    title: "Cards Coloridos de Sinais e Cores",
-    customContent: (
-      <div className="w-full h-64 bg-slate-50 rounded-2xl p-2.5 grid grid-cols-3 gap-1.5 border border-slate-200">
-        {[
-          { text: "Lilás", bg: "bg-purple-200 text-purple-900 border-dashed border-purple-400" },
-          { text: "Cinza", bg: "bg-gray-200 text-gray-800 border-dashed border-gray-400" },
-          { text: "Rosa", bg: "bg-pink-200 text-pink-900 border-dashed border-pink-400" },
-          { text: "Preto", bg: "bg-slate-900 text-white font-bold" },
-          { text: "Marrom", bg: "bg-amber-800 text-amber-100 font-bold" },
-          { text: "Branco", bg: "bg-white text-slate-700 border border-slate-300" },
-          { text: "Roxo", bg: "bg-purple-600 text-white font-bold" },
-          { text: "Laranja", bg: "bg-orange-400 text-slate-900 font-bold" },
-          { text: "Amarelo", bg: "bg-yellow-200 text-yellow-900 border border-yellow-400" },
-          { text: "Azul", bg: "bg-blue-500 text-white font-bold" },
-          { text: "Verde", bg: "bg-emerald-500 text-white font-bold" },
-          { text: "Vermelho", bg: "bg-rose-600 text-white font-bold" },
-        ].map((c, i) => (
-          <div key={i} className={`${c.bg} rounded-lg flex items-center justify-center text-[10px] font-black p-1 text-center`}>
-            {c.text}
-          </div>
-        ))}
-      </div>
-    ),
+    title: "Jogo da Memória dos Sinais — Cartas Visuais",
+    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
   },
   {
-    title: "Baralho UNO Adaptado em Libras",
-    customContent: (
-      <div className="w-full h-64 bg-gradient-to-br from-rose-500 via-amber-400 to-teal-500 rounded-2xl p-4 flex flex-col items-center justify-center text-white font-black text-center relative shadow-md">
-        <div className="bg-slate-950/90 border border-white/60 px-4 py-2 rounded-2xl text-xl shadow-md mb-2">
-          🎲 UNO LIBRAS
-        </div>
-        <p className="text-[11px] font-medium text-slate-100 max-w-[180px]">Baralho completo com datilologia, números e ações</p>
-      </div>
-    ),
+    title: "Jogo da Memória dos Sinais — Alfabeto & Vocabulário",
+    image: "https://i.ibb.co/d4kJn7Ys/memoria-dos-sinais-2.webp",
   },
   {
-    title: "Bingo do Alfabeto em Libras (20 Cartelas)",
-    customContent: (
-      <div className="w-full h-64 bg-slate-50 rounded-2xl p-3 border border-slate-200 flex flex-col items-center justify-between">
-        <div className="bg-indigo-600 text-white font-black px-4 py-1 rounded-lg text-xs tracking-wider uppercase">
-          BINGO LIBRAS
+    title: "Bingo de Libras para Turmas",
+    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
+  },
+  {
+    title: "UNO Adaptado com Datilologia",
+    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
+  },
+];
+
+export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
+  return (
+    <section className="relative pt-6 pb-12 md:pt-10 md:pb-16 overflow-hidden bg-slate-950 text-white">
+      {/* Background Mesh Gradients & Glow Orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/15 rounded-full blur-[140px] pointer-events-none animate-pulseGlow" />
+      <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[350px] h-[350px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+        {/* Top BNCC Pill */}
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 text-emerald-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)] mb-5">
+          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+          <span>Alinhado 100% à BNCC 2026</span>
         </div>
-        <div className="grid grid-cols-4 gap-1.5 w-full my-auto">
-          {["A 🤟", "B ✊", "C 🖐️", "D ✌️", "E 🤏", "F 🤞", "G 👆", "H 👈"].map((b, i) => (
-            <div key={i} className="bg-white border border-indigo-200 rounded-lg p-1.5 text-center font-bold text-[9px] text-slate-800">
-              {b}
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
+
+        {/* H1 Main Title */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] max-w-4xl mx-auto mb-4">
+          Jogos em Libras:{" "}
+          <span className="bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
+            aprender brincando, incluir de verdade
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p<dyad-write path="src/components/libras/HeroSection.tsx" description="Atualizando as imagens do carrossel da seção 'Veja os jogos e materiais que você recebe'">
+"use client";
+
+import React from "react";
+import { CheckCircle2, ShieldCheck, Download, Printer, Zap, Lock, Star, ArrowRight } from "lucide-react";
+
+interface CarouselItem {
+  title: string;
+  image: string;
+}
+
+const CAROUSEL_ITEMS: CarouselItem[] = [
+  {
+    title: "Jogo dos Sinais — Capa e Guia",
+    image: "https://i.ibb.co/9Hcs4qdz/jogo-dos-sinais-capa.webp",
+  },
+  {
+    title: "Jogo dos Sinais — Cards Visuais",
+    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
+  },
+  {
+    title: "Bingo em Libras — Cartelas Ilustradas",
+    image: "https://i.ibb.co/XrgfhVcQ/bingo-libras-1.webp",
+  },
+  {
+    title: "Baralho UNO em Libras — Edição Especial",
+    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
+  },
+  {
+    title: "Jogo dos Sinais — Atividades de Fixação",
+    image: "https://i.ibb.co/twNSWRdS/jogo-dos-sinais-folha.webp",
+  },
+  {
+    title: "Jogo da Memória dos Sinais em Libras",
+    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
+  },
+  {
+    title: "Atividades Práticas e Exercícios em Libras",
+    image: "https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp",
+  },
+  {
+    title: "Bingo em Libras — Fichas de Sorteio",
+    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
+  },
+  {
+    title: "Baralho UNO em Libras — Sinais e Números",
+    image: "https://i.ibb.co/0ypCHLQ9/uno-libras-3.webp",
+  },
+  {
+    title: "Jogo da Memória dos Sinais — Cartas Visuais",
+    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
+  },
+  {
+    title: "Jogo da Memória dos Sinais — Alfabeto & Vocabulário",
+    image: "https://i.ibb.co/d4kJn7Ys/memoria-dos-sinais-2.webp",
+  },
+  {
+    title: "Bingo de Libras para Turmas",
+    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
+  },
+  {
+    title: "UNO Adaptado com Datilologia",
+    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
   },
 ];
 
@@ -241,13 +305,9 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
                 >
                   {/* Card Visual Content Container */}
                   <div className="mb-3">
-                    {item.image ? (
-                      <div className="w-full h-64 rounded-2xl border border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center">
-                        <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                      </div>
-                    ) : (
-                      item.customContent
-                    )}
+                    <div className="w-full h-64 rounded-2xl border border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center">
+                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                    </div>
                   </div>
 
                   {/* Caption underneath card */}
