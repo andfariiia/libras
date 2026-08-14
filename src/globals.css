@@ -58,7 +58,7 @@
 .animate-marquee-slow {
   display: flex;
   width: max-content;
-  animation: marquee-left 35s linear infinite;
+  animation: marquee-left 65s linear infinite;
 }
 
 .animate-marquee-slow:hover {

@@ -205,22 +205,26 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </p>
 
           {/* Automatic Infinite Scrolling Carousel (Right to Left) */}
-          <div className="relative w-full overflow-hidden py-4 px-2">
+          <div className="relative w-full overflow-hidden py-4 px-1">
             <div className="animate-marquee-slow flex items-center gap-6">
               {[...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS, ...CAROUSEL_ITEMS].map((item, idx) => (
                 <div
                   key={idx}
-                  className="w-72 sm:w-80 shrink-0 bg-white rounded-3xl p-3.5 border border-slate-200/90 text-center flex flex-col justify-between transition-transform duration-300 hover:scale-[1.01] shadow-xs cursor-pointer"
+                  className="w-80 sm:w-[380px] shrink-0 bg-white rounded-3xl p-3 border border-slate-200/90 text-center flex flex-col justify-between transition-transform duration-300 hover:scale-[1.01] shadow-md cursor-pointer"
                 >
-                  {/* Card Visual Content Container */}
-                  <div className="mb-3">
-                    <div className="w-full h-64 rounded-2xl border border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center">
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                  {/* Card Visual Content Container - Rectangular Aspect Ratio */}
+                  <div className="mb-2.5">
+                    <div className="w-full h-48 sm:h-56 rounded-2xl border border-slate-200/80 overflow-hidden bg-slate-50 flex items-center justify-center">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
 
                   {/* Caption underneath card */}
-                  <p className="text-xs font-extrabold text-slate-800 leading-snug px-2 pt-0.5 pb-1">
+                  <p className="text-xs font-extrabold text-slate-800 leading-snug px-2 py-0.5">
                     {item.title}
                   </p>
                 </div>
