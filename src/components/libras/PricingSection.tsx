@@ -90,21 +90,69 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
               </div>
             </div>
 
-            {/* Plan 2: RECOMMENDED FULL KIT (R$ 27,00) */}
+            {/* Plan 2: RECOMMENDED FULL KIT (R$ 27,00) - Exact layout from image */}
             <div className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-2 border-cyan-400 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl shadow-cyan-500/25">
-              {/* Top Badge */}
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-slate-950 font-black text-xs px-4 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap">
-                <Star className="w-3.5 h-3.5 fill-slate-950" /> MAIS VENDIDO — ACESSO COMPLETO + 4 BÔNUS
+              {/* Top Badge ★ RECOMENDADO em azul */}
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-black text-xs px-5 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap uppercase tracking-wider">
+                ★ RECOMENDADO
               </div>
 
               <div>
-                <div className="mt-2 mb-5 text-center sm:text-left">
-                  <span className="text-xs uppercase font-bold text-cyan-400 tracking-wider">HOJE POR APENAS:</span>
-                  <div className="flex items-baseline gap-1 mt-0.5">
-                    <span className="text-2xl font-black text-cyan-300">R$</span>
-                    <span className="text-5xl font-black text-cyan-300">27,00</span>
+                {/* Header info */}
+                <div className="text-center pt-2 mb-5">
+                  <span className="text-[11px] font-black uppercase tracking-widest text-cyan-400 block mb-1">
+                    ACESSO COMPLETO + BÔNUS
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    Kit Libras na Prática
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1">
+                    O método definitivo para{" "}
+                    <span className="text-teal-300 font-bold">
+                      comunicação mais clara e inclusiva
+                    </span>
+                  </p>
+                </div>
+
+                {/* Quadro "VALOR INDIVIDUAL DOS MATERIAIS:" */}
+                <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 mb-5 text-xs text-left shadow-inner">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block mb-2.5">
+                    VALOR INDIVIDUAL DOS MATERIAIS:
+                  </span>
+                  <div className="space-y-2 font-medium text-slate-300">
+                    <div className="flex justify-between items-center">
+                      <span>Atividades de Sinais Básicos</span>
+                      <span className="line-through text-slate-500 font-mono">R$ 24,90</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Cartazes de Libras</span>
+                      <span className="line-through text-slate-500 font-mono">R$ 24,90</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Dinâmicas Inclusivas em Grupo</span>
+                      <span className="line-through text-slate-500 font-mono">R$ 24,00</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span>Dinâmicas Inclusivas</span>
+                      <span className="line-through text-slate-500 font-mono">R$ 24,10</span>
+                    </div>
                   </div>
-                  <span className="text-xs text-emerald-400 font-bold block mt-1">Pagamento Único • Acesso Vitalício</span>
+                  <div className="w-full h-px bg-slate-800 my-3" />
+                  <div className="flex justify-between items-center font-black">
+                    <span className="text-white uppercase tracking-wider">VALOR TOTAL:</span>
+                    <span className="text-blue-400 text-sm font-mono font-bold">R$ 97,90</span>
+                  </div>
+                </div>
+
+                {/* Bloco HOJE POR APENAS */}
+                <div className="text-center mb-6">
+                  <span className="text-xs font-black uppercase tracking-widest text-cyan-400 block mb-1">
+                    HOJE POR APENAS:
+                  </span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-3xl sm:text-4xl font-black text-teal-300">R$</span>
+                    <span className="text-5xl sm:text-6xl font-black text-teal-300">27,00</span>
+                  </div>
                 </div>
 
                 {/* Checklist idêntica à foto */}
