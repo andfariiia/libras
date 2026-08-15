@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2, ShieldCheck, Download, Printer, Zap, Lock, Star, ArrowRight } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Zap, Lock, Star, ArrowRight } from "lucide-react";
 
 interface CarouselItem {
   title: string;
@@ -156,36 +156,6 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
               <Zap className="w-3.5 h-3.5 text-amber-400" /> ACESSO IMEDIATO
             </span>
           </div>
-        </div>
-
-        {/* Action Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-6 text-xs sm:text-sm font-semibold text-slate-200">
-          <span className="bg-slate-900/80 backdrop-blur-md border border-slate-800 px-4 py-1.5 rounded-2xl flex items-center gap-2 shadow-lg">
-            <Download className="w-4 h-4 text-cyan-400" /> Baixe na hora
-          </span>
-          <span className="bg-slate-900/80 backdrop-blur-md border border-slate-800 px-4 py-1.5 rounded-2xl flex items-center gap-2 shadow-lg">
-            <Printer className="w-4 h-4 text-teal-400" /> Imprima ilimitado
-          </span>
-          <span className="bg-slate-900/80 backdrop-blur-md border border-slate-800 px-4 py-2 rounded-2xl flex items-center gap-2 shadow-lg">
-            <Zap className="w-4 h-4 text-amber-400" /> Use imediato
-          </span>
-        </div>
-
-        {/* Key Advantages Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto mb-8 text-left">
-          {[
-            "Sem faculdade de Libras",
-            "Pronto para aplicar hoje",
-            "Para escola, casa e reforço",
-            "Comunicação imediata",
-          ].map((item, idx) => (
-            <div key={idx} className="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-3.5 flex items-center gap-2.5 backdrop-blur-md">
-              <div className="w-6 h-6 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center font-bold text-xs shrink-0 border border-teal-500/30">
-                ✓
-              </div>
-              <span className="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">{item}</span>
-            </div>
-          ))}
         </div>
 
         {/* SHOWCASE CAROUSEL SECTION */}
