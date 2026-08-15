@@ -31,40 +31,6 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
     <>
       <section id="checkout" className="py-8 md:py-14 bg-slate-950 text-white relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          {/* Top Red Pill Badge - Identical to reference image<dyad-write path="src/components/libras/PricingSection.tsx" description="Alterando o texto do badge azul do Kit Completo de RECOMENDADO para MAIS VENDIDO">
-"use client";
-
-import React, { useState } from "react";
-import { Check, Lock, Zap, Star, Sparkles, ArrowRight, X, AlertTriangle, ShieldCheck, Clock } from "lucide-react";
-
-export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: string) => void }) => {
-  const [showUpsellModal, setShowUpsellModal] = useState(false);
-
-  // Formata a data atual automaticamente no formato DD/MM/YY (ex: 15/08/26)
-  const todayFormatted = new Date().toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "2-digit",
-  });
-
-  const handleBasicClick = () => {
-    setShowUpsellModal(true);
-  };
-
-  const handleAcceptUpsell = () => {
-    setShowUpsellModal(false);
-    onSelectPlan("R$ 17,90");
-  };
-
-  const handleDeclineUpsell = () => {
-    setShowUpsellModal(false);
-    onSelectPlan("R$ 10,00");
-  };
-
-  return (
-    <>
-      <section id="checkout" className="py-8 md:py-14 bg-slate-950 text-white relative">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           {/* Top Red Pill Badge - Identical to reference image */}
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-lg shadow-red-600/30 mb-4 border border-red-400/40">
             <Clock className="w-4 h-4 fill-white/20 text-white shrink-0" />
@@ -149,7 +115,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
               </div>
             </div>
 
-            {/* Plan 2: RECOMMENDED FULL KIT (R$ 27,00) */}
+            {/* Plan 2: RECOMMENDED FULL KIT (R$ 27,90) */}
             <div className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-2 border-cyan-400 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl shadow-cyan-500/25">
               {/* Top Badge ★ MAIS VENDIDO em azul */}
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-black text-xs px-5 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap uppercase tracking-wider">
@@ -210,7 +176,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
                   </span>
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-3xl sm:text-4xl font-black text-teal-300">R$</span>
-                    <span className="text-5xl sm:text-6xl font-black text-teal-300">27,00</span>
+                    <span className="text-5xl sm:text-6xl font-black text-teal-300">27,90</span>
                   </div>
                 </div>
 
@@ -276,10 +242,10 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
 
               <div>
                 <button
-                  onClick={() => onSelectPlan("R$ 27,00")}
+                  onClick={() => onSelectPlan("R$ 27,90")}
                   className="w-full py-4 px-5 rounded-2xl bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-cyan-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
                 >
-                  <span>QUERO O KIT COMPLETO — R$ 27,00</span>
+                  <span>QUERO O KIT COMPLETO — R$ 27,90</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
 
@@ -346,7 +312,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
             </div>
 
             <div className="bg-gradient-to-r from-amber-950/80 to-emerald-950/80 border border-amber-500/40 rounded-2xl p-3 flex items-center justify-between text-xs">
-              <span className="text-slate-300 font-medium">De <span className="line-through text-slate-500">R$ 27,00</span> por apenas:</span>
+              <span className="text-slate-300 font-medium">De <span className="line-through text-slate-500">R$ 27,90</span> por apenas:</span>
               <span className="text-2xl font-black text-emerald-400 font-mono">R$ 17,90</span>
             </div>
 
