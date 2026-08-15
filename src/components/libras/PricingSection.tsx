@@ -1,10 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, Lock, Zap, Star, Sparkles, ArrowRight, X, AlertTriangle, ShieldCheck } from "lucide-react";
+import { Check, Lock, Zap, Star, Sparkles, ArrowRight, X, AlertTriangle, ShieldCheck, Clock } from "lucide-react";
 
 export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: string) => void }) => {
   const [showUpsellModal, setShowUpsellModal] = useState(false);
+
+  // Formata a data atual automaticamente no formato DD/MM/YY (ex: 15/08/26)
+  const todayFormatted = new Date().toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  });
 
   const handleBasicClick = () => {
     setShowUpsellModal(true);
@@ -24,18 +31,16 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
     <>
       <section id="checkout" className="py-8 md:py-14 bg-slate-950 text-white relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          {/* Section Header */}
-          <span className="text-xs font-black uppercase tracking-widest text-cyan-300 bg-cyan-950 border border-cyan-500/40 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.2)]">
-            OFERTA POR TEMPO LIMITADO
-          </span>
+          {/* Top Red Pill Badge - Identical to reference image */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-lg shadow-red-600/30 mb-4 border border-red-400/40">
+            <Clock className="w-4 h-4 fill-white/20 text-white shrink-0" />
+            <span>OFERTA LIMITADA - Apenas no dia {todayFormatted}</span>
+          </div>
 
-          <h2 className="text-3xl sm:text-5xl font-black mt-3 mb-2 tracking-tight">
-            Escolha a melhor opção para você
+          {/* H2 Title - Identical to reference image */}
+          <h2 className="text-3xl sm:text-5xl font-black mt-1 mb-8 tracking-tight text-white">
+            Escolha Sua Oferta Especial
           </h2>
-
-          <p className="text-sm sm:text-base text-slate-400 max-w-xl mx-auto mb-8">
-            Pagamento único. Sem assinaturas, sem mensalidades ocultas. Acesso imediato no seu e-mail.
-          </p>
 
           {/* Pricing Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto text-left">
