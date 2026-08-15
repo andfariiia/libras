@@ -31,6 +31,40 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
     <>
       <section id="checkout" className="py-8 md:py-14 bg-slate-950 text-white relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          {/* Top Red Pill Badge - Identical to reference image<dyad-write path="src/components/libras/PricingSection.tsx" description="Alterando o texto do badge azul do Kit Completo de RECOMENDADO para MAIS VENDIDO">
+"use client";
+
+import React, { useState } from "react";
+import { Check, Lock, Zap, Star, Sparkles, ArrowRight, X, AlertTriangle, ShieldCheck, Clock } from "lucide-react";
+
+export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: string) => void }) => {
+  const [showUpsellModal, setShowUpsellModal] = useState(false);
+
+  // Formata a data atual automaticamente no formato DD/MM/YY (ex: 15/08/26)
+  const todayFormatted = new Date().toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  });
+
+  const handleBasicClick = () => {
+    setShowUpsellModal(true);
+  };
+
+  const handleAcceptUpsell = () => {
+    setShowUpsellModal(false);
+    onSelectPlan("R$ 17,90");
+  };
+
+  const handleDeclineUpsell = () => {
+    setShowUpsellModal(false);
+    onSelectPlan("R$ 10,00");
+  };
+
+  return (
+    <>
+      <section id="checkout" className="py-8 md:py-14 bg-slate-950 text-white relative">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           {/* Top Red Pill Badge - Identical to reference image */}
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-lg shadow-red-600/30 mb-4 border border-red-400/40">
             <Clock className="w-4 h-4 fill-white/20 text-white shrink-0" />
@@ -117,9 +151,9 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
 
             {/* Plan 2: RECOMMENDED FULL KIT (R$ 27,00) */}
             <div className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-2 border-cyan-400 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl shadow-cyan-500/25">
-              {/* Top Badge ★ RECOMENDADO em azul */}
+              {/* Top Badge ★ MAIS VENDIDO em azul */}
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-black text-xs px-5 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap uppercase tracking-wider">
-                ★ RECOMENDADO
+                ★ MAIS VENDIDO
               </div>
 
               <div>
