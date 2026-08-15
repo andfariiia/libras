@@ -4,7 +4,6 @@ import React from "react";
 import { UrgencyHeader } from "@/components/libras/UrgencyHeader";
 import { HeroSection } from "@/components/libras/HeroSection";
 import { PainPointsSection } from "@/components/libras/PainPointsSection";
-import { SolutionSection } from "@/components/libras/SolutionSection";
 import { DeliverablesSection } from "@/components/libras/DeliverablesSection";
 import { TestimonialsSection } from "@/components/libras/TestimonialsSection";
 import { TripleCarouselSection } from "@/components/libras/TripleCarouselSection";
@@ -52,34 +51,31 @@ const Index = () => {
       {/* 3. PAIN POINTS "DORES REAIS" */}
       <PainPointsSection onCtaClick={scrollToCheckout} />
 
-      {/* 4. SOLUÇÃO E PILARES ("MÉTODO EXCLUSIVO") */}
-      <SolutionSection />
-
-      {/* 5. ENTREGÁVEIS DETALHADOS ("O QUE VOCÊ VAI RECEBER AGORA MESMO") */}
+      {/* 4. ENTREGÁVEIS DETALHADOS ("O QUE VOCÊ VAI RECEBER AGORA MESMO") */}
       <DeliverablesSection onCtaClick={scrollToCheckout} />
 
-      {/* 6. PROVA SOCIAL E DEPOIMENTOS ("AMADO POR PROFESSORAS E MÃES") */}
+      {/* 5. PROVA SOCIAL E DEPOIMENTOS ("AMADO POR PROFESSORAS E MÃES") */}
       <TestimonialsSection />
 
-      {/* 7. SEÇÃO DOS 3 CARROSSEIS ("O QUE VOCÊ VAI RECEBER NO KIT COMPLETO") */}
+      {/* 6. SEÇÃO DOS 3 CARROSSEIS ("O QUE VOCÊ VAI RECEBER NO KIT COMPLETO") */}
       <TripleCarouselSection onCtaClick={scrollToCheckout} />
 
-      {/* 8. BÔNUS EXCLUSIVOS DO COMBO */}
+      {/* 7. BÔNUS EXCLUSIVOS DO COMBO */}
       <BonusSection onCtaClick={scrollToCheckout} />
 
-      {/* 9. COMPARATIVO DE DOIS CAMINHOS */}
+      {/* 8. COMPARATIVO DE DOIS CAMINHOS */}
       <TwoPathsSection onCtaClick={scrollToCheckout} />
 
-      {/* 10. TABELA DE PREÇOS E CHECKOUT ("OFERTA POR TEMPO LIMITADO") */}
+      {/* 9. TABELA DE PREÇOS E CHECKOUT ("OFERTA POR TEMPO LIMITADO") */}
       <PricingSection onSelectPlan={handleSelectPlan} />
 
-      {/* 11. SOBRE A CRIADORA ("QUEM CRIOU O MATERIAL") */}
+      {/* 10. SOBRE A CRIADORA ("QUEM CRIOU O MATERIAL") */}
       <CreatorSection />
 
-      {/* 12. PERGUNTAS FREQUENTES ("TIRE SUAS DÚVIDAS") */}
+      {/* 11. PERGUNTAS FREQUENTES ("TIRE SUAS DÚVIDAS") */}
       <FaqSection />
 
-      {/* 13. GARANTIA E RODAPÉ */}
+      {/* 12. GARANTIA E RODAPÉ */}
       <GuaranteeFooter onCtaClick={scrollToCheckout} />
     </div>
   );
