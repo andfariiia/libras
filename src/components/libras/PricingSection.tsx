@@ -39,32 +39,53 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
 
           {/* Pricing Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto text-left">
-            {/* Plan 1: Basic Plan (R$ 10,00) */}
-            <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
+            
+            {/* Plan 1: Basic Plan (Básico Inclusão - Exact layout from image) */}
+            <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl text-center sm:text-center">
               <div>
-                <h3 className="text-xl font-bold text-slate-200">Plano Básico</h3>
-                <p className="text-xs text-slate-400 mt-1 mb-5">Para quem busca apenas o essencial.</p>
+                <span className="text-[11px] font-black uppercase tracking-widest text-slate-400 block mb-3">
+                  PLANO INDIVIDUAL
+                </span>
 
-                <div className="mb-5">
-                  <span className="text-xs text-slate-500">Preço normal: R$ 49,90</span>
-                  <div className="flex items-baseline gap-1 mt-1">
-                    <span className="text-sm font-bold text-slate-400">R$</span>
-                    <span className="text-4xl font-extrabold text-white">10,00</span>
+                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
+                  Básico Inclusão
+                </h3>
+
+                <p className="text-xs sm:text-sm text-slate-300 font-medium max-w-xs mx-auto leading-relaxed mb-6">
+                  Para quem precisa começar com sinais e atividades práticas agora.
+                </p>
+
+                <div className="mb-6">
+                  <span className="text-xs text-slate-500 line-through font-mono block mb-1">
+                    R$ 47,00
+                  </span>
+                  <div className="flex items-baseline justify-center gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-black text-white">R$</span>
+                    <span className="text-5xl sm:text-6xl font-black text-white tracking-tight">10,00</span>
                   </div>
-                  <span className="text-[11px] text-slate-400">Pagamento Único</span>
                 </div>
 
-                <ul className="space-y-3 text-xs sm:text-sm text-slate-300 mb-6">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Apenas 100 atividades básicas em PDF</span>
+                {/* Checklist idêntica à imagem fornecida */}
+                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-200 mb-8 font-medium text-left max-w-xs mx-auto">
+                  <li className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0">
+                      <Check className="w-3.5 h-3.5 text-emerald-300 stroke-[3]" />
+                    </div>
+                    <span>100 Atividades Básicas de Libras</span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Sem bônus inclusos</span>
+
+                  <li className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0">
+                      <Check className="w-3.5 h-3.5 text-emerald-300 stroke-[3]" />
+                    </div>
+                    <span>Atividades organizadas por tema</span>
                   </li>
-                  <li className="flex items-center gap-2.5 text-slate-600 line-through">
-                    <span>Sem UNO e Bingo completos</span>
+
+                  <li className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0">
+                      <Check className="w-3.5 h-3.5 text-emerald-300 stroke-[3]" />
+                    </div>
+                    <span>Acesso Vitalício</span>
                   </li>
                 </ul>
               </div>
@@ -72,10 +93,9 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
               <div>
                 <button
                   onClick={handleBasicClick}
-                  className="w-full py-4 px-5 rounded-2xl bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-cyan-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
+                  className="w-full py-4 px-5 rounded-2xl bg-white hover:bg-slate-100 text-slate-950 font-black text-sm sm:text-base border-2 border-slate-900 shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
                 >
-                  <span>ESCOLHER PLANO BÁSICO — R$ 10,00</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <span>QUERO COMEÇAR COM LIBRAS</span>
                 </button>
 
                 <div className="flex items-center justify-center gap-4 mt-3 text-[11px] text-slate-400">
@@ -90,7 +110,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
               </div>
             </div>
 
-            {/* Plan 2: RECOMMENDED FULL KIT (R$ 27,00) - Exact layout from image */}
+            {/* Plan 2: RECOMMENDED FULL KIT (R$ 27,00) */}
             <div className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-2 border-cyan-400 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl shadow-cyan-500/25">
               {/* Top Badge ★ RECOMENDADO em azul */}
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-black text-xs px-5 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap uppercase tracking-wider">
