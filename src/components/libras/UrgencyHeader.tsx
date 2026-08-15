@@ -12,6 +12,14 @@ const RECENT_SALES = [
   { name: "Profa. Renata T.", city: "Porto Alegre - RS", time: "há 3 min" },
 ];
 
+const TICKER_ITEMS = [
+  "🔥 OFERTA ESPECIAL DE HOJE",
+  "⚡ +240 JOGOS EM LIBRAS",
+  "🎯 +100 DINÂMICAS EM LIBRAS",
+  "🃏 UNO EM LIBRAS",
+  "🎲 BINGO E MUITO MAIS...",
+];
+
 export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
   const [timeLeft, setTimeLeft] = useState(582);
   const [currentSaleIndex, setCurrentSaleIndex] = useState(0);
@@ -56,36 +64,39 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
     <>
       {/* Red Modern High-Impact Sticky Top Bar */}
-      <header className="sticky top-0 z-50 bg-gradient-to-r from-red-950 via-slate-950 to-red-950 backdrop-blur-xl border-b border-red-500/40 shadow-[0_4px_25px_rgba(220,38,38,0.3)] py-2.5 px-4 text-xs sm:text-sm font-semibold transition-all">
-        <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
-          <div className="flex items-center justify-center gap-3 w-full sm:w-auto text-center mx-auto sm:mx-0">
-            {/* Pulsing Red Dot */}
-            <span className="relative flex h-3 w-3 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-80"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 shadow-[0_0_10px_#ef4444]"></span>
-            </span>
-
-            {/* Label with Flame */}
-            <span className="text-white font-black tracking-wider text-xs sm:text-sm uppercase flex items-center gap-1.5 drop-shadow">
-              <Flame className="w-4 h-4 text-amber-400 animate-bounce shrink-0" />
-              <span className="hidden xs:inline text-red-200">Atenção:</span> Oferta Especial Expira Em:
-            </span>
-
-            {/* Glowing Red Timer */}
-            <div className="bg-gradient-to-r from-red-600 to-rose-600 text-white font-mono font-black px-3 py-1 rounded-xl border border-red-300/50 shadow-[0_0_18px_rgba(239,68,68,0.5)] tracking-widest text-xs sm:text-sm flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
-              <span>{formatTime(timeLeft)}</span>
+      <header className="sticky top-0 z-50 bg-gradient-to-r from-red-950 via-slate-950 to-red-950 backdrop-blur-xl border-b border-red-500/40 shadow-[0_4px_25px_rgba(220,38,38,0.35)] py-2.5 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+          
+          {/* Continuous Right-to-Left Ticker Bar */}
+          <div className="relative w-full sm:w-auto flex-1 overflow-hidden py-0.5">
+            <div className="animate-marquee-slow flex items-center whitespace-nowrap gap-6 text-xs sm:text-sm font-black text-amber-300 uppercase tracking-wide">
+              {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, idx) => (
+                <span key={idx} className="flex items-center gap-2 shrink-0">
+                  <span className="text-white font-extrabold">{item}</span>
+                  <span className="text-red-400 font-bold">•</span>
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* CTA Action Badge */}
-          <button
-            onClick={onCtaClick}
-            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 text-slate-950 font-black px-4 py-1.5 rounded-full text-xs sm:text-sm transition-all hover:scale-105 shadow-lg shadow-amber-500/25 cursor-pointer uppercase tracking-wide shrink-0"
-          >
-            <span>71% OFF GARANTIDO</span>
-            <Sparkles className="w-4 h-4 text-slate-950" />
-          </button>
+          {/* Right Side: Timer & Action Button */}
+          <div className="flex items-center gap-2.5 shrink-0">
+            {/* Timer Badge */}
+            <div className="bg-gradient-to-r from-red-600 to-rose-600 text-white font-mono font-black px-3 py-1 rounded-xl border border-red-300/50 shadow-[0_0_15px_rgba(239,68,68,0.5)] tracking-widest text-xs sm:text-sm flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-amber-300 animate-pulse shrink-0" />
+              <span>{formatTime(timeLeft)}</span>
+            </div>
+
+            {/* CTA Button */}
+            <button
+              onClick={onCtaClick}
+              className="flex items-center gap-1.5 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 text-slate-950 font-black px-3.5 py-1 rounded-full text-xs sm:text-sm transition-all hover:scale-105 shadow-md shadow-amber-500/25 cursor-pointer uppercase tracking-wider shrink-0"
+            >
+              <span>GARANTIR 71% OFF</span>
+              <Sparkles className="w-3.5 h-3.5 text-slate-950" />
+            </button>
+          </div>
+
         </div>
       </header>
 
