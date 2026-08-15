@@ -98,39 +98,71 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
               </div>
 
               <div>
-                <div className="mt-2 mb-5">
-                  <span className="text-xs text-rose-400 line-through font-semibold">De R$ 97,90</span>
-                  <div className="flex items-baseline gap-1 mt-1">
-                    <span className="text-sm font-bold text-cyan-300">Por apenas</span>
-                    <span className="text-5xl font-black text-amber-300">R$ 27,00</span>
+                <div className="mt-2 mb-5 text-center sm:text-left">
+                  <span className="text-xs uppercase font-bold text-cyan-400 tracking-wider">HOJE POR APENAS:</span>
+                  <div className="flex items-baseline gap-1 mt-0.5">
+                    <span className="text-2xl font-black text-cyan-300">R$</span>
+                    <span className="text-5xl font-black text-cyan-300">27,00</span>
                   </div>
-                  <span className="text-xs text-emerald-400 font-bold">Pagamento Único • Sem mensalidades</span>
+                  <span className="text-xs text-emerald-400 font-bold block mt-1">Pagamento Único • Acesso Vitalício</span>
                 </div>
 
-                <ul className="space-y-3 text-xs sm:text-sm text-slate-200 mb-6">
-                  <li className="flex items-center gap-2.5 font-bold text-white">
-                    <Check className="w-4 h-4 text-cyan-400 shrink-0 font-bold" />
-                    <span>+240 Jogos e Atividades em Libras</span>
+                {/* Checklist idêntica à foto */}
+                <ul className="space-y-3 text-xs sm:text-sm text-slate-200 mb-6 font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                    </div>
+                    <span className="font-bold text-white">+240 Jogos em Libras Prontos para Imprimir</span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyan-400 shrink-0 font-bold" />
-                    <span>UNO de Libras + Bingo Completo (20 cartelas)</span>
+
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                    </div>
+                    <span>Temas organizados por sinal, rotina, emoção e necessidade da criança</span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyan-400 shrink-0 font-bold" />
-                    <span>Jogo da Memória + Cards de Comunicação</span>
+
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                    </div>
+                    <span>Acesso Permanente e Imediato</span>
                   </li>
-                  <li className="flex items-center gap-2.5 text-amber-300 font-bold">
-                    <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span>4 BÔNUS EXCLUSIVOS INCLUSOS</span>
+
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                    </div>
+                    <span>Jogos Visuais e Atividades Inclusivas</span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyan-400 shrink-0 font-bold" />
-                    <span>Acesso Vitalício + Atualizações</span>
+
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                    </div>
+                    <span>Roteiros Prontos para Aplicar</span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyan-400 shrink-0 font-bold" />
-                    <span>Garantia Incondicional de 7 Dias</span>
+
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                    </div>
+                    <span>Jogos de Comunicação, Rotina e Inclusão</span>
+                  </li>
+
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                    </div>
+                    <span>Guia do Professor & Fichas de Acompanhamento</span>
+                  </li>
+
+                  <li className="flex items-start gap-2.5">
+                    <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                    </div>
+                    <span>Atividades Cooperativas e Inclusivas</span>
                   </li>
                 </ul>
               </div>
