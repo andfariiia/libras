@@ -266,7 +266,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
       {/* POP-UP MODAL EXATAMENTE IGUAL À IMAGEM ANEXADA */}
       {showUpsellModal && (
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
-          <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 max-w-[440px] w-full shadow-2xl relative space-y-5 my-auto text-center border border-slate-100">
+          <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 max-w-[440px] w-full shadow-2xl relative space-y-4 my-auto text-center border border-slate-100">
             
             {/* Botão Fechar Topo Direito */}
             <button
@@ -343,20 +343,22 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
               </div>
             </div>
 
-            {/* Botão Principal de Ação */}
-            <div className="pt-2">
+            {/* Botões de Ação */}
+            <div className="pt-2 space-y-2.5">
+              {/* Botão Principal */}
               <button
                 onClick={handleAcceptUpsell}
-                className="w-full py-4 px-4 rounded-2xl bg-[#009fb2] hover:bg-[#00899a] text-white font-black text-xs sm:text-sm shadow-xl shadow-cyan-600/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer uppercase tracking-wider leading-snug"
+                className="w-full py-4 px-4 rounded-2xl bg-[#009fb2] hover:bg-[#00899a] text-white font-black text-xs sm:text-sm shadow-xl shadow-cyan-600/25 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer uppercase tracking-wider leading-snug"
               >
                 SIM, EU QUERO O PLANO COMPLETO POR R$17
               </button>
 
+              {/* Botão Secundário idêntico à imagem */}
               <button
                 onClick={handleDeclineUpsell}
-                className="text-[11px] text-slate-400 hover:text-slate-700 underline font-medium mt-3 block mx-auto cursor-pointer"
+                className="w-full py-3.5 px-4 rounded-2xl bg-white hover:bg-slate-50 text-[#092240] font-black text-xs sm:text-[13px] border border-slate-200/90 shadow-sm hover:border-slate-300 transition-all cursor-pointer text-center block"
               >
-                Não, prefiro continuar com o básico de R$10
+                Não, quero continuar com o básico
               </button>
             </div>
 
