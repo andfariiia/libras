@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, Lock, Zap, Star, Sparkles, ArrowRight, X, AlertTriangle, ShieldCheck, Clock } from "lucide-react";
+import { Check, Lock, Zap, ArrowRight, X, Clock } from "lucide-react";
 
 export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: string) => void }) => {
   const [showUpsellModal, setShowUpsellModal] = useState(false);
@@ -31,13 +31,13 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
     <>
       <section id="checkout" className="py-8 md:py-14 bg-slate-950 text-white relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          {/* Top Red Pill Badge - Identical to reference image */}
+          {/* Top Red Pill Badge */}
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-lg shadow-red-600/30 mb-4 border border-red-400/40">
             <Clock className="w-4 h-4 fill-white/20 text-white shrink-0" />
             <span>OFERTA LIMITADA - Apenas no dia {todayFormatted}</span>
           </div>
 
-          {/* H2 Title - Identical to reference image */}
+          {/* H2 Title */}
           <h2 className="text-3xl sm:text-5xl font-black mt-1 mb-8 tracking-tight text-white">
             Escolha Sua Oferta Especial
           </h2>
@@ -45,7 +45,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
           {/* Pricing Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto text-left">
             
-            {/* Plan 1: Basic Plan (Básico Inclusão - Exact layout from image) */}
+            {/* Plan 1: Basic Plan (Básico Inclusão) */}
             <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl text-center sm:text-center">
               <div>
                 <span className="text-[11px] font-black uppercase tracking-widest text-slate-400 block mb-3">
@@ -70,7 +70,6 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
                   </div>
                 </div>
 
-                {/* Checklist idêntica à imagem fornecida */}
                 <ul className="space-y-3.5 text-xs sm:text-sm text-slate-200 mb-8 font-medium text-left max-w-xs mx-auto">
                   <li className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0">
@@ -117,7 +116,7 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
 
             {/* Plan 2: RECOMMENDED FULL KIT (R$ 27,90) */}
             <div className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-2 border-cyan-400 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl shadow-cyan-500/25">
-              {/* Top Badge ★ MAIS VENDIDO em azul */}
+              {/* Top Badge ★ MAIS VENDIDO */}
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-black text-xs px-5 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap uppercase tracking-wider">
                 ★ MAIS VENDIDO
               </div>
@@ -180,60 +179,60 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
                   </div>
                 </div>
 
-                {/* Checklist idêntica à foto */}
+                {/* Checklist */}
                 <ul className="space-y-3 text-xs sm:text-sm text-slate-200 mb-6 font-medium">
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                      <Check className="w-3.5 h-3.5 text-cyan-300 stroke-[3]" />
                     </div>
                     <span className="font-bold text-white">+240 Jogos em Libras Prontos para Imprimir</span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                      <Check className="w-3.5 h-3.5 text-cyan-300 stroke-[3]" />
                     </div>
                     <span>Temas organizados por sinal, rotina, emoção e necessidade da criança</span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                      <Check className="w-3.5 h-3.5 text-cyan-300 stroke-[3]" />
                     </div>
                     <span>Acesso Permanente e Imediato</span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                      <Check className="w-3.5 h-3.5 text-cyan-300 stroke-[3]" />
                     </div>
                     <span>Jogos Visuais e Atividades Inclusivas</span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                      <Check className="w-3.5 h-3.5 text-cyan-300 stroke-[3]" />
                     </div>
                     <span>Roteiros Prontos para Aplicar</span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                      <Check className="w-3.5 h-3.5 text-cyan-300 stroke-[3]" />
                     </div>
                     <span>Jogos de Comunicação, Rotina e Inclusão</span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                      <Check className="w-3.5 h-3.5 text-cyan-300 stroke-[3]" />
                     </div>
                     <span>Guia do Professor & Fichas de Acompanhamento</span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
                     <div className="w-4 h-4 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-cyan-300 stroke-[3]" />
+                      <Check className="w-3.5 h-3.5 text-cyan-300 stroke-[3]" />
                     </div>
                     <span>Atividades Cooperativas e Inclusivas</span>
                   </li>
@@ -264,79 +263,103 @@ export const PricingSection = ({ onSelectPlan }: { onSelectPlan: (planName: stri
         </div>
       </section>
 
-      {/* UPSELL POP-UP MODAL (R$ 17,90) */}
+      {/* POP-UP MODAL EXATAMENTE IGUAL À IMAGEM ANEXADA */}
       {showUpsellModal && (
-        <div className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="bg-slate-900 border-2 border-amber-400 text-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative space-y-5 overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
-
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
+          <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 max-w-[440px] w-full shadow-2xl relative space-y-5 my-auto text-center border border-slate-100">
+            
+            {/* Botão Fechar Topo Direito */}
             <button
               onClick={handleDeclineUpsell}
-              className="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-full hover:bg-slate-800 transition-colors cursor-pointer"
+              className="absolute top-4 right-4 text-slate-500 hover:text-slate-900 p-1.5 rounded-full hover:bg-slate-100 transition-colors cursor-pointer"
               aria-label="Fechar"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 stroke-[2.5]" />
             </button>
 
-            <div className="inline-flex items-center gap-2 bg-amber-950/80 border border-amber-500/40 text-amber-300 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider">
-              <AlertTriangle className="w-4 h-4 text-amber-400 animate-bounce" />
-              ESPERE! OPORTUNIDADE ÚNICA E EXCLUSIVA
+            {/* Pill OFERTA PREMIUM */}
+            <div className="inline-flex items-center justify-center bg-cyan-50 border border-cyan-200 text-cyan-800 text-[11px] font-extrabold uppercase px-4 py-1 rounded-full tracking-wider mx-auto">
+              OFERTA PREMIUM
             </div>
 
-            <div className="text-left space-y-1.5">
-              <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
-                Leve o <span className="text-amber-300">KIT COMPLETO</span> por apenas <span className="text-emerald-400 underline decoration-emerald-500">R$ 17,90</span>!
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Por apenas <strong className="text-white font-bold">R$ 7,90 a mais</strong> que o plano básico, você desbloqueia o kit completo com todos os jogos e 4 bônus exclusivos:
-              </p>
-            </div>
+            {/* Título Principal */}
+            <h3 className="text-2xl sm:text-[28px] font-black text-slate-950 leading-tight tracking-tight max-w-xs mx-auto">
+              Leve o Plano Completo por apenas mais R$7
+            </h3>
 
-            <div className="bg-slate-950/90 rounded-2xl p-4 border border-slate-800 space-y-2 text-xs text-slate-200">
-              <div className="flex items-center gap-2.5 font-bold text-emerald-400">
-                <Check className="w-4 h-4 text-emerald-400 shrink-0 font-bold" />
-                <span>+240 Jogos e Atividades Visuais em Libras</span>
+            {/* Caixa Destacada OFERTA ESPECIAL R$17 */}
+            <div className="bg-[#eefcfc] border-2 border-cyan-400/80 rounded-2xl p-4 sm:p-5 max-w-[280px] mx-auto shadow-sm">
+              <span className="text-[11px] font-extrabold text-cyan-800 uppercase tracking-wider block mb-1">
+                OFERTA ESPECIAL
+              </span>
+              <div className="text-5xl sm:text-6xl font-black text-slate-950 tracking-tight leading-none my-1">
+                R$17
               </div>
+              <span className="text-xs font-semibold text-slate-600 block mt-1.5">
+                pagamento único
+              </span>
+            </div>
+
+            {/* Texto Descritivo */}
+            <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed max-w-sm mx-auto font-medium">
+              Antes de continuar com o plano básico de R$10, aproveite esta condição exclusiva: por apenas mais R$7, você recebe o Plano Completo com todos os bônus e materiais extras.
+            </p>
+
+            {/* Lista com ícones circulares verdes idêntica à imagem */}
+            <div className="space-y-2.5 text-left text-xs sm:text-[13px] font-bold text-slate-800 max-w-sm mx-auto pt-1">
               <div className="flex items-center gap-2.5">
-                <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>Baralho UNO em Libras + Bingo Completo (20 cartelas)</span>
+                <div className="w-5 h-5 rounded-full bg-[#10b981] text-white flex items-center justify-center shrink-0">
+                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+                <span>Comunicação em Libras hoje</span>
               </div>
+
               <div className="flex items-center gap-2.5">
-                <Check className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>Jogo da Memória + Cards de Comunicação da Rotina</span>
+                <div className="w-5 h-5 rounded-full bg-[#10b981] text-white flex items-center justify-center shrink-0">
+                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+                <span>Bônus exclusivos liberados</span>
               </div>
-              <div className="flex items-center gap-2.5 font-bold text-amber-300">
-                <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>TODOS OS 4 BÔNUS INCLUSOS GRATUITAMENTE</span>
+
+              <div className="flex items-center gap-2.5">
+                <div className="w-5 h-5 rounded-full bg-[#10b981] text-white flex items-center justify-center shrink-0">
+                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+                <span>Jogos inclusivos e atividades visuais de Libras</span>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <div className="w-5 h-5 rounded-full bg-[#10b981] text-white flex items-center justify-center shrink-0">
+                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+                <span>Materiais extras para imprimir</span>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <div className="w-5 h-5 rounded-full bg-[#10b981] text-white flex items-center justify-center shrink-0">
+                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+                <span>Acesso imediato e garantia de 7 dias</span>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-amber-950/80 to-emerald-950/80 border border-amber-500/40 rounded-2xl p-3 flex items-center justify-between text-xs">
-              <span className="text-slate-300 font-medium">De <span className="line-through text-slate-500">R$ 27,90</span> por apenas:</span>
-              <span className="text-2xl font-black text-emerald-400 font-mono">R$ 17,90</span>
-            </div>
-
-            <div className="space-y-2.5 pt-1">
+            {/* Botão Principal de Ação */}
+            <div className="pt-2">
               <button
                 onClick={handleAcceptUpsell}
-                className="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide"
+                className="w-full py-4 px-4 rounded-2xl bg-[#009fb2] hover:bg-[#00899a] text-white font-black text-xs sm:text-sm shadow-xl shadow-cyan-600/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer uppercase tracking-wider leading-snug"
               >
-                <Sparkles className="w-5 h-5 text-slate-950" />
-                <span>SIM! QUERO O KIT COMPLETO POR R$ 17,90</span>
+                SIM, EU QUERO O PLANO COMPLETO POR R$17
               </button>
 
               <button
                 onClick={handleDeclineUpsell}
-                className="w-full py-2.5 px-4 rounded-2xl border border-slate-700/80 text-slate-400 hover:text-slate-200 font-semibold text-xs transition-colors hover:bg-slate-800/60 cursor-pointer"
+                className="text-[11px] text-slate-400 hover:text-slate-700 underline font-medium mt-3 block mx-auto cursor-pointer"
               >
-                Não obrigado, prefiro continuar com o Plano Básico de R$ 10,00
+                Não, prefiro continuar com o básico de R$10
               </button>
             </div>
 
-            <div className="flex items-center justify-center gap-2 text-[10px] text-slate-400 font-medium pt-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Garantia de 7 dias mantida para ambas as opções</span>
-            </div>
           </div>
         </div>
       )}
