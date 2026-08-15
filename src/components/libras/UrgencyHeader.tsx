@@ -17,7 +17,7 @@ const TICKER_ITEMS = [
   "⚡ +240 JOGOS EM LIBRAS",
   "🎯 +100 DINÂMICAS EM LIBRAS",
   "🃏 UNO EM LIBRAS",
-  "🎲 BINGO E MUITO MAIS...",
+  "🎲 BINGO EM LIBRAS E MAIS...",
 ];
 
 export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
