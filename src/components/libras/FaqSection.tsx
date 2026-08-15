@@ -6,15 +6,15 @@ import { HelpCircle, ChevronDown } from "lucide-react";
 const FAQS = [
   {
     q: "Funciona para qual idade?",
-    a: "O Kit foi projetado principalmente para crianças da Educação Infantil e Ensino Fundamental I (3 a 12 anos). Porém, por ser altamente visual e lúdico, serve perfeitamente para jovens e adultos em início de aprendizagem em Libras.",
+    a: "Os materiais podem ser usados com crianças de diferentes idades, pois são visuais e adaptáveis. A professora ou responsável pode selecionar os jogos e atividades de acordo com o nível de compreensão e desenvolvimento da criança.",
   },
   {
     q: "Preciso saber Libras para aplicar?",
-    a: "Não! O material é 100% intuitivo e acompanha ilustrações claras, datilologia em cada carta e orientações para você aplicar mesmo sem nunca ter feito curso de Libras.",
+    a: "Não precisa ser especialista. O material foi pensado para professoras e mães que precisam começar de forma prática, usando sinais básicos, cartazes, jogos e atividades guiadas.",
   },
   {
     q: "Como recebo o acesso?",
-    a: "O acesso é imediato após a confirmação do pagamento. Você receberá um e-mail com os links para baixar todos os arquivos em PDF HD diretamente no seu celular ou computador.",
+    a: "Após a confirmação do pagamento, o acesso é enviado automaticamente para o seu e-mail. Você poderá acessar o material pelo celular, computador ou tablet, baixar os arquivos, imprimir e começar a aplicar nas aulas.",
   },
   {
     q: "Posso imprimir o material?",
@@ -34,19 +34,19 @@ export const FaqSection = () => {
   };
 
   return (
-    <section className="py-6 md:py-10 bg-slate-950 text-white border-t border-slate-800">
+    <section className="py-8 md:py-14 bg-slate-950 text-white border-t border-slate-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-6">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-slate-900 text-cyan-300 border border-slate-800 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
             <HelpCircle className="w-3.5 h-3.5 text-cyan-400" /> Tire Suas Dúvidas
           </div>
-          <h2 className="text-2xl sm:text-4xl font-black">
-            Perguntas Frequentes
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight uppercase">
+            PERGUNTAS FREQUENTES
           </h2>
         </div>
 
         {/* Accordions */}
-        <div className="space-y-2.5">
+        <div className="space-y-3">
           {FAQS.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -56,18 +56,18 @@ export const FaqSection = () => {
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-3 font-bold text-white text-sm sm:text-base hover:text-cyan-300 transition-colors cursor-pointer"
+                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-3 font-bold text-cyan-400 sm:text-lg hover:text-cyan-300 transition-colors cursor-pointer"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown
-                    className={`w-4 h-4 text-cyan-400 shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-cyan-400 shrink-0 transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 pt-3">
+                  <div className="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 pt-4 font-normal">
                     {faq.a}
                   </div>
                 )}
