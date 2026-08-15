@@ -8,7 +8,6 @@ import {
   FileText,
   Layout,
   Users,
-  CheckCircle2,
   Sparkles,
   Download,
   ArrowUpRight
@@ -17,72 +16,41 @@ import {
 const DELIVERABLES = [
   {
     icon: Dices,
-    title: "Jogos para Imprimir",
-    tag: "Kit Interativo",
-    desc: "Memória, bingo, pareamento, associação de imagens e jogos de cartas adaptados para rápida fixação.",
-    items: [
-      "Jogo da Memória (60 cartas)",
-      "Bingo em Libras (20 cartelas)",
-      "UNO Adaptado em Libras",
-      "Dominó Visual dos Sinais",
-    ],
-    accentColor: "from-teal-400 to-cyan-400",
+    title: "Jogos para imprimir",
+    tag: "Jogos Interativos",
+    desc: "Memória, bingo, pareamento, associação, desafios e jogos de cartas adaptados para Libras.",
     glowColor: "shadow-cyan-500/15",
     iconBg: "from-cyan-500/20 to-teal-500/10 border-cyan-500/30 text-cyan-300",
   },
   {
     icon: Layers,
-    title: "Cards Visuais de Comunicação",
-    tag: "Rotina & Expressões",
-    desc: "Sinais práticos, palavras-chave, emoções, frases da rotina e comandos essenciais para o dia a dia.",
-    items: [
-      "Expressões e Emoções",
-      "Cumprimentos e Cortesia",
-      "Objetos Escolares e Comandos",
-    ],
-    accentColor: "from-cyan-400 to-blue-400",
+    title: "Cards visuais de comunicação",
+    tag: "Comunicação Direta",
+    desc: "Sinais, palavras, emoções, rotina, comandos e situações do dia a dia.",
     glowColor: "shadow-blue-500/15",
     iconBg: "from-blue-500/20 to-cyan-500/10 border-blue-500/30 text-blue-300",
   },
   {
     icon: FileText,
-    title: "Atividades Práticas de Fixação",
-    tag: "Exercícios em PDF",
-    desc: "Exercícios visuais com alfabeto dactilológico, números, verbos e sinais básicos prontos para aplicar.",
-    items: [
-      "Datilologia e Escrita",
-      "Caligrafia com Sinais",
-      "Exercícios Visuais de Ligação",
-    ],
-    accentColor: "from-indigo-400 to-purple-400",
+    title: "Atividades práticas",
+    tag: "Folhas em PDF",
+    desc: "Folhas prontas para trabalhar alfabeto, números, verbos, sinais básicos e comunicação.",
     glowColor: "shadow-indigo-500/15",
     iconBg: "from-indigo-500/20 to-purple-500/10 border-indigo-500/30 text-indigo-300",
   },
   {
     icon: Layout,
-    title: "Cartazes de Apoio Visual",
-    tag: "Decoração & Apoio",
-    desc: "Cartazes ilustrados em alta definição para afixar na parede da sala ou no cantinho de estudos em casa.",
-    items: [
-      "Cartaz Alfabeto A4 em Libras",
-      "Cartaz Numerais de 1 a 20",
-      "Combinados da Sala Inclusiva",
-    ],
-    accentColor: "from-amber-300 to-orange-400",
+    title: "Cartazes de apoio",
+    tag: "Apoio Visual",
+    desc: "Materiais para rotina escolar, combinados, emoções e pedidos.",
     glowColor: "shadow-amber-500/15",
     iconBg: "from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-300",
   },
   {
     icon: Users,
-    title: "Dinâmicas Inclusivas em Grupo",
+    title: "Dinâmicas inclusivas — bônus",
     tag: "Bônus Especial",
-    desc: "Propostas de jogos coletivos para envolver turmas mistas (crianças surdas e ouvintes aprendendo juntas).",
-    items: [
-      "Guia da Turma Inclusiva",
-      "Roteiro de Jogos em Roda",
-      "Desafios de Parceria e Empatia",
-    ],
-    accentColor: "from-emerald-400 to-teal-300",
+    desc: "Propostas extras para envolver crianças surdas e ouvintes em atividades conjuntas.",
     glowColor: "shadow-emerald-500/15",
     iconBg: "from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-300",
   },
@@ -104,8 +72,11 @@ export const DeliverablesSection = ({ onCtaClick }: { onCtaClick: () => void }) 
             <span>CONTEÚDO DO KIT</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-3">
-            O que você vai receber agora mesmo
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-3">
+            Tudo o que vem no{" "}
+            <span className="bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
+              Kit de Jogos em Libras
+            </span>
           </h2>
 
           <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -149,19 +120,6 @@ export const DeliverablesSection = ({ onCtaClick }: { onCtaClick: () => void }) 
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal mb-5">
                     {item.desc}
                   </p>
-
-                  {/* Checklist of Included Items */}
-                  <div className="space-y-2 mb-6 pt-2 border-t border-slate-800/80">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
-                      INCLUSO NO MÓDULO:
-                    </span>
-                    {item.items.map((sub, sIdx) => (
-                      <div key={sIdx} className="flex items-center gap-2.5 text-xs font-semibold text-slate-200">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 stroke-[2.5]" />
-                        <span>{sub}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Bottom Footer Tag */}
