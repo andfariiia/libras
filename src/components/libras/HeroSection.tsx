@@ -87,7 +87,7 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </span>
         </h1>
 
-        {/* Subtitle com tamanho ajustado */}
+        {/* Subtitle */}
         <p className="text-base sm:text-xl text-slate-200 max-w-3xl mx-auto font-medium leading-relaxed mb-6 text-balance">
           Mais de 240 jogos em Libras prontos para imprimir. Ajude crianças surdas e ouvintes a aprender, se comunicar e participar juntas com jogos, cards, desafios e atividades visuais fáceis de aplicar.
         </p>
@@ -128,16 +128,13 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
             </div>
           </div>
 
-          {/* Main CTA Button */}
+          {/* Main CTA Button - Exact Pill Format from Screenshot */}
           <button
             onClick={onCtaClick}
-            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4.5 text-base sm:text-xl font-black text-slate-950 bg-gradient-to-r from-teal-400 via-cyan-300 to-amber-300 rounded-2xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
+            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-3.5 sm:py-4 text-base sm:text-lg font-black text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-amber-300 rounded-full shadow-2xl shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer tracking-wider uppercase border border-cyan-200/40"
           >
-            <span className="relative z-10 flex items-center gap-2 tracking-wide uppercase">
-              QUERO OS +240 JOGOS
-              <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-            </span>
-            <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <span>QUERO OS +240 JOGOS</span>
+            <ArrowRight className="w-5 h-5 text-slate-950 stroke-[2.5] transition-transform group-hover:translate-x-1" />
           </button>
 
           <p className="text-xs sm:text-sm text-slate-300 mt-3 font-semibold">
