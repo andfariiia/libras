@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Flame, ShoppingBag, CheckCircle, X, Sparkles, Clock } from "lucide-react";
+import { ShoppingBag, CheckCircle, X } from "lucide-react";
 
 const RECENT_SALES = [
   { name: "Márcia S.", city: "São Paulo - SP", time: "há 2 min" },
@@ -21,16 +21,8 @@ const TICKER_ITEMS = [
 ];
 
 export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
-  const [timeLeft, setTimeLeft] = useState(582);
   const [currentSaleIndex, setCurrentSaleIndex] = useState(0);
   const [showToast, setShowToast] = useState(false);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 582));
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     const initialTimeout = setTimeout(() => {
@@ -53,22 +45,16 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
     };
   }, []);
 
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-  };
-
   const sale = RECENT_SALES[currentSaleIndex];
 
   return (
     <>
       {/* Red Modern High-Impact Sticky Top Bar */}
       <header className="sticky top-0 z-50 bg-gradient-to-r from-red-950 via-slate-950 to-red-950 backdrop-blur-xl border-b border-red-500/40 shadow-[0_4px_25px_rgba(220,38,38,0.35)] py-2.5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-2">
           
           {/* Continuous Right-to-Left Ticker Bar */}
-          <div className="relative w-full sm:w-auto flex-1 overflow-hidden py-0.5">
+          <div className="relative w-full overflow-hidden py-0.5">
             <div className="animate-marquee-slow flex items-center whitespace-nowrap gap-6 text-xs sm:text-sm font-black text-amber-300 uppercase tracking-wide">
               {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, idx) => (
                 <span key={idx} className="flex items-center gap-2 shrink-0">
@@ -77,24 +63,6 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
                 </span>
               ))}
             </div>
-          </div>
-
-          {/* Right Side: Timer & Action Button */}
-          <div className="flex items-center gap-2.5 shrink-0">
-            {/* Timer Badge */}
-            <div className="bg-gradient-to-r from-red-600 to-rose-600 text-white font-mono font-black px-3 py-1 rounded-xl border border-red-300/50 shadow-[0_0_15px_rgba(239,68,68,0.5)] tracking-widest text-xs sm:text-sm flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-amber-300 animate-pulse shrink-0" />
-              <span>{formatTime(timeLeft)}</span>
-            </div>
-
-            {/* CTA Button */}
-            <button
-              onClick={onCtaClick}
-              className="flex items-center gap-1.5 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 hover:from-amber-300 hover:to-amber-200 text-slate-950 font-black px-3.5 py-1 rounded-full text-xs sm:text-sm transition-all hover:scale-105 shadow-md shadow-amber-500/25 cursor-pointer uppercase tracking-wider shrink-0"
-            >
-              <span>GARANTIR 71% OFF</span>
-              <Sparkles className="w-3.5 h-3.5 text-slate-950" />
-            </button>
           </div>
 
         </div>
