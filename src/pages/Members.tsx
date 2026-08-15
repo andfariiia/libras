@@ -16,7 +16,8 @@ import {
   CheckCircle2,
   ExternalLink,
   Heart,
-  Lock
+  Lock,
+  Crown
 } from "lucide-react";
 
 export const Members = () => {
@@ -33,9 +34,17 @@ export const Members = () => {
       <nav className="bg-slate-950/90 border-b border-cyan-500/20 sticky top-0 z-50 text-white py-3 px-4 sm:px-8 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-teal-400 via-cyan-300 to-amber-300 text-slate-950 flex items-center justify-center font-black text-xl shadow-lg shadow-cyan-500/20">
-              🤟
+            {/* VIP Premium Crown Icon Badge */}
+            <div className="relative group">
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-300 via-amber-400 to-amber-500 text-slate-950 flex items-center justify-center font-black shadow-[0_0_20px_rgba(245,158,11,0.35)] ring-2 ring-amber-400/50 transition-transform group-hover:scale-105">
+                <Crown className="w-5 h-5 text-slate-950 fill-slate-950" />
+              </div>
+              <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-400"></span>
+              </span>
             </div>
+
             <div>
               <h1 className="font-black text-base sm:text-lg leading-tight text-white tracking-tight">
                 Dinâmicas e Jogos Em Libras!
