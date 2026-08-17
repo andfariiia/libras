@@ -77,6 +77,13 @@ const PACK_SUMMARY = [
 ];
 
 export const Obrigado = () => {
+  // Formata a data atual automaticamente no formato DD/MM/YY (ex: 17/08/26)
+  const todayFormatted = new Date().toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  });
+
   const handleAcceptUpsell = () => {
     showSuccess("Redirecionando para adicionar ao seu pedido...");
     setTimeout(() => {
@@ -241,16 +248,27 @@ export const Obrigado = () => {
         </div>
       </section>
 
-      {/* 5. SEÇÃO: QUER ECONOMIZAR HORAS DE PLANEJAMENTO? + CHECKOUT CARD */}
+      {/* 5. SEÇÃO: QUER ECONOMIZAR HORAS DE PLANEJAMENTO? + OFERTA LIMITADA + CHECKOUT CARD */}
       <section className="py-10 px-3 sm:px-6 bg-slate-900/80 border-t border-slate-800 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-6">
+          {/* Header da Seção */}
           <div>
             <h2 className="text-xl sm:text-4xl font-black text-white tracking-tight mb-1.5">
               Quer economizar horas de planejamento?
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto mb-6 font-medium">
               Adicione agora o pacote completo de Libras à sua compra e tenha centenas de materiais prontos para usar.
             </p>
+
+            {/* Badge Vermelho com Data e Título idêntico ao print */}
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-lg shadow-red-600/30 mb-4 border border-red-400/40">
+              <Clock className="w-4 h-4 fill-white/20 text-white shrink-0" />
+              <span>OFERTA LIMITADA - Apenas no dia {todayFormatted}</span>
+            </div>
+
+            <h3 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-2">
+              Escolha Sua Oferta Especial
+            </h3>
           </div>
 
           <div className="bg-slate-950 border-2 border-emerald-500/60 rounded-3xl p-5 sm:p-9 shadow-2xl relative max-w-2xl mx-auto text-center overflow-hidden">
