@@ -10,6 +10,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Flame,
+  PlayCircle,
 } from "lucide-react";
 import { showSuccess } from "@/utils/toast";
 
@@ -104,32 +105,32 @@ export const Obrigado = () => {
       </div>
 
       {/* Barra de Progresso do Pedido */}
-      <div className="bg-slate-900 border-b border-slate-800 py-2.5 px-4">
-        <div className="max-w-xl mx-auto flex items-center justify-between gap-3 text-xs font-bold">
-          <span className="text-emerald-400 flex items-center gap-1.5 shrink-0">
-            <CheckCircle2 className="w-4 h-4" /> Passo 1: Pedido Pago
+      <div className="bg-slate-900 border-b border-slate-800 py-2.5 px-3">
+        <div className="max-w-xl mx-auto flex items-center justify-between gap-2 text-[11px] sm:text-xs font-bold">
+          <span className="text-emerald-400 flex items-center gap-1 shrink-0">
+            <CheckCircle2 className="w-3.5 h-3.5" /> 1. Pedido Pago
           </span>
-          <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden relative">
+          <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden relative mx-1">
             <div className="w-[85%] h-full bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full animate-pulse" />
           </div>
           <span className="text-amber-400 flex items-center gap-1 shrink-0">
-            <Clock className="w-3.5 h-3.5" /> Passo 2: Oferta Especial (85%)
+            <Clock className="w-3.5 h-3.5" /> 2. Oferta Especial
           </span>
         </div>
       </div>
 
       {/* 2. HERO PRINCIPAL DO UPSELL */}
-      <section className="pt-8 sm:pt-12 pb-10 px-4 sm:px-6 relative overflow-hidden">
+      <section className="pt-6 sm:pt-12 pb-8 px-3 sm:px-6 relative overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute top-1/3 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-amber-950/80 border border-amber-500/40 text-amber-300 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md">
-            <Flame className="w-4 h-4 text-amber-400 fill-amber-400 animate-bounce" />
+          <div className="inline-flex items-center gap-1.5 bg-amber-950/90 border border-amber-500/40 text-amber-300 px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-md">
+            <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400 animate-bounce" />
             <span>OPORTUNIDADE ÚNICA • ADICIONE COM 1 CLIQUE</span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2] max-w-3xl mx-auto">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2] max-w-3xl mx-auto px-1">
             Leve também{" "}
             <span className="bg-gradient-to-r from-teal-400 via-cyan-300 to-blue-300 bg-clip-text text-transparent">
               mais de 400 Dinâmicas de Libras prontas
@@ -137,13 +138,19 @@ export const Obrigado = () => {
             e economize horas preparando suas aulas.
           </h1>
 
-          <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed">
+          <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed px-2">
             Tenha dinâmicas, atividades, flashcards, slides e recursos prontos para aplicar da <strong>Educação Infantil ao 5º ano</strong>.
           </p>
 
-          {/* VÍDEO DO VIMEO EMBUTIDO COM ALTA RESOLUÇÃO E ESTILO */}
-          <div className="pt-4 pb-2 max-w-3xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl bg-slate-950 aspect-video shadow-cyan-500/20">
+          {/* VÍDEO DO VIMEO MAXIMIZADO PARA CELULAR */}
+          <div className="pt-2 pb-2 w-full max-w-4xl mx-auto">
+            {/* Chamada visual acima do vídeo no celular */}
+            <div className="flex items-center justify-center gap-2 mb-2 text-xs font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/30 py-1.5 px-4 rounded-full max-w-xs mx-auto shadow-md">
+              <PlayCircle className="w-4 h-4 text-amber-300 animate-pulse" />
+              <span>Assista ao vídeo explicativo</span>
+            </div>
+
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 sm:border-[3px] border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.3)] bg-slate-950 aspect-[16/9] w-full">
               <iframe
                 title="vimeo-player"
                 src="https://player.vimeo.com/video/1216733174?h=e41970d37f"
@@ -157,29 +164,29 @@ export const Obrigado = () => {
       </section>
 
       {/* 3. SEÇÃO: UM ACERVO COMPLETO PARA SUAS AULAS DE LIBRAS */}
-      <section className="py-10 px-4 sm:px-6 bg-slate-900/90 border-y border-slate-800 relative z-10">
+      <section className="py-8 sm:py-10 px-3 sm:px-6 bg-slate-900/90 border-y border-slate-800 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl font-black text-white mb-2 tracking-tight">
+          <h2 className="text-xl sm:text-4xl font-black text-white mb-2 tracking-tight">
             Um acervo completo para suas aulas de Libras
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mb-8 font-medium">
+          <p className="text-xs sm:text-sm text-slate-400 mb-6 font-medium">
             Tudo organizado para você planejar menos e aplicar mais.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 text-left">
             {UPSERT_ACERVO.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-slate-950/90 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xl hover:border-cyan-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-slate-950/90 border border-slate-800 rounded-2xl p-4 shadow-xl hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between mb-2.5">
                     <span className="text-2xl">{item.icon}</span>
                     <span className="text-[10px] font-bold text-cyan-300 uppercase px-2.5 py-0.5 rounded-full bg-cyan-950 border border-cyan-800">
                       {item.tag}
                     </span>
                   </div>
-                  <h3 className="text-base font-black text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-sm sm:text-base font-black text-white mb-1 group-hover:text-cyan-300 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs text-slate-400 leading-relaxed">
@@ -193,14 +200,14 @@ export const Obrigado = () => {
       </section>
 
       {/* 4. SEÇÃO: VEJA MAIS DO MATERIAL POR DENTRO */}
-      <section className="py-12 px-4 sm:px-6 bg-slate-950 text-white relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
+      <section className="py-10 px-3 sm:px-6 bg-slate-950 text-white relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-5">
           <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
             <span>PRÉVIA EXCLUSIVA</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
+          <h2 className="text-xl sm:text-4xl font-black tracking-tight">
             Veja mais do material por dentro
           </h2>
 
@@ -208,29 +215,29 @@ export const Obrigado = () => {
             Recursos ilustrados com alfabeto manual, massinha sensorial, dominó de sinais e folhas interativas prontas para impressão.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto pt-2">
-            <div className="bg-slate-900/90 rounded-3xl p-3 border border-slate-800 overflow-hidden shadow-2xl group">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto pt-1">
+            <div className="bg-slate-900/90 rounded-2xl p-2.5 border border-slate-800 overflow-hidden shadow-2xl group">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-950 relative">
                 <img
                   src="https://i.ibb.co/6cvZK4fh/image.png"
                   alt="Material Dinâmicas Alfabeto"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <p className="text-xs font-bold text-slate-300 mt-2.5">
+              <p className="text-xs font-bold text-slate-300 mt-2">
                 Alfabeto Manual + Cartões Táteis
               </p>
             </div>
 
-            <div className="bg-slate-900/90 rounded-3xl p-3 border border-slate-800 overflow-hidden shadow-2xl group">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 relative">
+            <div className="bg-slate-900/90 rounded-2xl p-2.5 border border-slate-800 overflow-hidden shadow-2xl group">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-950 relative">
                 <img
                   src="https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp"
                   alt="Dinâmicas Inclusivas em Grupo"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <p className="text-xs font-bold text-slate-300 mt-2.5">
+              <p className="text-xs font-bold text-slate-300 mt-2">
                 Dinâmicas Inclusivas em Grupo
               </p>
             </div>
@@ -239,10 +246,10 @@ export const Obrigado = () => {
       </section>
 
       {/* 5. SEÇÃO: QUER ECONOMIZAR HORAS DE PLANEJAMENTO? + CHECKOUT CARD */}
-      <section className="py-12 px-4 sm:px-6 bg-slate-900/80 border-t border-slate-800 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section className="py-10 px-3 sm:px-6 bg-slate-900/80 border-t border-slate-800 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
           <div>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-2">
+            <h2 className="text-xl sm:text-4xl font-black text-white tracking-tight mb-1.5">
               Quer economizar horas de planejamento?
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
@@ -250,37 +257,37 @@ export const Obrigado = () => {
             </p>
           </div>
 
-          <div className="bg-slate-950 border-2 border-emerald-500/60 rounded-3xl p-6 sm:p-9 shadow-2xl relative max-w-2xl mx-auto text-center overflow-hidden">
-            <div className="space-y-2 mb-6">
-              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+          <div className="bg-slate-950 border-2 border-emerald-500/60 rounded-3xl p-5 sm:p-9 shadow-2xl relative max-w-2xl mx-auto text-center overflow-hidden">
+            <div className="space-y-1.5 mb-5">
+              <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight">
                 Leve agora o Pacote Completo de Libras
               </h3>
               
-              <div className="pt-2">
+              <div className="pt-1">
                 <span className="text-xs font-mono text-slate-500 line-through block">
                   Pacote completo R$ 97,00
                 </span>
                 <span className="text-xs uppercase font-bold text-slate-400 tracking-wider">
                   POR APENAS
                 </span>
-                <div className="text-5xl sm:text-6xl font-black text-amber-300 tracking-tight my-1">
+                <div className="text-4xl sm:text-6xl font-black text-amber-300 tracking-tight my-1">
                   R$ 27,90
                 </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed pt-1">
+              <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
                 Você recebe um acervo completo para deixar suas aulas de Libras prontas em minutos.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left mb-6">
               {PACK_SUMMARY.map((box, i) => (
                 <div
                   key={i}
-                  className="bg-slate-900/90 border border-slate-800 p-3.5 rounded-2xl flex flex-col justify-start"
+                  className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl flex flex-col justify-start"
                 >
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-lg">{box.icon}</span>
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="text-base">{box.icon}</span>
                     <h4 className="text-xs font-bold text-white leading-tight">
                       {box.title}
                     </h4>
@@ -292,13 +299,13 @@ export const Obrigado = () => {
               ))}
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3.5">
               <button
                 onClick={handleAcceptUpsell}
-                className="w-full py-4 sm:py-5 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-base uppercase tracking-wider shadow-2xl shadow-emerald-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 border border-emerald-300"
+                className="w-full py-4 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-base uppercase tracking-wider shadow-2xl shadow-emerald-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 border border-emerald-300 leading-snug"
               >
-                <span>SIM, QUERO ADICIONAR AS +400 DINÂMICAS DE LIBRAS</span>
-                <ArrowRight className="w-5 h-5 stroke-[2.5]" />
+                <span>SIM, QUERO ADICIONAR AS +400 DINÂMICAS</span>
+                <ArrowRight className="w-5 h-5 stroke-[2.5] shrink-0" />
               </button>
 
               <div>
@@ -311,14 +318,14 @@ export const Obrigado = () => {
               </div>
             </div>
 
-            <div className="mt-6 pt-5 border-t border-slate-900 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400 font-medium">
-              <span className="flex items-center gap-1.5 text-slate-300">
+            <div className="mt-5 pt-4 border-t border-slate-900 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[11px] text-slate-400 font-medium">
+              <span className="flex items-center gap-1 text-slate-300">
                 <Lock className="w-3.5 h-3.5 text-amber-400" /> Compra 100% segura
               </span>
-              <span className="flex items-center gap-1.5 text-slate-300">
+              <span className="flex items-center gap-1 text-slate-300">
                 <Zap className="w-3.5 h-3.5 text-cyan-400" /> Acesso imediato no e-mail
               </span>
-              <span className="flex items-center gap-1.5 text-slate-300">
+              <span className="flex items-center gap-1 text-slate-300">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> 7 Dias de Garantia
               </span>
             </div>
@@ -327,7 +334,7 @@ export const Obrigado = () => {
       </section>
 
       {/* 6. FOOTER DISCRETO */}
-      <footer className="py-8 px-4 text-center text-slate-500 text-xs border-t border-slate-800/80">
+      <footer className="py-6 px-4 text-center text-slate-500 text-xs border-t border-slate-800/80">
         <p className="max-w-md mx-auto leading-relaxed">
           Produto digital. Nenhum material físico será enviado pelo correio. <br />
           Kit Libras na Prática © {new Date().getFullYear()} — Todos os direitos reservados.
