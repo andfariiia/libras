@@ -11,7 +11,6 @@ import {
   ShieldCheck,
   Flame,
   PlayCircle,
-  Check,
   Gift,
 } from "lucide-react";
 import { showSuccess } from "@/utils/toast";
@@ -58,35 +57,23 @@ const UPSERT_ACERVO = [
 const PACK_SUMMARY = [
   {
     icon: "🤟",
-    badge: "MAIS USADO",
-    badgeColor: "bg-amber-400/20 text-amber-300 border-amber-500/30",
     title: "+400 Dinâmicas de Libras",
-    desc: "Ideias lúdicas para prender a atenção e tornar as aulas inclusivas.",
-    tag: "Economize horas",
+    desc: "Ideias prontas para tornar as aulas mais práticas e participativas.",
   },
   {
     icon: "🖨️",
-    badge: "ALTA DEFINIÇÃO",
-    badgeColor: "bg-cyan-400/20 text-cyan-300 border-cyan-500/30",
-    title: "+500 Atividades em PDF",
-    desc: "Exercícios estruturados (300 DPI) para Infantil e Fundamental I.",
-    tag: "Impressão Ilimitada",
+    title: "+500 Atividades para Imprimir",
+    desc: "Exercícios e materiais para Educação Infantil e Fundamental.",
   },
   {
     icon: "🃏",
-    badge: "PRÁTICO & VISUAL",
-    badgeColor: "bg-emerald-400/20 text-emerald-300 border-emerald-500/30",
     title: "250+ Flashcards de Sinais",
-    desc: "Cartões visuais para fixar e revisar vocabulário rápido.",
-    tag: "Fixação Rápida",
+    desc: "Recursos visuais para ensinar e revisar vocabulário.",
   },
   {
     icon: "📚",
-    badge: "BNCC ALINHADO",
-    badgeColor: "bg-purple-400/20 text-purple-300 border-purple-500/30",
-    title: "Slides + Planejamentos",
-    desc: "Planos de aula completos e slides ilustrados prontos para usar.",
-    tag: "Pronto para usar",
+    title: "Slides + Planejamentos + Extras",
+    desc: "Materiais para ganhar tempo e ter sempre uma aula preparada.",
   },
 ];
 
@@ -289,7 +276,7 @@ export const Obrigado = () => {
             </h3>
           </div>
 
-          {/* MAIN CARD OFERTA VIP (LIMPO E SEM CORTE SUPERIOR) */}
+          {/* MAIN CARD OFERTA VIP */}
           <div className="relative bg-gradient-to-b from-[#0e172a] via-[#090d18] to-[#070b14] border-2 border-emerald-400/80 rounded-3xl p-5 sm:p-7 md:p-8 shadow-[0_0_50px_rgba(16,185,129,0.2)] max-w-xl mx-auto text-center">
             
             {/* Title & Price Section */}
@@ -329,42 +316,26 @@ export const Obrigado = () => {
               </div>
             </div>
 
-            {/* BENEFIT CARDS (COMPACTOS E DIRETOS) */}
-            <div className="space-y-2 text-left my-4">
+            {/* BENEFIT CARDS (ESTILO EXATO DO PRINT) */}
+            <div className="space-y-2.5 text-left my-4 max-w-lg mx-auto">
               {PACK_SUMMARY.map((box, i) => (
                 <div
                   key={i}
-                  className="group bg-[#111c33] hover:bg-[#152340] border border-slate-800 hover:border-emerald-500/40 p-2.5 sm:p-3 rounded-xl transition-all duration-200 shadow-md flex items-center justify-between gap-2.5"
+                  className="bg-[#FFFDF5] border border-[#F6E8CE] rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 shadow-sm hover:shadow-md transition-all duration-200 flex items-start gap-3.5"
                 >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    {/* Ícone */}
-                    <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-lg shrink-0 shadow-inner">
-                      {box.icon}
-                    </div>
+                  {/* Ícone */}
+                  <span className="text-2xl sm:text-3xl shrink-0 mt-0.5 select-none leading-none">
+                    {box.icon}
+                  </span>
 
-                    {/* Texto */}
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-1.5">
-                        <h4 className="text-xs sm:text-sm font-black text-white truncate group-hover:text-emerald-300 transition-colors">
-                          {box.title}
-                        </h4>
-                        <span className={`text-[8px] font-black uppercase px-1.5 py-0.2 rounded border shrink-0 ${box.badgeColor}`}>
-                          {box.badge}
-                        </span>
-                      </div>
-                      
-                      <p className="text-[10px] sm:text-[11px] text-slate-400 leading-tight font-normal line-clamp-1">
-                        {box.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Micro Tag */}
-                  <div className="shrink-0 hidden xs:block">
-                    <span className="text-[9px] font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-800/80 px-2 py-0.5 rounded flex items-center gap-1">
-                      <Check className="w-2.5 h-2.5 text-emerald-400 stroke-[3]" />
-                      {box.tag}
-                    </span>
+                  {/* Texto do Card */}
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-xs sm:text-sm font-black text-[#0f284e] leading-snug tracking-tight mb-0.5">
+                      {box.title}
+                    </h4>
+                    <p className="text-[11px] sm:text-xs text-[#2b4162] font-semibold leading-snug">
+                      {box.desc}
+                    </p>
                   </div>
                 </div>
               ))}
