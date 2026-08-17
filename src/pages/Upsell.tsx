@@ -1,0 +1,606 @@
+"use client";
+
+import React, { useState } from "react";
+import {
+  Sparkles,
+  CheckCircle2,
+  Lock,
+  Zap,
+  Clock,
+  Printer,
+  FileText,
+  Gamepad2,
+  Presentation,
+  Check,
+  ArrowRight,
+  ShieldCheck,
+  Flame,
+  Layers,
+  ChevronRight,
+  Gift
+} from "lucide-react";
+import { showSuccess } from "@/utils/toast";
+
+const UPSERT_ACERVO = [
+  {
+    icon: "🤟",
+    title: "+400 Dinâmicas de Libras",
+    desc: "Prontas para aplicar em sala de aula, oficinas e atendimentos.",
+    tag: "Prático",
+    color: "from-teal-500/20 to-cyan-500/20 text-cyan-300 border-cyan-500/30",
+  },
+  {
+    icon: "🖨️",
+    title: "+500 Atividades para imprimir",
+    desc: "Materiais completos para Educação Infantil ao Ensino Fundamental.",
+    tag: "PDF HD",
+    color: "from-blue-500/20 to-indigo-500/20 text-blue-300 border-blue-500/30",
+  },
+  {
+    icon: "🃏",
+    title: "250+ Flashcards de sinais",
+    desc: "Recursos visuais e didáticos com ilustrações claras de configuração de mão.",
+    tag: "Visual",
+    color: "from-purple-500/20 to-pink-500/20 text-purple-300 border-purple-500/30",
+  },
+  {
+    icon: "🎥",
+    title: "Slides didáticos",
+    desc: "Apresentações prontas para aulas mais visuais, atraentes e participativas.",
+    tag: "Aulas",
+    color: "from-amber-500/20 to-orange-500/20 text-amber-300 border-amber-500/30",
+  },
+  {
+    icon: "🎯",
+    title: "Kit Libras Interativo",
+    desc: "Aprendizado mais envolvente através do estímulo tátil e lúdico.",
+    tag: "Interativo",
+    color: "from-rose-500/20 to-red-500/20 text-rose-300 border-rose-500/30",
+  },
+  {
+    icon: "📚",
+    title: "Planejamentos + Aulas de emergência",
+    desc: "100% alinhado à BNCC + Lei 10.436/2002 para você nunca ser pega de surpresa.",
+    tag: "BNCC",
+    color: "from-emerald-500/20 to-teal-500/20 text-emerald-300 border-emerald-500/30",
+  },
+];
+
+const PACK_SUMMARY = [
+  {
+    icon: "🤟",
+    title: "+400 Dinâmicas de Libras",
+    desc: "Ideias prontas para tornar as aulas mais práticas, inclusivas e participativas.",
+  },
+  {
+    icon: "🖨️",
+    title: "+500 Atividades para Imprimir",
+    desc: "Exercícios e materiais estruturados para Educação Infantil e Fundamental.",
+  },
+  {
+    icon: "🃏",
+    title: "250+ Flashcards de Sinais",
+    desc: "Recursos visuais essenciais para ensinar, fixar e revisar vocabulário.",
+  },
+  {
+    icon: "📚",
+    title: "Slides + Planejamentos + Extras",
+    desc: "Materiais para economizar semanas de preparação e ter sempre uma aula pronta.",
+  },
+];
+
+export const Upsell = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleAcceptUpsell = () => {
+    showSuccess("Redirecionando para adicionar ao seu pedido...");
+    // Link de checkout do Upsell com 1-clique / Kiwify / Cakto
+    setTimeout(() => {
+      window.location.href = "https://pay.kiwify.com.br/o8QVrMK";
+    }, 600);
+  };
+
+  const handleDecline = () => {
+    // Redireciona para a área de membros gratuita ou página de download inicial
+    window.location.href = "/membros";
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+      
+      {/* 1. TOP BAR: AVISO DE PEDIDO CONFIRMADO & OPORTUNIDADE EXCLUSIVA */}
+      <div className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-slate-950 py-3.5 px-4 text-center shadow-lg relative z-20">
+        <div className="max-w-4xl mx-auto space-y-1">
+          <div className="flex items-center justify-center gap-2 font-black text-sm sm:text-base uppercase tracking-wide text-slate-950">
+            <span>Obrigado pela sua compra!</span>
+            <span className="text-xl">🎉</span>
+          </div>
+          <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
+            Seu pedido principal foi aprovado e o acesso está a caminho do seu e-mail. <br className="hidden sm:inline" />
+            <strong className="underline font-bold">NÃO FECHE ESTA PÁGINA AINDA:</strong> separamos uma oportunidade única antes de você acessar seus materiais.
+          </p>
+        </div>
+      </div>
+
+      {/* Barra de Progresso do Pedido */}
+      <div className="bg-slate-900 border-b border-slate-800 py-2.5 px-4">
+        <div className="max-w-xl mx-auto flex items-center justify-between gap-3 text-xs font-bold">
+          <span className="text-emerald-400 flex items-center gap-1.5 shrink-0">
+            <CheckCircle2 className="w-4 h-4" /> Passo 1: Pedido Pago
+          </span>
+          <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden relative">
+            <div className="w-[85%] h-full bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full animate-pulse" />
+          </div>
+          <span className="text-amber-400 flex items-center gap-1 shrink-0">
+            <Clock className="w-3.5 h-3.5" /> Passo 2: Oferta Especial (85%)
+          </span>
+        </div>
+      </div>
+
+      {/* 2. HERO PRINCIPAL DO UPSELL */}
+      <section className="pt-8 sm:pt-12 pb-10 px-4 sm:px-6 relative overflow-hidden">
+        {/* Glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-4">
+          
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-amber-950/80 border border-amber-500/40 text-amber-300 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md">
+            <Flame className="w-4 h-4 text-amber-400 fill-amber-400 animate-bounce" />
+            <span>OPORTUNIDADE ÚNICA • ADICIONE COM 1 CLIQUE</span>
+          </div>
+
+          {/* Título Principal Exato dos Prints */}
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2] max-w-3xl mx-auto">
+            Leve também{" "}
+            <span className="bg-gradient-to-r from-teal-400 via-cyan-300 to-blue-300 bg-clip-text text-transparent">
+              mais de 400 Dinâmicas de Libras prontas
+            </span>{" "}
+            e economize horas preparando suas aulas.
+          </h1>
+
+          {/* Subtítulo */}
+          <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed">
+            Tenha dinâmicas, atividades, flashcards, slides e recursos prontos para aplicar da <strong>Educação Infantil ao 5º ano</strong>.
+          </p>
+
+          {/* PLAYER DE VÍDEO / DEMONSTRAÇÃO PRÁTICA */}
+          <div className="pt-4 pb-2 max-w-2xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl bg-slate-900 aspect-video group shadow-cyan-500/20">
+              <img
+                src="https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp"
+                alt="Vídeo Demonstração das Dinâmicas de Libras"
+                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-between p-4 sm:p-6">
+                <div className="flex items-center justify-between">
+                  <span className="bg-slate-950/90 text-cyan-300 text-[10px] sm:text-xs font-black uppercase px-3 py-1 rounded-full border border-cyan-500/30">
+                    PRÉVIA EM VÍDEO DAS DINÂMICAS
+                  </span>
+                  <span className="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md animate-pulse">
+                    AO VIVO
+                  </span>
+                </div>
+
+                <div className="text-left space-y-1">
+                  <span className="text-xs sm:text-sm font-black text-amber-300">
+                    Veja como aplicar em segundos na sua sala ou consultório ➔
+                  </span>
+                  <p className="text-[11px] text-slate-300 line-clamp-1">
+                    Materiais organizados por idade, tema, alfabeto e nível de desenvolvimento.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. SEÇÃO: UM ACERVO COMPLETO PARA SUAS AULAS DE LIBRAS */}
+      <section className="py-10 px-4 sm:px-6 bg-slate-900/90 border-y border-slate-800 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          
+          <h2 className="text-2xl sm:text-4xl font-black text-white mb-2 tracking-tight">
+            Um acervo completo para suas aulas de Libras
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-400 mb-8 font-medium">
+            Tudo organizado para você planejar menos e aplicar mais.
+          </p>
+
+          {/* Grid dos 6 Micro-Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+            {UPSERT_ACERVO.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-950/90 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xl hover:border-cyan-500/50 hover:-translate-y-1 transition<dyad-write path="src/pages/Upsell.tsx" description="Criando a página de Obrigado / Upsell de alta conversão com todas as copies dos prints">
+"use client";
+
+import React, { useState } from "react";
+import {
+  Sparkles,
+  CheckCircle2,
+  Lock,
+  Zap,
+  Clock,
+  Printer,
+  FileText,
+  Gamepad2,
+  Presentation,
+  Check,
+  ArrowRight,
+  ShieldCheck,
+  Flame,
+  Layers,
+  ChevronRight,
+  Gift
+} from "lucide-react";
+import { showSuccess } from "@/utils/toast";
+
+const UPSERT_ACERVO = [
+  {
+    icon: "🤟",
+    title: "+400 Dinâmicas de Libras",
+    desc: "Prontas para aplicar em sala de aula, oficinas e atendimentos.",
+    tag: "Prático",
+    color: "from-teal-500/20 to-cyan-500/20 text-cyan-300 border-cyan-500/30",
+  },
+  {
+    icon: "🖨️",
+    title: "+500 Atividades para imprimir",
+    desc: "Materiais completos para Educação Infantil ao Ensino Fundamental.",
+    tag: "PDF HD",
+    color: "from-blue-500/20 to-indigo-500/20 text-blue-300 border-blue-500/30",
+  },
+  {
+    icon: "🃏",
+    title: "250+ Flashcards de sinais",
+    desc: "Recursos visuais e didáticos com ilustrações claras de configuração de mão.",
+    tag: "Visual",
+    color: "from-purple-500/20 to-pink-500/20 text-purple-300 border-purple-500/30",
+  },
+  {
+    icon: "🎥",
+    title: "Slides didáticos",
+    desc: "Apresentações prontas para aulas mais visuais, atraentes e participativas.",
+    tag: "Aulas",
+    color: "from-amber-500/20 to-orange-500/20 text-amber-300 border-amber-500/30",
+  },
+  {
+    icon: "🎯",
+    title: "Kit Libras Interativo",
+    desc: "Aprendizado mais envolvente através do estímulo tátil e lúdico.",
+    tag: "Interativo",
+    color: "from-rose-500/20 to-red-500/20 text-rose-300 border-rose-500/30",
+  },
+  {
+    icon: "📚",
+    title: "Planejamentos + Aulas de emergência",
+    desc: "100% alinhado à BNCC + Lei 10.436/2002 para você nunca ser pega de surpresa.",
+    tag: "BNCC",
+    color: "from-emerald-500/20 to-teal-500/20 text-emerald-300 border-emerald-500/30",
+  },
+];
+
+const PACK_SUMMARY = [
+  {
+    icon: "🤟",
+    title: "+400 Dinâmicas de Libras",
+    desc: "Ideias prontas para tornar as aulas mais práticas, inclusivas e participativas.",
+  },
+  {
+    icon: "🖨️",
+    title: "+500 Atividades para Imprimir",
+    desc: "Exercícios e materiais estruturados para Educação Infantil e Fundamental.",
+  },
+  {
+    icon: "🃏",
+    title: "250+ Flashcards de Sinais",
+    desc: "Recursos visuais essenciais para ensinar, fixar e revisar vocabulário.",
+  },
+  {
+    icon: "📚",
+    title: "Slides + Planejamentos + Extras",
+    desc: "Materiais para economizar semanas de preparação e ter sempre uma aula pronta.",
+  },
+];
+
+export const Upsell = () => {
+  const handleAcceptUpsell = () => {
+    showSuccess("Redirecionando para adicionar ao seu pedido...");
+    setTimeout(() => {
+      window.location.href = "https://pay.kiwify.com.br/o8QVrMK";
+    }, 600);
+  };
+
+  const handleDecline = () => {
+    window.location.href = "/membros";
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+      
+      {/* 1. TOP BAR: AVISO DE PEDIDO CONFIRMADO & OPORTUNIDADE EXCLUSIVA */}
+      <div className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-slate-950 py-3.5 px-4 text-center shadow-lg relative z-20">
+        <div className="max-w-4xl mx-auto space-y-1">
+          <div className="flex items-center justify-center gap-2 font-black text-sm sm:text-base uppercase tracking-wide text-slate-950">
+            <span>Obrigado pela sua compra!</span>
+            <span className="text-xl">🎉</span>
+          </div>
+          <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
+            Seu pedido principal foi aprovado e o acesso está a caminho do seu e-mail. <br className="hidden sm:inline" />
+            <strong className="underline font-bold">NÃO FECHE ESTA PÁGINA AINDA:</strong> separamos uma oportunidade única antes de você acessar seus materiais.
+          </p>
+        </div>
+      </div>
+
+      {/* Barra de Progresso do Pedido */}
+      <div className="bg-slate-900 border-b border-slate-800 py-2.5 px-4">
+        <div className="max-w-xl mx-auto flex items-center justify-between gap-3 text-xs font-bold">
+          <span className="text-emerald-400 flex items-center gap-1.5 shrink-0">
+            <CheckCircle2 className="w-4 h-4" /> Passo 1: Pedido Pago
+          </span>
+          <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden relative">
+            <div className="w-[85%] h-full bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full animate-pulse" />
+          </div>
+          <span className="text-amber-400 flex items-center gap-1 shrink-0">
+            <Clock className="w-3.5 h-3.5" /> Passo 2: Oferta Especial (85%)
+          </span>
+        </div>
+      </div>
+
+      {/* 2. HERO PRINCIPAL DO UPSELL */}
+      <section className="pt-8 sm:pt-12 pb-10 px-4 sm:px-6 relative overflow-hidden">
+        {/* Glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-4">
+          
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-amber-950/80 border border-amber-500/40 text-amber-300 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md">
+            <Flame className="w-4 h-4 text-amber-400 fill-amber-400 animate-bounce" />
+            <span>OPORTUNIDADE ÚNICA • ADICIONE COM 1 CLIQUE</span>
+          </div>
+
+          {/* Título Principal Exato dos Prints */}
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2] max-w-3xl mx-auto">
+            Leve também{" "}
+            <span className="bg-gradient-to-r from-teal-400 via-cyan-300 to-blue-300 bg-clip-text text-transparent">
+              mais de 400 Dinâmicas de Libras prontas
+            </span>{" "}
+            e economize horas preparando suas aulas.
+          </h1>
+
+          {/* Subtítulo */}
+          <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed">
+            Tenha dinâmicas, atividades, flashcards, slides e recursos prontos para aplicar da <strong>Educação Infantil ao 5º ano</strong>.
+          </p>
+
+          {/* PLAYER DE VÍDEO / DEMONSTRAÇÃO PRÁTICA */}
+          <div className="pt-4 pb-2 max-w-2xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl bg-slate-900 aspect-video group shadow-cyan-500/20">
+              <img
+                src="https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp"
+                alt="Vídeo Demonstração das Dinâmicas de Libras"
+                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-between p-4 sm:p-6">
+                <div className="flex items-center justify-between">
+                  <span className="bg-slate-950/90 text-cyan-300 text-[10px] sm:text-xs font-black uppercase px-3 py-1 rounded-full border border-cyan-500/30">
+                    PRÉVIA EM VÍDEO DAS DINÂMICAS
+                  </span>
+                  <span className="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md animate-pulse">
+                    AO VIVO
+                  </span>
+                </div>
+
+                <div className="text-left space-y-1">
+                  <span className="text-xs sm:text-sm font-black text-amber-300">
+                    Veja como aplicar em segundos na sua sala ou consultório ➔
+                  </span>
+                  <p className="text-[11px] text-slate-300 line-clamp-1">
+                    Materiais organizados por idade, tema, alfabeto e nível de desenvolvimento.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. SEÇÃO: UM ACERVO COMPLETO PARA SUAS AULAS DE LIBRAS */}
+      <section className="py-10 px-4 sm:px-6 bg-slate-900/90 border-y border-slate-800 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          
+          <h2 className="text-2xl sm:text-4xl font-black text-white mb-2 tracking-tight">
+            Um acervo completo para suas aulas de Libras
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-400 mb-8 font-medium">
+            Tudo organizado para você planejar menos e aplicar mais.
+          </p>
+
+          {/* Grid dos 6 Micro-Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+            {UPSERT_ACERVO.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-950/90 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xl hover:border-cyan-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className="text-[10px] font-bold text-cyan-300 uppercase px-2.5 py-0.5 rounded-full bg-cyan-950 border border-cyan-800">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <h3 className="text-base font-black text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. SEÇÃO: VEJA MAIS DO MATERIAL POR DENTRO */}
+      <section className="py-12 px-4 sm:px-6 bg-slate-950 text-white relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <span>PRÉVIA EXCLUSIVA</span>
+          </div>
+
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
+            Veja mais do material por dentro
+          </h2>
+
+          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+            Recursos ilustrados com alfabeto manual, massinha sensorial, dominó de sinais e folhas interativas prontas para impressão.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto pt-2">
+            {/* Card Exemplo 1 */}
+            <div className="bg-slate-900/90 rounded-3xl p-3 border border-slate-800 overflow-hidden shadow-2xl group">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 relative">
+                <img
+                  src="https://i.ibb.co/6cvZK4fh/image.png"
+                  alt="Material Dinâmicas Alfabeto"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <p className="text-xs font-bold text-slate-300 mt-2.5">
+                Alfabeto Manual + Cartões Táteis
+              </p>
+            </div>
+
+            {/* Card Exemplo 2 */}
+            <div className="bg-slate-900/90 rounded-3xl p-3 border border-slate-800 overflow-hidden shadow-2xl group">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 relative">
+                <img
+                  src="https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp"
+                  alt="Dinâmicas Inclusivas em Grupo"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <p className="text-xs font-bold text-slate-300 mt-2.5">
+                Dinâmicas Inclusivas em Grupo
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. SEÇÃO: QUER ECONOMIZAR HORAS DE PLANEJAMENTO? + CHECKOUT UPSELL CARD */}
+      <section className="py-12 px-4 sm:px-6 bg-slate-900/80 border-t border-slate-800 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          
+          <div>
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-2">
+              Quer economizar horas de planejamento?
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+              Adicione agora o pacote completo de Libras à sua compra e tenha centenas de materiais prontos para usar.
+            </p>
+          </div>
+
+          {/* CARD DE OFERTA EXCLUSIVA (IGUAL AOS PRINTS) */}
+          <div className="bg-slate-950 border-2 border-emerald-500/60 rounded-3xl p-6 sm:p-9 shadow-2xl relative max-w-2xl mx-auto text-center overflow-hidden">
+            
+            <div className="space-y-2 mb-6">
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                Leve agora o Pacote Completo de Libras
+              </h3>
+              
+              <div className="pt-2">
+                <span className="text-xs font-mono text-slate-500 line-through block">
+                  Pacote completo R$ 97,00
+                </span>
+                <span className="text-xs uppercase font-bold text-slate-400 tracking-wider">
+                  POR APENAS
+                </span>
+                <div className="text-5xl sm:text-6xl font-black text-amber-300 tracking-tight my-1">
+                  R$ 27,90
+                </div>
+              </div>
+
+              <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed pt-1">
+                Você recebe um acervo completo para deixar suas aulas de Libras prontas em minutos.
+              </p>
+            </div>
+
+            {/* 4 Mini-quadros de benefícios */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left mb-8">
+              {PACK_SUMMARY.map((box, i) => (
+                <div
+                  key={i}
+                  className="bg-slate-900/90 border border-slate-800 p-3.5 rounded-2xl flex flex-col justify-start"
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg">{box.icon}</span>
+                    <h4 className="text-xs font-bold text-white leading-tight">
+                      {box.title}
+                    </h4>
+                  </div>
+                  <p className="text-[11px] text-slate-400 leading-snug">
+                    {box.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* BOTÃO PRINCIPAL VERDE DE ALTA CONVERSÃO */}
+            <div className="space-y-4">
+              <button
+                onClick={handleAcceptUpsell}
+                className="w-full py-4 sm:py-5 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-base uppercase tracking-wider shadow-2xl shadow-emerald-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 border border-emerald-300"
+              >
+                <span>SIM, QUERO ADICIONAR AS +400 DINÂMICAS DE LIBRAS</span>
+                <ArrowRight className="w-5 h-5 stroke-[2.5]" />
+              </button>
+
+              {/* Botão de Recusa Textual */}
+              <div>
+                <button
+                  onClick={handleDecline}
+                  className="text-xs text-slate-400 hover:text-slate-200 underline cursor-pointer transition-colors"
+                >
+                  Não, obrigado. Quero continuar apenas com minha compra atual.
+                </button>
+              </div>
+            </div>
+
+            {/* Selos de Segurança e Acesso */}
+            <div className="mt-6 pt-5 border-t border-slate-900 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400 font-medium">
+              <span className="flex items-center gap-1.5 text-slate-300">
+                <Lock className="w-3.5 h-3.5 text-amber-400" /> Compra 100% segura
+              </span>
+              <span className="flex items-center gap-1.5 text-slate-300">
+                <Zap className="w-3.5 h-3.5 text-cyan-400" /> Acesso imediato no e-mail
+              </span>
+              <span className="flex items-center gap-1.5 text-slate-300">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> 7 Dias de Garantia
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FOOTER DISCRETO */}
+      <footer className="py-8 px-4 text-center text-slate-500 text-xs border-t border-slate-800/80">
+        <p className="max-w-md mx-auto leading-relaxed">
+          Produto digital. Nenhum material físico será enviado pelo correio. <br />
+          Kit Libras na Prática © {new Date().getFullYear()} — Todos os direitos reservados.
+        </p>
+      </footer>
+
+    </div>
+  );
+};
+
+export default Upsell;
