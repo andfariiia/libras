@@ -17,39 +17,39 @@ import { showSuccess } from "@/utils/toast";
 const UPSERT_ACERVO = [
   {
     icon: "🤟",
-    title: "+400 Dinâmicas de Libras",
-    desc: "Prontas para aplicar em sala de aula, oficinas e atendimentos.",
-    tag: "Prático",
+    highlight: "+400",
+    title: "Dinâmicas de Libras",
+    desc: "Prontas para aplicar em sala",
   },
   {
     icon: "🖨️",
-    title: "+500 Atividades para imprimir",
-    desc: "Materiais completos para Educação Infantil ao Ensino Fundamental.",
-    tag: "PDF HD",
+    highlight: "+500",
+    title: "Atividades para imprimir",
+    desc: "Materiais para diferentes níveis",
   },
   {
     icon: "🃏",
-    title: "250+ Flashcards de sinais",
-    desc: "Recursos visuais e didáticos com ilustrações claras de configuração de mão.",
-    tag: "Visual",
+    highlight: "250+",
+    title: "Flashcards de sinais",
+    desc: "Recursos visuais e didáticos",
   },
   {
     icon: "🎥",
+    highlight: "",
     title: "Slides didáticos",
-    desc: "Apresentações prontas para aulas mais visuais, atraentes e participativas.",
-    tag: "Aulas",
+    desc: "Aulas mais visuais e práticas",
   },
   {
     icon: "🎯",
+    highlight: "",
     title: "Kit Libras Interativo",
-    desc: "Aprendizado mais envolvente através do estímulo tátil e lúdico.",
-    tag: "Interativo",
+    desc: "Aprendizado mais envolvente",
   },
   {
     icon: "📚",
-    title: "Planejamentos + Aulas de emergência",
-    desc: "100% alinhado à BNCC + Lei 10.436/2002 para você nunca ser pega de surpresa.",
-    tag: "BNCC",
+    highlight: "",
+    title: "Planejamentos + aulas de emergência",
+    desc: "BNCC + Lei 10.436/2002",
   },
 ];
 
@@ -144,13 +144,11 @@ export const Obrigado = () => {
 
           {/* VÍDEO NO FORMATO STORY (9:16 VERTICAL) */}
           <div className="pt-2 pb-2 w-full flex flex-col items-center">
-            {/* Chamada visual acima do vídeo no celular */}
             <div className="flex items-center justify-center gap-2 mb-3 text-xs font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/30 py-1.5 px-4 rounded-full shadow-md">
               <PlayCircle className="w-4 h-4 text-amber-300 animate-pulse" />
               <span>Assista ao vídeo explicativo</span>
             </div>
 
-            {/* Container formato Story (9:16) */}
             <div className="relative w-full max-w-[330px] sm:max-w-[380px] aspect-[9/16] rounded-3xl overflow-hidden border-2 sm:border-[3px] border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.3)] bg-slate-950">
               <iframe
                 title="vimeo-player"
@@ -164,36 +162,42 @@ export const Obrigado = () => {
         </div>
       </section>
 
-      {/* 3. SEÇÃO: UM ACERVO COMPLETO PARA SUAS AULAS DE LIBRAS */}
-      <section className="py-8 sm:py-10 px-3 sm:px-6 bg-slate-900/90 border-y border-slate-800 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-xl sm:text-4xl font-black text-white mb-2 tracking-tight">
+      {/* 3. SEÇÃO: UM ACERVO COMPLETO PARA SUAS AULAS DE LIBRAS (DESIGN IDÊNTICO AO PRINT EM 2 COLUNAS) */}
+      <section className="py-8 sm:py-12 px-3 sm:px-6 bg-[#0a1526] border-y border-slate-800/80 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-4xl lg:text-[40px] font-black text-white mb-2 tracking-tight leading-tight">
             Um acervo completo para suas aulas de Libras
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mb-6 font-medium">
+          <p className="text-xs sm:text-base text-slate-300 mb-6 sm:mb-8 font-medium">
             Tudo organizado para você planejar menos e aplicar mais.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 text-left">
+          {/* Grid em 2 colunas mesmo no mobile */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 text-left max-w-3xl mx-auto">
             {UPSERT_ACERVO.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-slate-950/90 border border-slate-800 rounded-2xl p-4 shadow-xl hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-[#f0f7ff] rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-lg border border-white/60 flex flex-col justify-start hover:scale-[1.02] transition-transform duration-200"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-2.5">
-                    <span className="text-2xl">{item.icon}</span>
-                    <span className="text-[10px] font-bold text-cyan-300 uppercase px-2.5 py-0.5 rounded-full bg-cyan-950 border border-cyan-800">
-                      {item.tag}
+                {/* Ícone + Número em destaque azul (se houver) */}
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-1.5">
+                  <span className="text-lg sm:text-2xl">{item.icon}</span>
+                  {item.highlight && (
+                    <span className="text-base sm:text-2xl font-black text-[#0284c7] tracking-tight">
+                      {item.highlight}
                     </span>
-                  </div>
-                  <h3 className="text-sm sm:text-base font-black text-white mb-1 group-hover:text-cyan-300 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    {item.desc}
-                  </p>
+                  )}
                 </div>
+
+                {/* Título */}
+                <h3 className="text-xs sm:text-base font-black text-[#0f284e] leading-snug mb-1">
+                  {item.title}
+                </h3>
+
+                {/* Descrição */}
+                <p className="text-[10px] sm:text-xs text-[#527092] leading-snug font-medium">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
