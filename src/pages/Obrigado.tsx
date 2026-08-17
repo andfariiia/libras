@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Sparkles,
   CheckCircle2,
@@ -78,6 +78,17 @@ const PACK_SUMMARY = [
 ];
 
 export const Obrigado = () => {
+  const [showVslButton, setShowVslButton] = useState(false);
+
+  useEffect(() => {
+    // Delay de exatamente 35 segundos (35000 ms) para exibir o botão
+    const timer = setTimeout(() => {
+      setShowVslButton(true);
+    }, 35000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const todayFormatted = new Date().toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "2-digit",
@@ -160,13 +171,29 @@ export const Obrigado = () => {
               <div className="relative w-full" style={{ paddingBottom: "177.77%" }}>
                 <iframe
                   title="vimeo-player"
-                  src="https://player.vimeo.com/video/1216733174?h=e41970d37f&title=0&byline=0&portrait=0&badge=0"
+                  src="https://player.vimeo.com/video/1216733174?h=e41970d37f&title=0&byline=0&portrait=0&badge=0&autopause=0"
                   className="w-full h-full border-0 absolute top-0 left-0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen
                 />
               </div>
             </div>
+
+            {/* BOTÃO COM DELAY DE 35 SEGUNDOS ABAIXO DO VÍDEO */}
+            {showVslButton && (
+              <div className="mt-6 w-full max-w-md mx-auto animate-in fade-in zoom-in-95 duration-500 space-y-2">
+                <button
+                  onClick={handleAcceptUpsell}
+                  className="group relative w-full inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 text-base sm:text-lg font-black text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-amber-300 rounded-full shadow-2xl shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer tracking-wider uppercase border border-cyan-200/40"
+                >
+                  <span>QUERO ADICIONAR POR R$ 27,90</span>
+                  <ArrowRight className="w-5 h-5 text-slate-950 stroke-[2.5] transition-transform group-hover:translate-x-1" />
+                </button>
+                <p className="text-[11px] sm:text-xs text-amber-300 font-semibold">
+                  ⚠️ Desconto exclusivo nesta página • Acesso imediato • 7 dias de garantia
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -181,7 +208,7 @@ export const Obrigado = () => {
             Tudo organizado para você planejar menos e aplicar mais.
           </p>
 
-          {/* Grid em 2 colunas mesmo no mobile */}
+          {/* Grid em 2 colunas */}
           <div className="grid grid-cols-2 gap-3 sm:gap-4 text-left max-w-3xl mx-auto">
             {UPSERT_ACERVO.map((item, idx) => (
               <div
@@ -231,8 +258,8 @@ export const Obrigado = () => {
               <div className="w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner">
                 <div className="relative w-full" style={{ paddingBottom: "177.77%" }}>
                   <iframe
-                    title="vimeo-player"
-                    src="https://player.vimeo.com/video/1216733322?h=8dd53c15c2&title=0&byline=0&portrait=0&badge=0"
+                    title="Demonstração do Material"
+                    src="https://player.vimeo.com/video/1216733322?h=8dd53c15c2&title=0&byline=0&portrait=0&badge=0&autopause=0"
                     className="w-full h-full border-0 absolute top-0 left-0"
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     allowFullScreen
@@ -316,7 +343,7 @@ export const Obrigado = () => {
               </div>
             </div>
 
-            {/* BENEFIT CARDS (ESTILO EXATO DO PRINT) */}
+            {/* BENEFIT CARDS */}
             <div className="space-y-2.5 text-left my-4 max-w-lg mx-auto">
               {PACK_SUMMARY.map((box, i) => (
                 <div
