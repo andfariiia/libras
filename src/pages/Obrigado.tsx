@@ -141,32 +141,16 @@ export const Obrigado = () => {
             Tenha dinâmicas, atividades, flashcards, slides e recursos prontos para aplicar da <strong>Educação Infantil ao 5º ano</strong>.
           </p>
 
-          <div className="pt-4 pb-2 max-w-2xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl bg-slate-900 aspect-video group shadow-cyan-500/20">
-              <img
-                src="https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp"
-                alt="Vídeo Demonstração das Dinâmicas de Libras"
-                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+          {/* VÍDEO DO VIMEO EMBUTIDO COM ALTA RESOLUÇÃO E ESTILO */}
+          <div className="pt-4 pb-2 max-w-3xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden border-2 border-cyan-500/40 shadow-2xl bg-slate-950 aspect-video shadow-cyan-500/20">
+              <iframe
+                title="vimeo-player"
+                src="https://player.vimeo.com/video/1216733174?h=e41970d37f"
+                className="w-full h-full border-0 absolute inset-0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allowFullScreen
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-between p-4 sm:p-6">
-                <div className="flex items-center justify-between">
-                  <span className="bg-slate-950/90 text-cyan-300 text-[10px] sm:text-xs font-black uppercase px-3 py-1 rounded-full border border-cyan-500/30">
-                    PRÉVIA EM VÍDEO DAS DINÂMICAS
-                  </span>
-                  <span className="bg-red-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md animate-pulse">
-                    AO VIVO
-                  </span>
-                </div>
-
-                <div className="text-left space-y-1">
-                  <span className="text-xs sm:text-sm font-black text-amber-300">
-                    Veja como aplicar em segundos na sua sala ou consultório ➔
-                  </span>
-                  <p className="text-[11px] text-slate-300 line-clamp-1">
-                    Materiais organizados por idade, tema, alfabeto e nível de desenvolvimento.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
