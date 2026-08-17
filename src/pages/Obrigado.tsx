@@ -289,31 +289,26 @@ export const Obrigado = () => {
             </h3>
           </div>
 
-          {/* MAIN CARD OFERTA VIP (COMPACTO E DE ALTA CONVERSÃO) */}
-          <div className="relative bg-gradient-to-b from-[#0e172a] via-[#090d18] to-[#070b14] border-2 border-emerald-400/80 rounded-3xl p-4 sm:p-7 md:p-8 shadow-[0_0_50px_rgba(16,185,129,0.2)] max-w-xl mx-auto text-center overflow-hidden">
+          {/* MAIN CARD OFERTA VIP (LIMPO E SEM CORTE SUPERIOR) */}
+          <div className="relative bg-gradient-to-b from-[#0e172a] via-[#090d18] to-[#070b14] border-2 border-emerald-400/80 rounded-3xl p-5 sm:p-7 md:p-8 shadow-[0_0_50px_rgba(16,185,129,0.2)] max-w-xl mx-auto text-center">
             
-            {/* Top Seal Badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-500 text-slate-950 font-black text-[10px] sm:text-xs px-4 py-1 rounded-full shadow-lg border border-emerald-200 uppercase tracking-widest flex items-center gap-1.5 whitespace-nowrap">
-              <Sparkles className="w-3.5 h-3.5 fill-slate-950" />
-              <span>OFERTA EXCLUSIVA DESTA PÁGINA</span>
-            </div>
-
             {/* Title & Price Section */}
-            <div className="pt-3 pb-1 space-y-1.5">
-              <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 px-3 py-0.5 rounded-full inline-block">
-                ACESSO COMPLETO & VITALÍCIO
-              </span>
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-1.5 bg-emerald-950/90 border border-emerald-500/40 text-emerald-400 text-[11px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
+                <span>ACESSO COMPLETO & VITALÍCIO</span>
+              </div>
 
-              <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight pt-1">
                 Leve agora o Pacote Completo de Libras
               </h3>
               
-              <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
                 Mais de <strong className="text-white font-bold">1.150 materiais</strong> reunidos em um único acervo pronto para salvar suas aulas.
               </p>
 
               {/* Price Tag Highlight Compacto */}
-              <div className="my-3.5 bg-[#0b1322] border border-slate-800/90 rounded-2xl p-3 sm:p-4 max-w-sm mx-auto shadow-inner relative">
+              <div className="my-3.5 bg-[#0b1322] border border-slate-800/90 rounded-2xl p-3.5 sm:p-4 max-w-sm mx-auto shadow-inner relative">
                 <div className="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800 pb-1.5 mb-1.5">
                   <span className="font-semibold">Valor normal separado:</span>
                   <span className="line-through text-rose-400/80 font-mono font-bold">R$ 97,00</span>
