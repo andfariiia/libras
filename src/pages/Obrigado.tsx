@@ -149,20 +149,22 @@ export const Obrigado = () => {
               <span>Assista ao vídeo explicativo</span>
             </div>
 
-            <div className="relative w-full max-w-[330px] sm:max-w-[380px] aspect-[9/16] rounded-3xl overflow-hidden border-2 sm:border-[3px] border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.3)] bg-slate-950">
-              <iframe
-                title="vimeo-player"
-                src="https://player.vimeo.com/video/1216733174?h=e41970d37f&title=0&byline=0&portrait=0&badge=0"
-                className="w-full h-full border-0 absolute inset-0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                allowFullScreen
-              />
+            <div className="w-full max-w-[320px] sm:max-w-[360px] rounded-3xl overflow-hidden border-2 sm:border-[3px] border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.3)] bg-slate-950">
+              <div className="relative w-full" style={{ paddingBottom: "177.77%" }}>
+                <iframe
+                  title="vimeo-player"
+                  src="https://player.vimeo.com/video/1216733174?h=e41970d37f&title=0&byline=0&portrait=0&badge=0"
+                  className="w-full h-full border-0 absolute top-0 left-0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. SEÇÃO: UM ACERVO COMPLETO PARA SUAS AULAS DE LIBRAS (DESIGN IDÊNTICO AO PRINT EM 2 COLUNAS) */}
+      {/* 3. SEÇÃO: UM ACERVO COMPLETO PARA SUAS AULAS DE LIBRAS */}
       <section className="py-8 sm:py-12 px-3 sm:px-6 bg-[#0a1526] border-y border-slate-800/80 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-4xl lg:text-[40px] font-black text-white mb-2 tracking-tight leading-tight">
@@ -179,7 +181,6 @@ export const Obrigado = () => {
                 key={idx}
                 className="bg-[#f0f7ff] rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-lg border border-white/60 flex flex-col justify-start hover:scale-[1.02] transition-transform duration-200"
               >
-                {/* Ícone + Número em destaque azul (se houver) */}
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-1.5">
                   <span className="text-lg sm:text-2xl">{item.icon}</span>
                   {item.highlight && (
@@ -189,12 +190,10 @@ export const Obrigado = () => {
                   )}
                 </div>
 
-                {/* Título */}
                 <h3 className="text-xs sm:text-base font-black text-[#0f284e] leading-snug mb-1">
                   {item.title}
                 </h3>
 
-                {/* Descrição */}
                 <p className="text-[10px] sm:text-xs text-[#527092] leading-snug font-medium">
                   {item.desc}
                 </p>
@@ -223,14 +222,16 @@ export const Obrigado = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto pt-2 items-stretch">
             {/* Card 1: Vídeo Formato Story (9:16) */}
             <div className="bg-slate-900/90 rounded-3xl p-3 sm:p-4 border-2 border-cyan-500/40 shadow-2xl flex flex-col justify-between group">
-              <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner">
-                <iframe
-                  title="vimeo-player"
-                  src="https://player.vimeo.com/video/1216733322?h=8dd53c15c2&title=0&byline=0&portrait=0&badge=0"
-                  className="w-full h-full border-0 absolute inset-0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  allowFullScreen
-                />
+              <div className="w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner">
+                <div className="relative w-full" style={{ paddingBottom: "177.77%" }}>
+                  <iframe
+                    title="vimeo-player"
+                    src="https://player.vimeo.com/video/1216733322?h=8dd53c15c2&title=0&byline=0&portrait=0&badge=0"
+                    className="w-full h-full border-0 absolute top-0 left-0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    allowFullScreen
+                  />
+                </div>
               </div>
               <p className="text-xs sm:text-sm font-bold text-cyan-300 mt-3 text-center">
                 Demonstração em Vídeo do Material
@@ -239,12 +240,14 @@ export const Obrigado = () => {
 
             {/* Card 2: Imagem do Material */}
             <div className="bg-slate-900/90 rounded-3xl p-3 sm:p-4 border border-slate-800 shadow-2xl flex flex-col justify-between group">
-              <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
-                <img
-                  src="https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp"
-                  alt="Dinâmicas Inclusivas em Grupo"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <div className="relative w-full" style={{ paddingBottom: "177.77%" }}>
+                  <img
+                    src="https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp"
+                    alt="Dinâmicas Inclusivas em Grupo"
+                    className="w-full h-full object-cover absolute top-0 left-0 group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
               </div>
               <p className="text-xs sm:text-sm font-bold text-slate-300 mt-3 text-center">
                 Dinâmicas Inclusivas em Grupo
