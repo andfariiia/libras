@@ -204,7 +204,7 @@ export const Obrigado = () => {
         </div>
       </section>
 
-      {/* 4. SEÇÃO: VEJA MAIS DO MATERIAL POR DENTRO */}
+      {/* 4. SEÇÃO: VEJA MAIS DO MATERIAL POR DENTRO (COM VÍDEO STORY NO PRIMEIRO CARD) */}
       <section className="py-10 px-3 sm:px-6 bg-slate-950 text-white relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
@@ -220,29 +220,33 @@ export const Obrigado = () => {
             Recursos ilustrados com alfabeto manual, massinha sensorial, dominó de sinais e folhas interativas prontas para impressão.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto pt-1">
-            <div className="bg-slate-900/90 rounded-2xl p-2.5 border border-slate-800 overflow-hidden shadow-2xl group">
-              <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-950 relative">
-                <img
-                  src="https://i.ibb.co/6cvZK4fh/image.png"
-                  alt="Material Dinâmicas Alfabeto"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto pt-2 items-stretch">
+            {/* Card 1: Vídeo Formato Story (9:16) */}
+            <div className="bg-slate-900/90 rounded-3xl p-3 sm:p-4 border-2 border-cyan-500/40 shadow-2xl flex flex-col justify-between group">
+              <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner">
+                <iframe
+                  title="vimeo-player"
+                  src="https://player.vimeo.com/video/1216733322?h=8dd53c15c2&title=0&byline=0&portrait=0&badge=0"
+                  className="w-full h-full border-0 absolute inset-0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allowFullScreen
                 />
               </div>
-              <p className="text-xs font-bold text-slate-300 mt-2">
-                Alfabeto Manual + Cartões Táteis
+              <p className="text-xs sm:text-sm font-bold text-cyan-300 mt-3 text-center">
+                Demonstração em Vídeo do Material
               </p>
             </div>
 
-            <div className="bg-slate-900/90 rounded-2xl p-2.5 border border-slate-800 overflow-hidden shadow-2xl group">
-              <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-950 relative">
+            {/* Card 2: Imagem do Material */}
+            <div className="bg-slate-900/90 rounded-3xl p-3 sm:p-4 border border-slate-800 shadow-2xl flex flex-col justify-between group">
+              <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
                 <img
                   src="https://i.ibb.co/67DKVwGy/bonus-3-edf-otimizado.webp"
                   alt="Dinâmicas Inclusivas em Grupo"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <p className="text-xs font-bold text-slate-300 mt-2">
+              <p className="text-xs sm:text-sm font-bold text-slate-300 mt-3 text-center">
                 Dinâmicas Inclusivas em Grupo
               </p>
             </div>
