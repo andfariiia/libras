@@ -11,6 +11,9 @@ import {
   ShieldCheck,
   Flame,
   PlayCircle,
+  Check,
+  Gift,
+  Star,
 } from "lucide-react";
 import { showSuccess } from "@/utils/toast";
 
@@ -56,28 +59,43 @@ const UPSERT_ACERVO = [
 const PACK_SUMMARY = [
   {
     icon: "🤟",
+    badge: "MAIS USADO",
+    badgeColor: "bg-amber-400/20 text-amber-300 border-amber-500/30",
     title: "+400 Dinâmicas de Libras",
-    desc: "Ideias prontas para tornar as aulas mais práticas, inclusivas e participativas.",
+    desc: "Ideias prontas e dinâmicas lúdicas para prender a atenção da turma e tornar as aulas 100% inclusivas.",
+    tag: "Economize horas de aula",
+    iconBg: "from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-300",
   },
   {
     icon: "🖨️",
+    badge: "ALTA DEFINIÇÃO",
+    badgeColor: "bg-cyan-400/20 text-cyan-300 border-cyan-500/30",
     title: "+500 Atividades para Imprimir",
-    desc: "Exercícios e materiais estruturados para Educação Infantil e Fundamental.",
+    desc: "Exercícios estruturados em PDF (300 DPI) para Educação Infantil e Ensino Fundamental I.",
+    tag: "Imprima quantas vezes quiser",
+    iconBg: "from-cyan-500/20 to-teal-500/10 border-cyan-500/30 text-cyan-300",
   },
   {
     icon: "🃏",
+    badge: "PRÁTICO & VISUAL",
+    badgeColor: "bg-emerald-400/20 text-emerald-300 border-emerald-500/30",
     title: "250+ Flashcards de Sinais",
-    desc: "Recursos visuais essenciais para ensinar, fixar e revisar vocabulário.",
+    desc: "Cartões visuais ilustrados e coloridos essenciais para fixar, revisar vocabulário e acelerar o aprendizado.",
+    tag: "Fixação rápida e divertida",
+    iconBg: "from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-300",
   },
   {
     icon: "📚",
+    badge: "BNCC ALINHADO",
+    badgeColor: "bg-purple-400/20 text-purple-300 border-purple-500/30",
     title: "Slides + Planejamentos + Extras",
-    desc: "Materiais para economizar semanas de preparação e ter sempre uma aula pronta.",
+    desc: "Planos de aula completos e slides ilustrados para nunca mais ficar sem ideia do que passar.",
+    tag: "Pronto para aplicar hoje",
+    iconBg: "from-purple-500/20 to-indigo-500/10 border-purple-500/30 text-purple-300",
   },
 ];
 
 export const Obrigado = () => {
-  // Formata a data atual automaticamente no formato DD/MM/YY (ex: 17/08/26)
   const todayFormatted = new Date().toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "2-digit",
@@ -97,7 +115,7 @@ export const Obrigado = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
-      {/* 1. TOP BAR: AVISO DE PEDIDO CONFIRMADO & OPORTUNIDADE EXCLUSIVA */}
+      {/* 1. TOP BAR: AVISO DE PEDIDO CONFIRMADO */}
       <div className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-slate-950 py-3.5 px-4 text-center shadow-lg relative z-20">
         <div className="max-w-4xl mx-auto space-y-1">
           <div className="flex items-center justify-center gap-2 font-black text-sm sm:text-base uppercase tracking-wide text-slate-950">
@@ -210,7 +228,7 @@ export const Obrigado = () => {
         </div>
       </section>
 
-      {/* 4. SEÇÃO: VEJA MAIS DO MATERIAL POR DENTRO (COM VÍDEO STORY CENTRALIZADO) */}
+      {/* 4. SEÇÃO: VEJA MAIS DO MATERIAL POR DENTRO */}
       <section className="py-10 px-3 sm:px-6 bg-slate-950 text-white relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
@@ -227,7 +245,6 @@ export const Obrigado = () => {
           </p>
 
           <div className="flex justify-center pt-2">
-            {/* Card Único: Vídeo Formato Story (9:16) */}
             <div className="w-full max-w-[320px] sm:max-w-[360px] bg-slate-900/90 rounded-3xl p-3 sm:p-4 border-2 border-cyan-500/40 shadow-2xl flex flex-col justify-between group">
               <div className="w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner">
                 <div className="relative w-full" style={{ paddingBottom: "177.77%" }}>
@@ -248,78 +265,129 @@ export const Obrigado = () => {
         </div>
       </section>
 
-      {/* 5. SEÇÃO: QUER ECONOMIZAR HORAS DE PLANEJAMENTO? + OFERTA LIMITADA + CHECKOUT CARD */}
-      <section className="py-10 px-3 sm:px-6 bg-slate-900/80 border-t border-slate-800 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
+      {/* 5. SEÇÃO: OFERTA IRRESISTÍVEL COM DESIGN DE ALTA CONVERSÃO */}
+      <section className="py-10 sm:py-14 px-3 sm:px-6 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-t border-slate-800 relative z-10 overflow-hidden">
+        {/* Glow de fundo */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+          
           {/* Header da Seção */}
-          <div>
-            <h2 className="text-xl sm:text-4xl font-black text-white tracking-tight mb-1.5">
+          <div className="space-y-3">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
               Quer economizar horas de planejamento?
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto mb-6 font-medium">
+            <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-medium">
               Adicione agora o pacote completo de Libras à sua compra e tenha centenas de materiais prontos para usar.
             </p>
 
-            {/* Badge Vermelho com Data e Título idêntico ao print */}
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-lg shadow-red-600/30 mb-4 border border-red-400/40">
-              <Clock className="w-4 h-4 fill-white/20 text-white shrink-0" />
-              <span>OFERTA LIMITADA - Apenas no dia {todayFormatted}</span>
+            {/* Badge Vermelho com Data Atual */}
+            <div className="pt-2">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white font-black text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-lg shadow-red-600/30 border border-red-400/50 uppercase tracking-wide">
+                <Clock className="w-4 h-4 fill-white/20 text-white shrink-0 animate-pulse" />
+                <span>OFERTA LIMITADA - Apenas no dia {todayFormatted}</span>
+              </div>
             </div>
 
-            <h3 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-2">
+            <h3 className="text-2xl sm:text-4xl font-black tracking-tight text-white pt-1">
               Escolha Sua Oferta Especial
             </h3>
           </div>
 
-          <div className="bg-slate-950 border-2 border-emerald-500/60 rounded-3xl p-5 sm:p-9 shadow-2xl relative max-w-2xl mx-auto text-center overflow-hidden">
-            <div className="space-y-1.5 mb-5">
-              <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight">
+          {/* MAIN CARD OFERTA VIP (DESIGN PREMIUM & DE ALTA CONVERSÃO) */}
+          <div className="relative bg-gradient-to-b from-[#0e172a] via-[#090d18] to-[#070b14] border-2 border-emerald-400/80 rounded-3xl p-5 sm:p-8 md:p-10 shadow-[0_0_50px_rgba(16,185,129,0.2)] max-w-2xl mx-auto text-center overflow-hidden">
+            
+            {/* Top Seal Badge */}
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-500 text-slate-950 font-black text-[11px] sm:text-xs px-5 py-1 rounded-full shadow-lg border border-emerald-200 uppercase tracking-widest flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 fill-slate-950" />
+              <span>OFERTA EXCLUSIVA DESTA PÁGINA</span>
+            </div>
+
+            {/* Title & Price Section */}
+            <div className="pt-4 pb-2 space-y-2">
+              <span className="text-[11px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 px-3.5 py-1 rounded-full inline-block">
+                ACESSO COMPLETO & VITALÍCIO
+              </span>
+
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
                 Leve agora o Pacote Completo de Libras
               </h3>
               
-              <div className="pt-1">
-                <span className="text-xs font-mono text-slate-500 line-through block">
-                  Pacote completo R$ 97,00
-                </span>
-                <span className="text-xs uppercase font-bold text-slate-400 tracking-wider">
-                  POR APENAS
-                </span>
-                <div className="text-4xl sm:text-6xl font-black text-amber-300 tracking-tight my-1">
-                  R$ 27,90
+              <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+                Mais de <strong className="text-white font-bold">1.150 materiais</strong> reunidos em um único acervo pronto para salvar suas aulas.
+              </p>
+
+              {/* Price Tag Highlight */}
+              <div className="my-5 bg-[#0b1322] border border-slate-800/90 rounded-2xl p-4 sm:p-5 max-w-md mx-auto shadow-inner relative">
+                <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-2 mb-2">
+                  <span className="font-semibold">Valor normal separado:</span>
+                  <span className="line-through text-rose-400/80 font-mono font-bold">R$ 97,00</span>
+                </div>
+
+                <div className="flex items-baseline justify-center gap-1.5 my-1">
+                  <span className="text-2xl sm:text-3xl font-black text-emerald-400">R$</span>
+                  <span className="text-5xl sm:text-6xl font-black text-emerald-400 tracking-tight">
+                    27,90
+                  </span>
+                  <span className="text-xs text-slate-400 font-semibold uppercase">à vista</span>
+                </div>
+
+                <div className="inline-flex items-center gap-1.5 text-xs font-black text-emerald-300 bg-emerald-950/90 border border-emerald-500/40 px-3 py-1 rounded-full mt-1 shadow-sm">
+                  <Gift className="w-3.5 h-3.5 text-amber-300" />
+                  <span>Economia imediata de R$ 69,10 (71% OFF)</span>
                 </div>
               </div>
-
-              <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                Você recebe um acervo completo para deixar suas aulas de Libras prontas em minutos.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left mb-6">
+            {/* BENEFIT CARDS (REESTRUTURADOS E MAIS ATRATIVOS) */}
+            <div className="space-y-3 text-left my-6">
               {PACK_SUMMARY.map((box, i) => (
                 <div
                   key={i}
-                  className="bg-slate-900/90 border border-slate-800 p-3 rounded-xl flex flex-col justify-start"
+                  className="group bg-[#111c33] hover:bg-[#152340] border border-slate-800 hover:border-emerald-500/50 p-4 rounded-2xl transition-all duration-300 shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 relative overflow-hidden"
                 >
-                  <div className="flex items-center gap-1.5 mb-1">
-                    <span className="text-base">{box.icon}</span>
-                    <h4 className="text-xs font-bold text-white leading-tight">
-                      {box.title}
-                    </h4>
+                  <div className="flex items-start gap-3.5">
+                    {/* Ícone com Box Destacado */}
+                    <div className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-700/80 flex items-center justify-center text-2xl shrink-0 shadow-inner group-hover:scale-105 transition-transform">
+                      {box.icon}
+                    </div>
+
+                    {/* Texto & Descrição */}
+                    <div className="space-y-0.5">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h4 className="text-sm sm:text-base font-black text-white group-hover:text-emerald-300 transition-colors">
+                          {box.title}
+                        </h4>
+                        <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-md border ${box.badgeColor}`}>
+                          {box.badge}
+                        </span>
+                      </div>
+                      
+                      <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                        {box.desc}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-[11px] text-slate-400 leading-snug">
-                    {box.desc}
-                  </p>
+
+                  {/* Micro Tag de Resultado */}
+                  <div className="shrink-0 self-end sm:self-center">
+                    <span className="text-[10px] font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-800/80 px-2.5 py-1 rounded-lg flex items-center gap-1">
+                      <Check className="w-3 h-3 text-emerald-400 stroke-[3]" />
+                      {box.tag}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
 
-            <div className="space-y-3.5">
+            {/* BOTÃO CTA & COMPROMISSO */}
+            <div className="space-y-3.5 pt-2">
               <button
                 onClick={handleAcceptUpsell}
-                className="w-full py-4 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-base uppercase tracking-wider shadow-2xl shadow-emerald-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2 border border-emerald-300 leading-snug"
+                className="group relative w-full py-4 sm:py-5 px-4 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-black text-sm sm:text-lg uppercase tracking-wider shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2.5 border border-emerald-200 leading-snug"
               >
-                <span>SIM, QUERO ADICIONAR AS +400 DINÂMICAS</span>
-                <ArrowRight className="w-5 h-5 stroke-[2.5] shrink-0" />
+                <span>SIM, QUERO ADICIONAR AO MEU PEDIDO POR R$ 27,90</span>
+                <ArrowRight className="w-5 h-5 stroke-[3] group-hover:translate-x-1 transition-transform shrink-0" />
               </button>
 
               <div>
@@ -332,17 +400,21 @@ export const Obrigado = () => {
               </div>
             </div>
 
-            <div className="mt-5 pt-4 border-t border-slate-900 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[11px] text-slate-400 font-medium">
-              <span className="flex items-center gap-1 text-slate-300">
-                <Lock className="w-3.5 h-3.5 text-amber-400" /> Compra 100% segura
+            {/* TRUST FOOTER BADGES */}
+            <div className="mt-6 pt-5 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[11px] text-slate-300 font-bold">
+              <span className="flex items-center gap-1.5">
+                <Lock className="w-3.5 h-3.5 text-amber-400" /> Checkout Kiwify Seguro
               </span>
-              <span className="flex items-center gap-1 text-slate-300">
-                <Zap className="w-3.5 h-3.5 text-cyan-400" /> Acesso imediato no e-mail
+              <span>•</span>
+              <span className="flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5 text-cyan-400" /> Acesso Imediato no E-mail
               </span>
-              <span className="flex items-center gap-1 text-slate-300">
+              <span>•</span>
+              <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> 7 Dias de Garantia
               </span>
             </div>
+
           </div>
         </div>
       </section>
