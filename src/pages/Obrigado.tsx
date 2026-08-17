@@ -120,7 +120,7 @@ export const Obrigado = () => {
       </div>
 
       {/* 2. HERO PRINCIPAL DO UPSELL */}
-      <section className="pt-6 sm:pt-12 pb-8 px-3 sm:px-6 relative overflow-hidden">
+      <section className="pt-6 sm:pt-10 pb-8 px-3 sm:px-6 relative overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute top-1/3 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -142,15 +142,16 @@ export const Obrigado = () => {
             Tenha dinâmicas, atividades, flashcards, slides e recursos prontos para aplicar da <strong>Educação Infantil ao 5º ano</strong>.
           </p>
 
-          {/* VÍDEO DO VIMEO MAXIMIZADO PARA CELULAR */}
-          <div className="pt-2 pb-2 w-full max-w-4xl mx-auto">
+          {/* VÍDEO NO FORMATO STORY (9:16 VERTICAL) */}
+          <div className="pt-2 pb-2 w-full flex flex-col items-center">
             {/* Chamada visual acima do vídeo no celular */}
-            <div className="flex items-center justify-center gap-2 mb-2 text-xs font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/30 py-1.5 px-4 rounded-full max-w-xs mx-auto shadow-md">
+            <div className="flex items-center justify-center gap-2 mb-3 text-xs font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/30 py-1.5 px-4 rounded-full shadow-md">
               <PlayCircle className="w-4 h-4 text-amber-300 animate-pulse" />
               <span>Assista ao vídeo explicativo</span>
             </div>
 
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 sm:border-[3px] border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.3)] bg-slate-950 aspect-[16/9] w-full">
+            {/* Container formato Story (9:16) */}
+            <div className="relative w-full max-w-[330px] sm:max-w-[380px] aspect-[9/16] rounded-3xl overflow-hidden border-2 sm:border-[3px] border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.3)] bg-slate-950">
               <iframe
                 title="vimeo-player"
                 src="https://player.vimeo.com/video/1216733174?h=e41970d37f"
