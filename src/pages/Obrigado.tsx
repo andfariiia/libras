@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   Sparkles,
   CheckCircle2,
@@ -75,7 +75,7 @@ const PACK_SUMMARY = [
   },
 ];
 
-export const Upsell = () => {
+export const Obrigado = () => {
   const handleAcceptUpsell = () => {
     showSuccess("Redirecionando para adicionar ao seu pedido...");
     setTimeout(() => {
@@ -353,4 +353,4 @@ export const Upsell = () => {
   );
 };
 
-export default Upsell;
+export default Obrigado;
