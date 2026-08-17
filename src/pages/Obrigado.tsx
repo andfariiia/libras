@@ -152,7 +152,7 @@ export const Obrigado = () => {
             <div className="relative w-full max-w-[330px] sm:max-w-[380px] aspect-[9/16] rounded-3xl overflow-hidden border-2 sm:border-[3px] border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.3)] bg-slate-950">
               <iframe
                 title="vimeo-player"
-                src="https://player.vimeo.com/video/1216733174?h=e41970d37f"
+                src="https://player.vimeo.com/video/1216733174?h=e41970d37f&title=0&byline=0&portrait=0&badge=0"
                 className="w-full h-full border-0 absolute inset-0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 allowFullScreen
