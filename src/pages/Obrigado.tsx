@@ -98,7 +98,122 @@ export const Obrigado = () => {
   const handleAcceptUpsell = () => {
     showSuccess("Redirecionando para adicionar ao seu pedido...");
     setTimeout(() => {
-      window.location.href = "https://pay.kiwify.com.br/o8QVrMK";
+      window.location.href = "https://pay.kiwify.com.br/GzliuhP";
+    }, 600);
+  };
+
+  const handleDecline = () => {
+    window.location.href = "/membros";
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+      {/* 1. TOP BAR: AVISO DE PEDIDO CONFIRMADO */}
+      <div className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-slate-950 py-3.5 px-4 text-center shadow-lg relative z-20">
+        <div className="max-w-4xl mx-auto space-y-1">
+          <div className="flex items-center justify-center gap-2 font-black text-sm sm:text-base uppercase tracking-wide text-slate-950">
+            <span>Obrigado pela sua compra<dyad-write path="src/pages/Obrigado.tsx" description="Atualizando o link de checkout do upsell na página de Obrigado para https://pay.kiwify.com.br/GzliuhP">
+"use client";
+
+import React, { useState, useEffect } from "react";
+import {
+  Sparkles,
+  CheckCircle2,
+  Lock,
+  Zap,
+  Clock,
+  ArrowRight,
+  ShieldCheck,
+  Flame,
+  PlayCircle,
+  Gift,
+} from "lucide-react";
+import { showSuccess } from "@/utils/toast";
+
+const UPSERT_ACERVO = [
+  {
+    icon: "🤟",
+    highlight: "+400",
+    title: "Dinâmicas de Libras",
+    desc: "Prontas para aplicar em sala",
+  },
+  {
+    icon: "🖨️",
+    highlight: "+500",
+    title: "Atividades para imprimir",
+    desc: "Materiais para diferentes níveis",
+  },
+  {
+    icon: "🃏",
+    highlight: "250+",
+    title: "Flashcards de sinais",
+    desc: "Recursos visuais e didáticos",
+  },
+  {
+    icon: "🎥",
+    highlight: "",
+    title: "Slides didáticos",
+    desc: "Aulas mais visuais e práticas",
+  },
+  {
+    icon: "🎯",
+    highlight: "",
+    title: "Kit Libras Interativo",
+    desc: "Aprendizado mais envolvente",
+  },
+  {
+    icon: "📚",
+    highlight: "",
+    title: "Planejamentos + aulas de emergência",
+    desc: "BNCC + Lei 10.436/2002",
+  },
+];
+
+const PACK_SUMMARY = [
+  {
+    icon: "🤟",
+    title: "+400 Dinâmicas de Libras",
+    desc: "Ideias prontas para tornar as aulas mais práticas e participativas.",
+  },
+  {
+    icon: "🖨️",
+    title: "+500 Atividades para Imprimir",
+    desc: "Exercícios e materiais para Educação Infantil e Fundamental.",
+  },
+  {
+    icon: "🃏",
+    title: "250+ Flashcards de Sinais",
+    desc: "Recursos visuais para ensinar e revisar vocabulário.",
+  },
+  {
+    icon: "📚",
+    title: "Slides + Planejamentos + Extras",
+    desc: "Materiais para ganhar tempo e ter sempre uma aula preparada.",
+  },
+];
+
+export const Obrigado = () => {
+  const [showVslButton, setShowVslButton] = useState(false);
+
+  useEffect(() => {
+    // Delay de exatamente 35 segundos (35000 ms) para exibir o botão
+    const timer = setTimeout(() => {
+      setShowVslButton(true);
+    }, 35000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const todayFormatted = new Date().toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  });
+
+  const handleAcceptUpsell = () => {
+    showSuccess("Redirecionando para adicionar ao seu pedido...");
+    setTimeout(() => {
+      window.location.href = "https://pay.kiwify.com.br/GzliuhP";
     }, 600);
   };
 
