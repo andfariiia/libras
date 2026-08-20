@@ -95,6 +95,13 @@ export const Obrigado = () => {
     year: "2-digit",
   });
 
+  const scrollToOffer = () => {
+    const offerEl = document.getElementById("oferta");
+    if (offerEl) {
+      offerEl.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const handleAcceptUpsell = () => {
     showSuccess("Redirecionando para adicionar ao seu pedido...");
     setTimeout(() => {
@@ -179,11 +186,219 @@ export const Obrigado = () => {
               </div>
             </div>
 
-            {/* BOTÃO COM DELAY DE 35 SEGUNDOS ABAIXO DO VÍDEO */}
+            {/* BOTÃO COM DELAY DE 35 SEGUNDOS ABAIXO DO VÍDEO (ROLA ATÉ A SEÇÃO DA OFERTA) */}
             {showVslButton && (
               <div className="mt-6 w-full max-w-md mx-auto animate-in fade-in zoom-in-95 duration-500 space-y-2">
                 <button
-                  onClick={handleAcceptUpsell}
+                  onClick={scrollToOffer}
+                  className="group relative w-full inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 text-base sm:text-lg font-black text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-amber-300 rounded-full shadow-2xl shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer tracking-wider uppercase border border-cyan-200/40"
+                >
+                  <span>QUERO ADICIONAR POR R$ 27,90</span>
+                  <ArrowRight className="w-5 h-5 text-slate-950 stroke-[2.5] transition-transform group-hover:translate-x-1" />
+                </button>
+                <p className="text-[11px] sm:text-xs text-amber-300 font-semibold">
+                  ⚠️ Desconto exclusivo nesta página • Acesso imediato • 7 dias de garantia
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+<dyad-write path="src/pages/Obrigado.tsx" description="Atualizado o arquivo Obrigado.tsx com rolagem suave para a seção de oferta ao clicar no botão pós-vídeo">
+"use client";
+
+import React, { useState, useEffect } from "react";
+import {
+  Sparkles,
+  CheckCircle2,
+  Lock,
+  Zap,
+  Clock,
+  ArrowRight,
+  ShieldCheck,
+  Flame,
+  PlayCircle,
+  Gift,
+} from "lucide-react";
+import { showSuccess } from "@/utils/toast";
+
+const UPSERT_ACERVO = [
+  {
+    icon: "🤟",
+    highlight: "+400",
+    title: "Dinâmicas de Libras",
+    desc: "Prontas para aplicar em sala",
+  },
+  {
+    icon: "🖨️",
+    highlight: "+500",
+    title: "Atividades para imprimir",
+    desc: "Materiais para diferentes níveis",
+  },
+  {
+    icon: "🃏",
+    highlight: "250+",
+    title: "Flashcards de sinais",
+    desc: "Recursos visuais e didáticos",
+  },
+  {
+    icon: "🎥",
+    highlight: "",
+    title: "Slides didáticos",
+    desc: "Aulas mais visuais e práticas",
+  },
+  {
+    icon: "🎯",
+    highlight: "",
+    title: "Kit Libras Interativo",
+    desc: "Aprendizado mais envolvente",
+  },
+  {
+    icon: "📚",
+    highlight: "",
+    title: "Planejamentos + aulas de emergência",
+    desc: "BNCC + Lei 10.436/2002",
+  },
+];
+
+const PACK_SUMMARY = [
+  {
+    icon: "🤟",
+    title: "+400 Dinâmicas de Libras",
+    desc: "Ideias prontas para tornar as aulas mais práticas e participativas.",
+  },
+  {
+    icon: "🖨️",
+    title: "+500 Atividades para Imprimir",
+    desc: "Exercícios e materiais para Educação Infantil e Fundamental.",
+  },
+  {
+    icon: "🃏",
+    title: "250+ Flashcards de Sinais",
+    desc: "Recursos visuais para ensinar e revisar vocabulário.",
+  },
+  {
+    icon: "📚",
+    title: "Slides + Planejamentos + Extras",
+    desc: "Materiais para ganhar tempo e ter sempre uma aula preparada.",
+  },
+];
+
+export const Obrigado = () => {
+  const [showVslButton, setShowVslButton] = useState(false);
+
+  useEffect(() => {
+    // Delay de exatamente 35 segundos (35000 ms) para exibir o botão
+    const timer = setTimeout(() => {
+      setShowVslButton(true);
+    }, 35000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const todayFormatted = new Date().toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  });
+
+  const scrollToOffer = () => {
+    const offerEl = document.getElementById("oferta");
+    if (offerEl) {
+      offerEl.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleAcceptUpsell = () => {
+    showSuccess("Redirecionando para adicionar ao seu pedido...");
+    setTimeout(() => {
+      window.location.href = "https://pay.cakto.com.br/m5smh9j_1053324";
+    }, 600);
+  };
+
+  const handleDecline = () => {
+    window.location.href = "/membros";
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+      {/* 1. TOP BAR: AVISO DE PEDIDO CONFIRMADO */}
+      <div className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 text-slate-950 py-3.5 px-4 text-center shadow-lg relative z-20">
+        <div className="max-w-4xl mx-auto space-y-1">
+          <div className="flex items-center justify-center gap-2 font-black text-sm sm:text-base uppercase tracking-wide text-slate-950">
+            <span>Obrigado pela sua compra!</span>
+            <span className="text-xl">🎉</span>
+          </div>
+          <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
+            Seu pedido principal foi aprovado e o acesso está a caminho do seu e-mail. <br className="hidden sm:inline" />
+            <strong className="underline font-bold">NÃO FECHE ESTA PÁGINA AINDA:</strong> separamos uma oportunidade única antes de você acessar seus materiais.
+          </p>
+        </div>
+      </div>
+
+      {/* Barra de Progresso do Pedido */}
+      <div className="bg-slate-900 border-b border-slate-800 py-2.5 px-3">
+        <div className="max-w-xl mx-auto flex items-center justify-between gap-2 text-[11px] sm:text-xs font-bold">
+          <span className="text-emerald-400 flex items-center gap-1 shrink-0">
+            <CheckCircle2 className="w-3.5 h-3.5" /> 1. Pedido Pago
+          </span>
+          <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden relative mx-1">
+            <div className="w-[85%] h-full bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full animate-pulse" />
+          </div>
+          <span className="text-amber-400 flex items-center gap-1 shrink-0">
+            <Clock className="w-3.5 h-3.5" /> 2. Oferta Especial
+          </span>
+        </div>
+      </div>
+
+      {/* 2. HERO PRINCIPAL DO UPSELL */}
+      <section className="pt-6 sm:pt-10 pb-8 px-3 sm:px-6 relative overflow-hidden">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-4">
+          <div className="inline-flex items-center gap-1.5 bg-amber-950/90 border border-amber-500/40 text-amber-300 px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-md">
+            <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400 animate-bounce" />
+            <span>OPORTUNIDADE ÚNICA • ADICIONE COM 1 CLIQUE</span>
+          </div>
+
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2] max-w-3xl mx-auto px-1">
+            Leve também{" "}
+            <span className="bg-gradient-to-r from-teal-400 via-cyan-300 to-blue-300 bg-clip-text text-transparent">
+              mais de 400 Dinâmicas de Libras prontas
+            </span>{" "}
+            e economize horas preparando suas aulas.
+          </h1>
+
+          <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed px-2">
+            Tenha dinâmicas, atividades, flashcards, slides e recursos prontos para aplicar da <strong>Educação Infantil ao 5º ano</strong>.
+          </p>
+
+          {/* VÍDEO NO FORMATO STORY (9:16 VERTICAL) */}
+          <div className="pt-2 pb-2 w-full flex flex-col items-center">
+            <div className="flex items-center justify-center gap-2 mb-3 text-xs font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-500/30 py-1.5 px-4 rounded-full shadow-md">
+              <PlayCircle className="w-4 h-4 text-amber-300 animate-pulse" />
+              <span>Assista ao vídeo explicativo</span>
+            </div>
+
+            <div className="w-full max-w-[320px] sm:max-w-[360px] rounded-3xl overflow-hidden border-2 sm:border-[3px] border-cyan-400/80 shadow-[0_0_35px_rgba(6,182,212,0.3)] bg-slate-950">
+              <div className="relative w-full" style={{ paddingBottom: "177.77%" }}>
+                <iframe
+                  title="vimeo-player"
+                  src="https://player.vimeo.com/video/1216733174?h=e41970d37f&title=0&byline=0&portrait=0&badge=0&autopause=0"
+                  className="w-full h-full border-0 absolute top-0 left-0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            {/* BOTÃO COM DELAY DE 35 SEGUNDOS ABAIXO DO VÍDEO (ROLA ATÉ A SEÇÃO DA OFERTA) */}
+            {showVslButton && (
+              <div className="mt-6 w-full max-w-md mx-auto animate-in fade-in zoom-in-95 duration-500 space-y-2">
+                <button
+                  onClick={scrollToOffer}
                   className="group relative w-full inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 text-base sm:text-lg font-black text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-amber-300 rounded-full shadow-2xl shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer tracking-wider uppercase border border-cyan-200/40"
                 >
                   <span>QUERO ADICIONAR POR R$ 27,90</span>
@@ -275,7 +490,7 @@ export const Obrigado = () => {
       </section>
 
       {/* 5. SEÇÃO: QUER ECONOMIZAR HORAS DE PLANEJAMENTO? + CHECKOUT CARD */}
-      <section className="py-10 sm:py-14 px-3 sm:px-6 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-t border-slate-800 relative z-10 overflow-hidden">
+      <section id="oferta" className="py-10 sm:py-14 px-3 sm:px-6 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-t border-slate-800 relative z-10 overflow-hidden">
         {/* Glow de fundo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none" />
 
