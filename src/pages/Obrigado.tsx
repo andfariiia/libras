@@ -98,7 +98,7 @@ export const Obrigado = () => {
   const handleAcceptUpsell = () => {
     showSuccess("Redirecionando para adicionar ao seu pedido...");
     setTimeout(() => {
-      window.location.href = "https://pay.kiwify.com.br/GzliuhP";
+      window.location.href = "https://pay.cakto.com.br/m5smh9j_1053324";
     }, 600);
   };
 
