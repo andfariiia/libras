@@ -3,7 +3,7 @@
 import React from "react";
 import { X, Check } from "lucide-react";
 
-export const TwoPathsSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
+export const TwoPathsSection = ({ onCtaClick }: { onCtaClick?: () => void }) => {
   return (
     <section className="py-6 md:py-10 bg-slate-950 text-white relative border-t border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
@@ -49,7 +49,10 @@ export const TwoPathsSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </div>
 
           {/* Path 2: With Kit (Highlighted) */}
-          <div className="bg-gradient-to-br from-teal-950/80 via-slate-900 to-cyan-950/80 border-2 border-cyan-400 rounded-3xl p-5 sm:p-6 relative shadow-2xl shadow-cyan-500/20">
+          <div
+            onClick={onCtaClick}
+            className="bg-gradient-to-br from-teal-950/80 via-slate-900 to-cyan-950/80 border-2 border-cyan-400 rounded-3xl p-5 sm:p-6 relative shadow-2xl shadow-cyan-500/20 cursor-pointer hover:scale-[1.01] transition-transform"
+          >
             <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-teal-400 to-cyan-400 text-slate-950 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider shadow-md">
               RECOMENDADO
             </div>

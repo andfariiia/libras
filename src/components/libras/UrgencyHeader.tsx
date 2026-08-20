@@ -20,7 +20,7 @@ const TICKER_ITEMS = [
   "🎲 BINGO EM LIBRAS E MAIS...",
 ];
 
-export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
+export const UrgencyHeader = ({ onCtaClick }: { onCtaClick?: () => void }) => {
   const [currentSaleIndex, setCurrentSaleIndex] = useState(0);
   const [showToast, setShowToast] = useState(false);
 
@@ -50,9 +50,11 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
     <>
       {/* Red Modern High-Impact Sticky Top Bar */}
-      <header className="sticky top-0 z-50 bg-gradient-to-r from-red-950 via-slate-950 to-red-950 backdrop-blur-xl border-b border-red-500/40 shadow-[0_4px_25px_rgba(220,38,38,0.35)] py-2.5 overflow-hidden">
+      <header
+        onClick={onCtaClick}
+        className="sticky top-0 z-50 bg-gradient-to-r from-red-950 via-slate-950 to-red-950 backdrop-blur-xl border-b border-red-500/40 shadow-[0_4px_25px_rgba(220,38,38,0.35)] py-2.5 overflow-hidden cursor-pointer"
+      >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-2">
-          
           {/* Continuous Right-to-Left Ticker Bar */}
           <div className="relative w-full overflow-hidden py-0.5">
             <div className="animate-marquee-slow flex items-center whitespace-nowrap gap-6 text-xs sm:text-sm font-black text-amber-300 uppercase tracking-wide">
@@ -64,7 +66,6 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick: () => void }) => {
               ))}
             </div>
           </div>
-
         </div>
       </header>
 

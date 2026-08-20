@@ -11,7 +11,7 @@ const PAIN_POINTS = [
   "Você sabe que inclusão não pode esperar, mas precisa de atividades prontas, visuais e simples de aplicar"
 ];
 
-export const PainPointsSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
+export const PainPointsSection = ({ onCtaClick }: { onCtaClick?: () => void }) => {
   return (
     <section className="py-8 md:py-12 bg-slate-950 text-white relative border-b border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
@@ -47,7 +47,10 @@ export const PainPointsSection = ({ onCtaClick }: { onCtaClick: () => void }) =>
         </div>
 
         {/* Callout box */}
-        <div className="bg-gradient-to-r from-amber-950/40 via-slate-900 to-amber-950/40 border border-amber-500/30 rounded-2xl p-4 sm:p-5 max-w-2xl mx-auto flex items-center gap-3.5 text-left">
+        <div
+          onClick={onCtaClick}
+          className="bg-gradient-to-r from-amber-950/40 via-slate-900 to-amber-950/40 border border-amber-500/30 rounded-2xl p-4 sm:p-5 max-w-2xl mx-auto flex items-center gap-3.5 text-left cursor-pointer hover:border-amber-400/50 transition-colors"
+        >
           <HelpCircle className="w-8 h-8 text-amber-400 shrink-0 hidden xs:block" />
           <p className="text-xs sm:text-base text-slate-200 font-medium leading-relaxed">
             <strong className="text-amber-300">Chega de passar perrengue ou improvisar na hora da aula!</strong> Com os materiais estruturados do Kit, você economiza horas de planejamento e conquista a atenção do aluno em minutos.

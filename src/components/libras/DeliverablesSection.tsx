@@ -56,7 +56,7 @@ const DELIVERABLES = [
   },
 ];
 
-export const DeliverablesSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
+export const DeliverablesSection = ({ onCtaClick }: { onCtaClick?: () => void }) => {
   return (
     <section className="py-12 md:py-18 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800/80">
       {/* Background Ambient Glows */}
@@ -91,7 +91,8 @@ export const DeliverablesSection = ({ onCtaClick }: { onCtaClick: () => void }) 
             return (
               <div
                 key={idx}
-                className={`group relative bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-slate-800/90 shadow-2xl hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between ${item.glowColor} ${
+                onClick={onCtaClick}
+                className={`group relative bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-slate-800/90 shadow-2xl hover:border-cyan-500/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer ${item.glowColor} ${
                   idx === 4 ? "md:col-span-2 lg:col-span-1" : ""
                 }`}
               >

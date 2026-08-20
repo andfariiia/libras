@@ -52,7 +52,7 @@ const BONUSES: BonusItem[] = [
   },
 ];
 
-export const BonusSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
+export const BonusSection = ({ onCtaClick }: { onCtaClick?: () => void }) => {
   return (
     <section className="py-6 md:py-10 bg-[#0B0F19] text-white relative overflow-hidden border-t border-slate-800/80">
       {/* Background Glow Effects */}
@@ -81,7 +81,8 @@ export const BonusSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           {BONUSES.map((bonus, idx) => (
             <div
               key={idx}
-              className="bg-[#121829] border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all duration-300 group"
+              onClick={onCtaClick}
+              className="bg-[#121829] border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all duration-300 group cursor-pointer"
             >
               <div>
                 {/* Image Top Frame */}
