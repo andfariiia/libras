@@ -67,15 +67,36 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
   return (
     <section className="relative pt-6 pb-8 md:pt-8 md:pb-12 overflow-hidden bg-slate-950 text-white">
       {/* Background Mesh Gradients & Glow Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/15 rounded-full blur-[140px] pointer-events-none animate-pulseGlow" />
-      <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 w-[350px] h-[350px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-<dyad-write path="src/components/libras/HeroSection.tsx" description="Finalizando a correção completa do HeroSection com título, subtítulo e pontuações exatas">
+"use client";
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-        {/* Top BNCC Pill */}
-        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 text-emerald-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)] mb-4">
-          <CheckCircle2 className="w-4 h-4 text-emerald-40<dyad-write path="src/components/libras/HeroSection.tsx" description="Atualizando título e subtítulo com a pontuação solicitada">
+import React from "react";
+import { CheckCircle2, ShieldCheck, Zap, Lock, Star, ArrowRight } from "lucide-react";
+
+interface CarouselItem {
+  title: string;
+  image: string;
+}
+
+const CAROUSEL_ITEMS: CarouselItem[] = [
+  {
+    title: "Jogo dos Sinais — Capa e Guia",
+    image: "https://i.ibb.co/9Hcs4qdz/jogo-dos-sinais-capa.webp",
+  },
+  {
+    title: "Jogo dos Sinais — Cards Visuais",
+    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
+  },
+  {
+    title: "Bingo em Libras — Cartelas Ilustradas",
+    image: "https://i.ibb.co/XrgfhVcQ/bingo-libras-1.webp",
+  },
+  {
+    title: "Baralho UNO em Libras — Edição Especial",
+    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
+  },
+  {
+    title:<dyad-write path="src/components/libras/HeroSection.tsx" description="Correção completa do arquivo HeroSection.tsx sem interrupções">
 "use client";
 
 import React from "react";
