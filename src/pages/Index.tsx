@@ -24,14 +24,14 @@ const Index = () => {
   };
 
   const handleSelectPlan = (planName: string) => {
-    let checkoutUrl = "https://pay.kiwify.com.br/o8QVrMK"; // Valor padrão (R$ 27,00)
+    let checkoutUrl = "https://pay.cakto.com.br/b5jqr5k_1053249"; // Oferta de R$ 27,90 (Padrão)
 
     if (planName.includes("10")) {
-      checkoutUrl = "https://pay.kiwify.com.br/Tch9sHz";
-    } else if (planName.includes("17,90") || planName.includes("17.90")) {
-      checkoutUrl = "https://pay.kiwify.com.br/n80iYQJ";
+      checkoutUrl = "https://pay.cakto.com.br/393872h"; // Oferta de R$ 10
+    } else if (planName.includes("17,90") || planName.includes("17.90") || planName.includes("17")) {
+      checkoutUrl = "https://pay.cakto.com.br/uodyk8t"; // Oferta de R$ 17
     } else if (planName.includes("27")) {
-      checkoutUrl = "https://pay.kiwify.com.br/o8QVrMK";
+      checkoutUrl = "https://pay.cakto.com.br/b5jqr5k_1053249"; // Oferta de R$ 27,90
     }
 
     showSuccess(`Redirecionando para o checkout seguro...`);
