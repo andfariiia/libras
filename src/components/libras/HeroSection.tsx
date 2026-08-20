@@ -75,6 +75,84 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 text-center">
         {/* Top BNCC Pill */}
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 text-emerald-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)] mb-4">
+          <CheckCircle2 className="w-4 h-4 text-emerald-40<dyad-write path="src/components/libras/HeroSection.tsx" description="Atualizando título e subtítulo com a pontuação solicitada">
+"use client";
+
+import React from "react";
+import { CheckCircle2, ShieldCheck, Zap, Lock, Star, ArrowRight } from "lucide-react";
+
+interface CarouselItem {
+  title: string;
+  image: string;
+}
+
+const CAROUSEL_ITEMS: CarouselItem[] = [
+  {
+    title: "Jogo dos Sinais — Capa e Guia",
+    image: "https://i.ibb.co/9Hcs4qdz/jogo-dos-sinais-capa.webp",
+  },
+  {
+    title: "Jogo dos Sinais — Cards Visuais",
+    image: "https://i.ibb.co/4njqt1LM/jogo-dos-sinais-cards.webp",
+  },
+  {
+    title: "Bingo em Libras — Cartelas Ilustradas",
+    image: "https://i.ibb.co/XrgfhVcQ/bingo-libras-1.webp",
+  },
+  {
+    title: "Baralho UNO em Libras — Edição Especial",
+    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
+  },
+  {
+    title: "Jogo dos Sinais — Atividades de Fixação",
+    image: "https://i.ibb.co/twNSWRdS/jogo-dos-sinais-folha.webp",
+  },
+  {
+    title: "Jogo da Memória dos Sinais em Libras",
+    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
+  },
+  {
+    title: "Atividades Práticas e Exercícios em Libras",
+    image: "https://i.ibb.co/3y2YYF6Q/jogo-dos-sinais-atividades.webp",
+  },
+  {
+    title: "Bingo em Libras — Fichas de Sorteio",
+    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
+  },
+  {
+    title: "Baralho UNO em Libras — Sinais e Números",
+    image: "https://i.ibb.co/0ypCHLQ9/uno-libras-3.webp",
+  },
+  {
+    title: "Jogo da Memória dos Sinais — Cartas Visuais",
+    image: "https://i.ibb.co/q3tNG7v9/memoria-dos-sinais-1.webp",
+  },
+  {
+    title: "Jogo da Memória dos Sinais — Alfabeto & Vocabulário",
+    image: "https://i.ibb.co/d4kJn7Ys/memoria-dos-sinais-2.webp",
+  },
+  {
+    title: "Bingo de Libras para Turmas",
+    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
+  },
+  {
+    title: "UNO Adaptado com Datilologia",
+    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
+  },
+];
+
+export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
+  return (
+    <section className="relative pt-6 pb-8 md:pt-8 md:pb-12 overflow-hidden bg-slate-950 text-white">
+      {/* Background Mesh Gradients & Glow Orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/15 rounded-full blur-[140px] pointer-events-none animate-pulseGlow" />
+      <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[350px] h-[350px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+        {/* Top BNCC Pill */}
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 text-emerald-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)] mb-4">
           <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
           <span>Alinhado 100% à BNCC 2026</span>
         </div>
@@ -83,7 +161,7 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] max-w-4xl mx-auto mb-4">
           Jogos em Libras:{" "}
           <span className="bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
-            aprender brincando, incluir de verdade
+            aprender brincando, incluir de verdade.
           </span>
         </h1>
 
@@ -128,7 +206,7 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
             </div>
           </div>
 
-          {/* Main CTA Button - Exact Pill Format from Screenshot */}
+          {/* Main CTA Button */}
           <button
             onClick={onCtaClick}
             className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-3.5 sm:py-4 text-base sm:text-lg font-black text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-amber-300 rounded-full shadow-2xl shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer tracking-wider uppercase border border-cyan-200/40"

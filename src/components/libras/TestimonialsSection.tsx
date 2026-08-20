@@ -1,91 +1,72 @@
 "use client";
 
 import React from "react";
-import { Star, Quote, CheckCheck } from "lucide-react";
+import { MessageSquareText, Star, Quote } from "lucide-react";
 
-const WHATSAPP_TESTIMONIALS = [
+const TESTIMONIAL_IMAGES = [
   {
-    name: "Prof. Claudia Ramos",
-    role: "Professora do Ensino Fundamental • SP",
-    message: "Aline, estou apaixonada pelo material! Eu tinha um aluno surdo no 2º ano e não sabia como interagir. O Bingo e o Jogo da Memória mudaram o clima da sala inteira. A turma toda quis aprender os sinais!",
-    time: "14:23",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80",
+    image: "https://i.ibb.co/MDXKVrF5/Gemini-Generated-Image-y650tfy650tfy650.jpg",
+    title: "Depoimento de Professora",
   },
   {
-    name: "Mariana Costa",
-    role: "Mãe do Gabriel (8 anos) • MG",
-    message: "Comprei o kit para usar em casa com meu filho. A gente imprime e joga no final de semana. Ele se sente muito mais confiante para se comunicar. Valeu cada centavo!",
-    time: "18:05",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80",
+    image: "https://i.ibb.co/JFz2sfFH/Gemini-Generated-Image-fv4fz6fv4fz6fv4f.jpg",
+    title: "Depoimento de Educadora Especial",
   },
   {
-    name: "Profa. Luciana Dias",
-    role: "Educadora Especial • RJ",
-    message: "Material riquíssimo, muito bem organizado em PDF. O UNO em Libras é sucesso absoluto! Já indiquei para todas as colegas da escola.",
-    time: "09:41",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&auto=format&fit=crop&q=80",
+    image: "https://i.ibb.co/Y4hbgPqc/Gemini-Generated-Image-7242ve7242ve7242.jpg",
+    title: "Depoimento de Mãe",
   },
 ];
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-6 md:py-10 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-8 md:py-14 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800/80">
       {/* Decorative Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        {/* Top Tag Badge */}
+        <div className="inline-flex items-center gap-2 bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-3 shadow-md">
+          <MessageSquareText className="w-3.5 h-3.5 text-cyan-400" />
+          <span>RESULTADOS REAIS</span>
+        </div>
+
         {/* Title */}
         <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 tracking-tight">
           Amado por <span className="text-cyan-400 underline decoration-cyan-500/40">PROFESSORAS E MÃES</span>
         </h2>
 
         {/* Inspirational Quote */}
-        <div className="max-w-3xl mx-auto mb-8 bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 sm:p-5 backdrop-blur-md">
+        <div className="max-w-3xl mx-auto mb-6 bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 backdrop-blur-md">
           <Quote className="w-5 h-5 text-cyan-400 mx-auto mb-1 opacity-60" />
           <p className="text-xs sm:text-base font-medium text-slate-200 italic leading-relaxed">
             "Um material para quem precisa sair do improviso e começar a se comunicar com mais segurança, acolhimento e clareza."
           </p>
         </div>
 
-        {/* WhatsApp Testimonials Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
-          {WHATSAPP_TESTIMONIALS.map((t, idx) => (
-            <div
-              key={idx}
-              className="bg-slate-800/90 border border-slate-700/90 rounded-3xl p-5 shadow-xl flex flex-col justify-between hover:border-cyan-500/50 transition-colors"
-            >
-              <div>
-                {/* User Header */}
-                <div className="flex items-center gap-3 mb-3">
+        {/* Infinite Scrolling Testimonials Photos Carousel (Right to Left) */}
+        <div className="relative w-full overflow-hidden py-3 px-1">
+          <div className="animate-marquee-slow flex items-center gap-5 sm:gap-6">
+            {[
+              ...TESTIMONIAL_IMAGES,
+              ...TESTIMONIAL_IMAGES,
+              ...TESTIMONIAL_IMAGES,
+              ...TESTIMONIAL_IMAGES,
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="w-72 sm:w-84 shrink-0 bg-slate-950/90 rounded-3xl p-3 border border-slate-800 text-center flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02] shadow-2xl hover:border-cyan-500/40 cursor-pointer group"
+              >
+                <div className="w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-800/80 relative shadow-inner">
                   <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-10 h-10 rounded-full object-cover ring-2 ring-cyan-400"
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div>
-                    <h3 className="font-bold text-slate-100 text-xs sm:text-sm">{t.name}</h3>
-                    <p className="text-[10px] text-slate-400">{t.role}</p>
-                  </div>
-                </div>
-
-                {/* Stars */}
-                <div className="flex text-amber-400 gap-1 mb-2.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                  ))}
-                </div>
-
-                {/* WhatsApp Chat Bubble Style */}
-                <div className="bg-emerald-950/60 border border-emerald-500/30 rounded-2xl p-3 text-emerald-100 text-xs leading-relaxed relative">
-                  <p>"{t.message}"</p>
-                  <div className="flex items-center justify-end gap-1 mt-1.5 text-[10px] text-emerald-400 font-mono">
-                    <span>{t.time}</span>
-                    <CheckCheck className="w-3.5 h-3.5" />
-                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
