@@ -15,17 +15,17 @@ const RECENT_SALES = [
 export const UrgencyHeader = ({ onCtaClick }: { onCtaClick?: () => void }) => {
   const [currentSaleIndex, setCurrentSaleIndex] = useState(0);
   const [showToast, setShowToast] = useState(false);
-
-  // Formata a data atual no formato DD/MM/YY (ex: 24/08/26)
-  const todayFormatted = new Date().toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "2-digit",
-  });
-
-  const tickerText = `🔥 Ofertas válidas somente na data de hoje ${todayFormatted}!`;
+  const [currentDateString, setCurrentDateString] = useState("");
 
   useEffect(() => {
+    // Pega a data exata em tempo real do dispositivo do visitante no momento do acesso
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, "0");
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const year = String(now.getFullYear()).slice(-2);
+    
+    setCurrentDateString(`${day}/${month}/${year}`);
+
     const initialTimeout = setTimeout(() => {
       setShowToast(true);
       setTimeout(() => setShowToast(false), 5000);
@@ -45,6 +45,8 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick?: () => void }) => {
       clearTimeout(initialTimeout);
     };
   }, []);
+
+  const tickerText = `🔥 Ofertas válidas somente na data de hoje ${currentDateString || "hoje"}!`;
 
   const sale = RECENT_SALES[currentSaleIndex];
 
