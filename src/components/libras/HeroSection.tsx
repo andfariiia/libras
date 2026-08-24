@@ -10,6 +10,10 @@ interface CarouselItem {
 
 const CAROUSEL_ITEMS: CarouselItem[] = [
   {
+    title: "Jogo dos Sinais & Atividades em Libras",
+    image: "https://i.ibb.co/27sZ12B5/image.png",
+  },
+  {
     title: "Jogo dos Sinais — Capa e Guia",
     image: "https://i.ibb.co/9Hcs4qdz/jogo-dos-sinais-capa.webp",
   },
@@ -53,14 +57,6 @@ const CAROUSEL_ITEMS: CarouselItem[] = [
     title: "Jogo da Memória dos Sinais — Alfabeto & Vocabulário",
     image: "https://i.ibb.co/d4kJn7Ys/memoria-dos-sinais-2.webp",
   },
-  {
-    title: "Bingo de Libras para Turmas",
-    image: "https://i.ibb.co/S4y4pF3R/bingo-libras-2.webp",
-  },
-  {
-    title: "UNO Adaptado com Datilologia",
-    image: "https://i.ibb.co/XfL47vmK/uno-libras-1.webp",
-  },
 ];
 
 export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
@@ -98,7 +94,7 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           
           <div className="relative bg-slate-900/90 border border-slate-700/80 rounded-3xl p-3 sm:p-4 shadow-2xl backdrop-blur-2xl overflow-hidden">
             <img
-              src="https://i.ibb.co/35WTpLhF/Gemini-Generated-Image-kqkqvbkqkqvbkqkq.png"
+              src="https://i.ibb.co/ZR6bRRF0/Gemini-Generated-Image-5eukx85eukx85euk.jpg"
               alt="Kit Jogos em Libras na Prática"
               className="w-full h-auto rounded-2xl object-cover shadow-lg transform group-hover:scale-[1.01] transition-transform duration-500"
             />
@@ -155,7 +151,7 @@ export const HeroSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           </div>
         </div>
 
-        {/* SHOWCASE CAROUSEL SECTION */}
+        {/* SHOWCASE CAROUSEL SECTION — VEJA POR DENTRO */}
         <div className="pt-6 border-t border-slate-800/80 relative">
           {/* Header Pill */}
           <span className="text-xs font-black uppercase tracking-widest text-cyan-400 bg-cyan-950/80 border border-cyan-500/30 px-4 py-1.5 rounded-full shadow-xs">

@@ -34,9 +34,15 @@ const Index = () => {
       checkoutUrl = "https://pay.cakto.com.br/b5jqr5k_1053249"; // Oferta de R$ 27,90
     }
 
+    // Captura os parâmetros de UTM/SRC presentes na URL atual
+    const queryParams = window.location.search;
+    const finalUrl = queryParams
+      ? checkoutUrl + (checkoutUrl.includes("?") ? "&" : "?") + queryParams.replace("?", "")
+      : checkoutUrl;
+
     showSuccess(`Redirecionando para o checkout seguro...`);
     setTimeout(() => {
-      window.location.href = checkoutUrl;
+      window.location.href = finalUrl;
     }, 600);
   };
 
