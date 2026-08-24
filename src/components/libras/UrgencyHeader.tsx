@@ -46,33 +46,19 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick?: () => void }) => {
     };
   }, []);
 
-  const tickerText = `🔥 Ofertas válidas somente na data de hoje ${currentDateString || "hoje"}!`;
-
   const sale = RECENT_SALES[currentSaleIndex];
 
   return (
     <>
-      {/* Red Modern High-Impact Sticky Top Bar */}
+      {/* Red Solid Static Header Top Bar */}
       <header
         onClick={onCtaClick}
-        className="sticky top-0 z-50 bg-gradient-to-r from-red-950 via-slate-950 to-red-950 backdrop-blur-xl border-b border-red-500/40 shadow-[0_4px_25px_rgba(220,38,38,0.35)] py-2.5 overflow-hidden cursor-pointer"
+        className="sticky top-0 z-50 bg-red-600 text-white shadow-md py-2.5 px-4 cursor-pointer text-center select-none"
       >
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-2">
-          {/* Continuous Right-to-Left Ticker Bar */}
-          <div className="relative w-full overflow-hidden py-0.5">
-            <div className="animate-marquee-slow flex items-center whitespace-nowrap gap-6 text-xs sm:text-sm font-black text-amber-300 uppercase tracking-wide">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <span key={item} className="flex items-center gap-4 shrink-0">
-                  <span className="text-white font-extrabold">{tickerText}</span>
-                  <span className="text-red-400 font-bold">•</span>
-                  <span className="text-amber-300 font-black">+240 JOGOS EM LIBRAS</span>
-                  <span className="text-red-400 font-bold">•</span>
-                  <span className="text-white font-bold">DESCONTO PRÉ-APLICADO</span>
-                  <span className="text-red-400 font-bold">•</span>
-                </span>
-              ))}
-            </div>
-          </div>
+        <div className="max-w-7xl mx-auto flex items-center justify-center">
+          <p className="text-xs sm:text-sm md:text-base font-black tracking-wide uppercase">
+            🔥 Ofertas válidas somente na data de hoje {currentDateString || "hoje"}!
+          </p>
         </div>
       </header>
 
