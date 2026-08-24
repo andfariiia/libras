@@ -12,17 +12,18 @@ const RECENT_SALES = [
   { name: "Profa. Renata T.", city: "Porto Alegre - RS", time: "há 3 min" },
 ];
 
-const TICKER_ITEMS = [
-  "🔥 OFERTA ESPECIAL DE HOJE",
-  "⚡ +240 JOGOS EM LIBRAS",
-  "🎯 +100 DINÂMICAS EM LIBRAS",
-  "🃏 UNO EM LIBRAS",
-  "🎲 BINGO EM LIBRAS E MAIS...",
-];
-
 export const UrgencyHeader = ({ onCtaClick }: { onCtaClick?: () => void }) => {
   const [currentSaleIndex, setCurrentSaleIndex] = useState(0);
   const [showToast, setShowToast] = useState(false);
+
+  // Formata a data atual no formato DD/MM/YY (ex: 24/08/26)
+  const todayFormatted = new Date().toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  });
+
+  const tickerText = `🔥 Ofertas válidas somente na data de hoje ${todayFormatted}!`;
 
   useEffect(() => {
     const initialTimeout = setTimeout(() => {
@@ -58,9 +59,13 @@ export const UrgencyHeader = ({ onCtaClick }: { onCtaClick?: () => void }) => {
           {/* Continuous Right-to-Left Ticker Bar */}
           <div className="relative w-full overflow-hidden py-0.5">
             <div className="animate-marquee-slow flex items-center whitespace-nowrap gap-6 text-xs sm:text-sm font-black text-amber-300 uppercase tracking-wide">
-              {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, idx) => (
-                <span key={idx} className="flex items-center gap-2 shrink-0">
-                  <span className="text-white font-extrabold">{item}</span>
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <span key={item} className="flex items-center gap-4 shrink-0">
+                  <span className="text-white font-extrabold">{tickerText}</span>
+                  <span className="text-red-400 font-bold">•</span>
+                  <span className="text-amber-300 font-black">+240 JOGOS EM LIBRAS</span>
+                  <span className="text-red-400 font-bold">•</span>
+                  <span className="text-white font-bold">DESCONTO PRÉ-APLICADO</span>
                   <span className="text-red-400 font-bold">•</span>
                 </span>
               ))}
