@@ -24,14 +24,14 @@ const Index = () => {
   };
 
   const handleSelectPlan = (planName: string) => {
-    let checkoutUrl = "https://pay.kirvano.com/2813ffcb-eb1e-49a2-8c5b-567510732a45"; // Oferta de R$ 27,90 (Padrão)
+    let checkoutUrl = "https://pay.kiwify.com.br/Uhv8QjD"; // Oferta de R$ 27,90 (Padrão)
 
     if (planName.includes("10")) {
-      checkoutUrl = "https://pay.kirvano.com/6cdd8567-6983-4b39-aeca-dee902a469a7"; // Oferta de R$ 10
+      checkoutUrl = "https://pay.kiwify.com.br/MXOuBx4"; // Oferta de R$ 10,00
     } else if (planName.includes("17,90") || planName.includes("17.90") || planName.includes("17")) {
-      checkoutUrl = "https://pay.kirvano.com/253caae9-16db-4bd3-ac61-8b854802f282"; // Oferta de R$ 17
+      checkoutUrl = "https://pay.kiwify.com.br/EmxGd4c"; // Oferta de R$ 17,00
     } else if (planName.includes("27")) {
-      checkoutUrl = "https://pay.kirvano.com/2813ffcb-eb1e-49a2-8c5b-567510732a45"; // Oferta de R$ 27,90
+      checkoutUrl = "https://pay.kiwify.com.br/Uhv8QjD"; // Oferta de R$ 27,90
     }
 
     // Captura os parâmetros de UTM/SRC presentes na URL atual
