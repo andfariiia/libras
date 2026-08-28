@@ -14,6 +14,7 @@ import { CreatorSection } from "@/components/libras/CreatorSection";
 import { FaqSection } from "@/components/libras/FaqSection";
 import { GuaranteeFooter } from "@/components/libras/GuaranteeFooter";
 import { showSuccess } from "@/utils/toast";
+import { navigateWithParams } from "@/utils/navigation";
 
 const Index = () => {
   const scrollToCheckout = () => {
@@ -34,16 +35,10 @@ const Index = () => {
       checkoutUrl = "https://pay.kiwify.com.br/Uhv8QjD"; // Oferta de R$ 27,90
     }
 
-    // Captura os parâmetros de UTM/SRC presentes na URL atual
-    const queryParams = window.location.search;
-    const finalUrl = queryParams
-      ? checkoutUrl + (checkoutUrl.includes("?") ? "&" : "?") + queryParams.replace("?", "")
-      : checkoutUrl;
-
     showSuccess(`Redirecionando para o checkout seguro...`);
     setTimeout(() => {
-      window.location.href = finalUrl;
-    }, 600);
+      navigateWithParams(checkoutUrl);
+    }, 400);
   };
 
   return (

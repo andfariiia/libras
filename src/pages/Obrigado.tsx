@@ -4,16 +4,17 @@ import React, { useState, useEffect } from "react";
 import {
   Sparkles,
   CheckCircle2,
-  Lock,
-  Zap,
   Clock,
   ArrowRight,
   ShieldCheck,
   Flame,
   PlayCircle,
   Gift,
+  Lock,
+  Zap,
 } from "lucide-react";
 import { showSuccess } from "@/utils/toast";
+import { navigateWithParams } from "@/utils/navigation";
 
 const UPSERT_ACERVO = [
   {
@@ -105,12 +106,12 @@ export const Obrigado = () => {
   const handleAcceptUpsell = () => {
     showSuccess("Redirecionando para adicionar ao seu pedido...");
     setTimeout(() => {
-      window.location.href = "https://pay.cakto.com.br/m5smh9j_1053324";
-    }, 600);
+      navigateWithParams("https://pay.cakto.com.br/m5smh9j_1053324");
+    }, 500);
   };
 
   const handleDecline = () => {
-    window.location.href = "/membros";
+    navigateWithParams("/membros");
   };
 
   return (
